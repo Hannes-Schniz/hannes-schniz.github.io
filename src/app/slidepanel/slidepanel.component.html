@@ -11,7 +11,10 @@
 
     <div class="textBlock">
       <div class="header">
-        <h1>{{ this.currSlide.title }}</h1>
+        <h1>
+          {{ this.currSlide.title }}
+        </h1>
+        <a [href]="this.currSlide.link"><mat-icon>launch</mat-icon></a>
       </div>
       <div class="text">
         <h2>{{ this.currSlide.text }}</h2>

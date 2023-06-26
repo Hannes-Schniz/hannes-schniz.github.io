@@ -24,4 +24,8 @@ export class TranslatorService {
     }
     return slides;
   }
+
+  public getProjects(): project[] {
+    return this.allProjects;
+  }
 }

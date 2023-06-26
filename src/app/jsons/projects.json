@@ -6,7 +6,7 @@
         "title": "Doggo",
         "picture": "https://material.angular.io/assets/img/examples/shiba2.jpg",
         "text": "lorem ipsum text lul",
-        "link": ""
+        "link": "/projects"
       },
       "project": {}
     },
@@ -16,7 +16,7 @@
         "title": "Room",
         "picture": "https://images.pexels.com/photos/10755921/pexels-photo-10755921.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
         "text": "lorem ipsum text lul",
-        "link": ""
+        "link": "/projects"
       },
       "project": {}
     },
@@ -26,7 +26,7 @@
         "title": "Nature",
         "picture": "https://images.pexels.com/photos/17356579/pexels-photo-17356579/free-photo-of-holz-garten-tier-blatt.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
         "text": "lorem ipsum text lul",
-        "link": ""
+        "link": "/projects"
       },
       "project": {}
     }
