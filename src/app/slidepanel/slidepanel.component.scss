@@ -38,9 +38,9 @@
 
 .dots {
   width: 100%;
-  position: relative;
+  position: absolute;
   z-index: 1;
-  top: -100%;
+  top: 95vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -48,4 +48,21 @@
 
 .dot {
   transform: scale(0.5);
+}
+
+.textBlock {
+  z-index: 1;
+  position: absolute;
+  left: 10%;
+  top: 50vh;
+}
+
+h1 {
+  font-size: 100px !important;
+  color: white;
+}
+
+h2 {
+  font-size: 30px !important;
+  color: white;
 }

@@ -1,15 +1,27 @@
 import { Injectable } from '@angular/core';
-import slidesJson from "../jsons/slides.json"
+import projectJson from "../jsons/projects.json"
 import { slide } from '../models/slide';
+import { project } from '../models/project';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TranslatorService {
 
-  constructor() { }
+  private allProjects: Array<project>;
+
+  constructor() {
+    this.allProjects = projectJson.projects;
+  }
 
   public getSlideObjects(): slide[] {
-    return slidesJson.slides;
+
+    let slides: Array<slide> = new Array<slide>(this.allProjects.length);
+
+    for (let index = 0; index < this.allProjects.length; index++) {
+      slides[index] = this.allProjects[index].slide
+
+    }
+    return slides;
   }
 }

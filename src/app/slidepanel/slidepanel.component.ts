@@ -18,8 +18,6 @@ export class SlidepanelComponent {
 
   public currTitle: string = "";
 
-  public progress: number = 0;
-
   public dots : Array<boolean> = [];
 
   constructor(public slideService: SlidesService) {
@@ -41,7 +39,6 @@ export class SlidepanelComponent {
   private update() {
     this.currImgURL = this.currSlide.picture;
     this.currTitle = this.currSlide.title;
-    this.progress = 100 / this.slideService.getNumberOfSlides() * (this.currSlide.position + 1);
     this.initDots();
   }
 

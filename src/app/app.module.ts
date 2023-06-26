@@ -13,12 +13,14 @@ import { AppNavComponent } from './app-nav/app-nav.component';
 import { MatListModule } from '@angular/material/list';
 import { SlidepanelComponent } from './slidepanel/slidepanel.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ProjectComponentComponent } from './project-component/project-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavComponent,
-    SlidepanelComponent
+    SlidepanelComponent,
+    ProjectComponentComponent
   ],
   imports: [
     BrowserModule,

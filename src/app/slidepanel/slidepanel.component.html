@@ -9,6 +9,15 @@
       </button>
     </div>
 
+    <div class="textBlock">
+      <div class="header">
+        <h1>{{ this.currSlide.title }}</h1>
+      </div>
+      <div class="text">
+        <h2>{{ this.currSlide.text }}</h2>
+      </div>
+    </div>
+
     <img class="center-fit" id="0" mat-card-image [src]="this.currImgURL" />
     <div class="dots">
       <div class="dot" *ngFor="let item of dots; let i = index">
