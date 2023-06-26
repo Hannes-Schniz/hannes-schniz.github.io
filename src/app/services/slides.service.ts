@@ -20,24 +20,20 @@ export class SlidesService {
   }
 
   public getNextSlide(): slide{
-    let old = this.slidePosition;
     if(this.slidePosition == this.slides.length - 1){
       this.slidePosition = 0;
     }
     else {
       this.slidePosition++;
     }
-    return this.slides[old];
+    return this.slides[this.slidePosition];
   }
 
   public getPrevSlide(): slide{
-    let old = this.slidePosition;
-    if(this.slidePosition == 0){
+    this.slidePosition--;
+    if(this.slidePosition == -1){
       this.slidePosition = this.slides.length - 1;
     }
-    else {
-      this.slidePosition--;
-    }
-    return this.slides[old];
+    return this.slides[this.slidePosition];
   }
 }

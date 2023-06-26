@@ -5,7 +5,8 @@ import { slide } from '../models/slide';
 @Component({
   selector: 'app-slidepanel',
   templateUrl: './slidepanel.component.html',
-  styleUrls: ['./slidepanel.component.scss']
+  styleUrls: ['./slidepanel.component.scss'],
+  animations: []
 })
 export class SlidepanelComponent {
 
@@ -13,22 +14,26 @@ export class SlidepanelComponent {
 
   public currImgURL: string;
 
+  public currTitle: string;
+
   constructor(public slideService: SlidesService) {
     this.currSlide = slideService.getInitSlide();
     this.currImgURL = this.currSlide.picture;
+    this.currTitle = this.currSlide.title;
   }
 
   public nextSlide() {
     this.currSlide = this.slideService.getNextSlide();
-    this.updateImg();
+    this.update();
   }
 
   public prevSlide() {
     this.currSlide = this.slideService.getPrevSlide();
-    this.updateImg();
+    this.update();
   }
 
-  private updateImg() {
+  private update() {
     this.currImgURL = this.currSlide.picture;
+    this.currTitle = this.currSlide.title;
   }
 }

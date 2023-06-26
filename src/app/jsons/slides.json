@@ -2,15 +2,22 @@
   "slides": [
     {
       "position": 0,
-      "title": "",
+      "title": "1",
       "picture": "https://material.angular.io/assets/img/examples/shiba2.jpg",
       "text": "",
       "link": ""
     },
     {
       "position": 1,
-      "title": "",
+      "title": "2",
       "picture": "https://images.pexels.com/photos/10755921/pexels-photo-10755921.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "text": "",
+      "link": ""
+    },
+    {
+      "position": 2,
+      "title": "3",
+      "picture": "https://images.pexels.com/photos/17356579/pexels-photo-17356579/free-photo-of-holz-garten-tier-blatt.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
       "text": "",
       "link": ""
     }
