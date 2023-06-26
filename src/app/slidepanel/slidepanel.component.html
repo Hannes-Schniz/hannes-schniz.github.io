@@ -1,17 +1,13 @@
 <div class="mainFlexContainer">
   <div class="slideContainer">
     <div class="swipes">
-      <button mat-button class="swipeButton">
+      <button mat-button class="swipeButton" (click)="this.prevSlide()">
         <mat-icon class="icon">keyboard_arrow_left</mat-icon>
       </button>
-      <button mat-button class="swipeButton">
+      <button mat-button class="swipeButton" (click)="this.nextSlide()">
         <mat-icon class="icon">keyboard_arrow_right</mat-icon>
       </button>
     </div>
-    <img
-      class="center-fit"
-      mat-card-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-    />
+    <img class="center-fit" id="0" mat-card-image [src]="this.currImgURL" />
   </div>
 </div>
