@@ -1,9 +1,14 @@
+.mainFlexContainer {
+  height: 95vh;
+}
+
 .slideContainer {
   display: grid;
+  height: inherit;
 }
 .center-fit {
   width: 100%;
-  height: 100vh;
+  height: inherit;
   margin: auto;
   position: relative;
 }
@@ -14,15 +19,15 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 100vh;
   top: 64px;
+  height: inherit;
 }
 
 .swipeButton {
   width: 10%;
   position: relative;
   z-index: 1;
-  height: 100vh;
+  height: inherit;
   display: flex;
   align-content: center;
   .icon {
