@@ -1,6 +1,5 @@
 .slideContainer {
     display: grid;
-    height: 100%;
 }
 .center-fit {
     width: 100%;
@@ -8,18 +7,25 @@
     margin: auto;
     position: relative;
 }
-.leftSwipe{
-    width: 10%;
-    height: 100vh;
+
+.swipes{
     position: absolute;
-    z-index: 1;
-    top: 64px;
     display: flex;
-    align-content: baseline;
-    justify-content:center;
-    .iconLeft{
-        position: inherit;
-        top: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    top:64px;
+}
+
+.swipeButton{
+    width: 10%;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    .icon{
         transform: scaleY(5) scaleX(5);
         color: white;
     }

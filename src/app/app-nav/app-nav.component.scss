@@ -1,7 +1,8 @@
 .sidenav-container {
   height: 100%;
-  position: sticky !important;
-  z-index: 2;
+  position: sticky;
+  top: 0;
+  z-index: 1000 ;
 }
 
 .sidenav {
@@ -15,5 +16,4 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
 }
