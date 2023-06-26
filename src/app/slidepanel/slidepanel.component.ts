@@ -20,8 +20,11 @@ export class SlidepanelComponent {
 
   public progress: number = 0;
 
+  public dots : Array<boolean> = [];
+
   constructor(public slideService: SlidesService) {
     this.currSlide = slideService.getInitSlide();
+    this.initDots();
     this.update();
   }
 
@@ -39,5 +42,13 @@ export class SlidepanelComponent {
     this.currImgURL = this.currSlide.picture;
     this.currTitle = this.currSlide.title;
     this.progress = 100 / this.slideService.getNumberOfSlides() * (this.currSlide.position + 1);
+    this.initDots();
+  }
+
+  private initDots() {
+    this.dots = new Array<boolean>(this.slideService.getNumberOfSlides());
+    for (let index = 0; index < this.slideService.getNumberOfSlides(); index++) {
+      this.dots[index] = (index != this.currSlide.position);
+    }
   }
 }
