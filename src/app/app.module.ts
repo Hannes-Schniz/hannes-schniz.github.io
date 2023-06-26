@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { MatListModule } from '@angular/material/list';
 import { SlidepanelComponent } from './slidepanel/slidepanel.component'; 
+import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SlidepanelComponent } from './slidepanel/slidepanel.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

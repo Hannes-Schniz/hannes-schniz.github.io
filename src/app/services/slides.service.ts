@@ -36,4 +36,8 @@ export class SlidesService {
     }
     return this.slides[this.slidePosition];
   }
+
+  public getNumberOfSlides(): number{
+    return this.slides.length;
+  }
 }

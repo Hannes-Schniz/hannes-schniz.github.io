@@ -30,3 +30,10 @@
     color: white;
   }
 }
+
+.dots {
+  position: absolute;
+  z-index: 1;
+  top: 90vh;
+  left: 50%;
+}
