@@ -17,6 +17,7 @@ import { ProjectComponentComponent } from './project-component/project-component
 import { HomeComponent } from './home/home.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { PersonalHomeComponent } from './personal-home/personal-home.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PersonalHomeComponent } from './personal-home/personal-home.component';
     MatIconModule,
     MatListModule,
     MatProgressBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
