@@ -18,3 +18,38 @@
   top: 0;
   height: 5vh;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: inherit;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image {
+  width: 140px;
+  height: 140px;
+  border-radius: 80px;
+  object-fit: cover;
+}
+
+.mennuItems {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.picture {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

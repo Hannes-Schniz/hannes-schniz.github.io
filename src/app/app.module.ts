@@ -15,6 +15,7 @@ import { SlidepanelComponent } from './slidepanel/slidepanel.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ProjectComponentComponent } from './project-component/project-component.component';
 import { HomeComponent } from './home/home.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
