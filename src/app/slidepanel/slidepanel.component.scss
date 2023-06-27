@@ -1,10 +1,12 @@
 .mainFlexContainer {
-  height: 95vh;
+  height: 100vh;
+  top: 5vh;
 }
 
 .slideContainer {
   display: grid;
   height: inherit;
+  top: inherit;
 }
 .center-fit {
   width: 100%;
@@ -19,7 +21,6 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  top: 64px;
   height: inherit;
 }
 

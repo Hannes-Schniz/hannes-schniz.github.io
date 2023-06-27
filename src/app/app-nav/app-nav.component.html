@@ -4,10 +4,10 @@
     class="sidenav"
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'push'"
+    [mode]="(isHandset$ | async) ? 'over' : 'over'"
     [opened]="(isHandset$ | async) === true"
   >
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="center">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="/home">home</a>
       <a mat-list-item href="/projects">Projects</a>
@@ -25,23 +25,22 @@
           >
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
-          <span>portfolio</span>
+          <span><h1>portfolio</h1></span>
         </div>
         <div class="right">
           <button
-            mat-icon-button
+            mat-fab
             [matMenuTriggerFor]="menu"
             aria-label="Example icon-button with a menu"
           >
-            <mat-icon>more_vert</mat-icon>
+            <img
+              class="image"
+              src="../../assets/pictures/personal/Hannes_Schniz.jpg"
+            />
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item class="picture">
-              <img
-                class="image"
-                src="../../assets/pictures/personal/Hannes_Schniz.jpg"
-              />
-            </button>
+            <button class="picture" mat-menu-item></button>
+
             <button mat-menu-item disabled>
               <mat-icon>voicemail</mat-icon>
               <span>Check voice mail</span>

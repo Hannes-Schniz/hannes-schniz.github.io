@@ -16,6 +16,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ProjectComponentComponent } from './project-component/project-component.component';
 import { HomeComponent } from './home/home.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { PersonalHomeComponent } from './personal-home/personal-home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatMenuModule} from '@angular/material/menu';
     AppNavComponent,
     SlidepanelComponent,
     ProjectComponentComponent,
-    HomeComponent
+    HomeComponent,
+    PersonalHomeComponent
   ],
   imports: [
     BrowserModule,

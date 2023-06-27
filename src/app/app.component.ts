@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, HostListener, Input, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -9,6 +9,12 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'portfolio';
 
+
+
   constructor() {}
+
+  onScroll() {
+    console.log("scroll")
+  }
 
 }

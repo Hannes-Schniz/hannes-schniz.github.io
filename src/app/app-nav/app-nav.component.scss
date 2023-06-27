@@ -1,12 +1,19 @@
 .sidenav-container {
   height: 100%;
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .sidenav {
-  width: 200px;
+  width: 30vw;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .sidenav .mat-toolbar {
@@ -14,9 +21,12 @@
 }
 
 .mat-toolbar.mat-primary {
-  position: sticky;
   top: 0;
   height: 5vh;
+  z-index: 1000;
+  position: fixed;
+  backdrop-filter: blur(1px);
+  background-color: rgba(88, 88, 88, 0.466);
 }
 
 .buttons {
@@ -33,11 +43,17 @@
   align-items: center;
 }
 
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .image {
-  width: 140px;
-  height: 140px;
-  border-radius: 80px;
-  object-fit: cover;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 35px;
+  object-fit: cover !important;
 }
 
 .mennuItems {
@@ -52,4 +68,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+h1 {
+  font-size: 2vh !important;
 }
