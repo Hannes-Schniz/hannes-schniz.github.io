@@ -14,45 +14,51 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <div class="buttons">
-        <div class="left">
-          <button
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            (click)="drawer.toggle()"
-          >
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button>
-          <span><h1>portfolio</h1></span>
-        </div>
-        <div class="right">
-          <button
-            mat-fab
-            [matMenuTriggerFor]="menu"
-            aria-label="Example icon-button with a menu"
-          >
-            <img
-              class="image"
-              src="../../assets/pictures/personal/Hannes_Schniz.jpg"
-            />
-          </button>
-          <mat-menu #menu="matMenu">
-            <button class="picture" mat-menu-item></button>
+    <div class="bar">
+      <mat-toolbar color="primary">
+        <div class="buttons">
+          <div class="left">
+            <button
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+            >
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span><h1>portfolio</h1></span>
+          </div>
+          <div class="right">
+            <button
+              mat-fab
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <img
+                class="image"
+                src="../../assets/pictures/personal/Hannes_Schniz.jpg"
+              />
+            </button>
+            <mat-menu #menu="matMenu">
+              <button class="picture" mat-menu-item></button>
 
-            <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voice mail</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
-            </button>
-          </mat-menu>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
         </div>
-      </div>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
+      </mat-toolbar>
+      <mat-progress-bar
+        mode="determinate"
+        [value]="this.scrollService.scrollPosition"
+        class="progessBar"
+      ></mat-progress-bar>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

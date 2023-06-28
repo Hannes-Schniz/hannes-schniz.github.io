@@ -73,3 +73,9 @@
 h1 {
   font-size: 2vh !important;
 }
+
+.progessBar {
+  position: fixed;
+  z-index: 1000;
+  top: 5vh;
+}

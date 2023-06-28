@@ -7,14 +7,5 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
-
-
-
-  constructor() {}
-
-  onScroll() {
-    console.log("scroll")
-  }
-
+  constructor(){}
 }
