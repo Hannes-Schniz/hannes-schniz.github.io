@@ -3,8 +3,8 @@
     {
       "slide": {
         "position": 0,
-        "title": "Doggo",
-        "picture": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "title": "Brains",
+        "picture": "../../assets/pictures/projects/one.jpg",
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
@@ -13,8 +13,8 @@
     {
       "slide": {
         "position": 1,
-        "title": "Room",
-        "picture": "https://images.pexels.com/photos/10755921/pexels-photo-10755921.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+        "title": "Mr. Robot",
+        "picture": "../../assets/pictures/projects/two.jpg",
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
@@ -24,7 +24,7 @@
       "slide": {
         "position": 2,
         "title": "Nature",
-        "picture": "https://images.pexels.com/photos/17356579/pexels-photo-17356579/free-photo-of-holz-garten-tier-blatt.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+        "picture": "../../assets/pictures/projects/three.jpg",
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
