@@ -25,11 +25,9 @@ export class AppNavComponent {
     maxSteps: number = 2;
 
   @HostListener("window:scroll", []) onWindowScroll() {
-    this.scrollService.scrollNext();
     this.scrollService.updateScrollPosition();
   }
 
   constructor(public scrollService: ScrollService) {
-    this.scrollService.updateScrollPosition();
   }
 }

@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { PersonalHomeComponent } from './personal-home/personal-home.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ContactFormHomeComponent } from './contact-form-home/contact-form-home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     SlidepanelComponent,
     ProjectComponentComponent,
     HomeComponent,
-    PersonalHomeComponent
+    PersonalHomeComponent,
+    ContactFormHomeComponent
   ],
   imports: [
     BrowserModule,
