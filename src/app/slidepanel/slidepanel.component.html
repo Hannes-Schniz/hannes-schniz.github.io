@@ -9,6 +9,8 @@
       </button>
     </div>
 
+    <img class="center-fit" [src]="this.currImgURL" />
+
     <div class="textBlock">
       <div class="header">
         <h1>
@@ -20,8 +22,6 @@
         <h2>{{ this.currSlide.text }}</h2>
       </div>
     </div>
-
-    <img class="center-fit" id="0" mat-card-image [src]="this.currImgURL" />
     <div class="footer">
       <div class="spacer"></div>
       <div class="slideIndicator">
