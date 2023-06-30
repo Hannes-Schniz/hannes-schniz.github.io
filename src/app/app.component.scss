@@ -1,3 +1,12 @@
 .navigation {
   width: 100%;
 }
+.button {
+  z-index: 9999;
+  position: fixed;
+  bottom: 1vh;
+  right: 1vh;
+  background: rgba(88, 88, 88, 0.466);
+  backdrop-filter: blur(1px);
+  color: white;
+}

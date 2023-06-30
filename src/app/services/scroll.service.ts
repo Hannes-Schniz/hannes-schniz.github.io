@@ -20,4 +20,8 @@ export class ScrollService {
   public getCurrentScrollPosition() {
     return ( 100 / ((this.numberElements - 1) * window.innerHeight) *  window.scrollY);
   }
+
+  public showScrollTop() {
+    return this.getCurrentScrollPosition() > 30;
+  }
 }
