@@ -9,7 +9,13 @@
       </button>
     </div>
 
-    <img class="center-fit" [src]="this.currImgURL" />
+    <div [@animImageSlider]="this.slideService.slidePosition">
+      <div *ngFor="let img of this.slideService.getSlides(); let i = index">
+        <div *ngIf="i === this.slideService.slidePosition">
+          <img class="center-fit" [src]="this.currImgURL" />
+        </div>
+      </div>
+    </div>
 
     <div class="textBlock">
       <div class="header">

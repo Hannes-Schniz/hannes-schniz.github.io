@@ -7,7 +7,7 @@
 }
 .center-fit {
   width: 100%;
-  height: inherit;
+  max-height: 100vh;
   margin: auto;
   position: relative;
 }

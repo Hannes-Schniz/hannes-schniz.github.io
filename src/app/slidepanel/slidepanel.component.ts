@@ -2,14 +2,42 @@ import { Component } from '@angular/core';
 import { SlidesService } from '../services/slides.service';
 import { slide } from '../models/slide';
 import { Observable, Subscription, interval } from 'rxjs';
+import { trigger, transition, style, animate, group, state, query } from '@angular/animations';
 
+'@angular/animations'
+const left = [
+  query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(-100%)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(100%)' }))], {
+      optional: true,
+    }),
+  ]),
+];
+
+const right = [
+  query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(100%)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(-100%)' }))], {
+      optional: true,
+    }),
+  ]),
+];
 
 //TODO add aniations
 @Component({
   selector: 'app-slidepanel',
   templateUrl: './slidepanel.component.html',
   styleUrls: ['./slidepanel.component.scss'],
-  animations: []
+  animations: [trigger('animImageSlider', [
+    transition(':increment', right),
+    transition(':decrement', left),
+  ]),]
 })
 export class SlidepanelComponent {
 
@@ -25,7 +53,7 @@ export class SlidepanelComponent {
 
   public dots : Array<boolean> = [];
 
-  private slideSpeed: number = 100;
+  public position = 0;
 
   private subscription: Subscription;
 
@@ -36,8 +64,7 @@ export class SlidepanelComponent {
   constructor(public slideService: SlidesService) {
     this.currSlide = slideService.getInitSlide();
     this.subscription = new Subscription;
-    this.initDots();
-    this.update();
+    this.init();
     this.startInterval();
   }
 
@@ -71,6 +98,11 @@ export class SlidepanelComponent {
     this.initDots();
   }
 
+  private init() {
+    this.currImgURL = this.currSlide.picture;
+    this.currTitle = this.currSlide.title;
+    this.initDots();
+  }
   private initDots() {
     this.dots = new Array<boolean>(this.slideService.getNumberOfSlides());
     for (let index = 0; index < this.slideService.getNumberOfSlides(); index++) {

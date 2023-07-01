@@ -9,10 +9,10 @@ export class SlidesService {
 
   private slides: Array<slide>;
 
-  private slidePosition = 0;
+  public slidePosition = 0;
 
-  constructor(private translationService: TranslatorService) { 
-    this.slides = translationService.getSlideObjects(); 
+  constructor(private translationService: TranslatorService) {
+    this.slides = translationService.getSlideObjects();
   }
 
   public getInitSlide():slide{
@@ -39,5 +39,9 @@ export class SlidesService {
 
   public getNumberOfSlides(): number{
     return this.slides.length;
+  }
+
+  public getSlides() {
+    return this.slides;
   }
 }
