@@ -12,7 +12,7 @@
     <div [@animImageSlider]="this.slideService.slidePosition">
       <div *ngFor="let img of this.slideService.getSlides(); let i = index">
         <div *ngIf="i === this.slideService.slidePosition">
-          <img class="center-fit" [src]="this.currImgURL" />
+          <img class="center-fit" [src]="this.currSlide.picture" />
         </div>
       </div>
     </div>
