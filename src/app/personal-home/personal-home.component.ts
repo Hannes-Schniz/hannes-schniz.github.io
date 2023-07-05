@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class PersonalHomeComponent {
 
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    var fileURL = "../../assets/pdfs/Lebenslauf.pdf";
+    console.log('test');
+    console.log(document.querySelector('#pdf'), 'test');
+    if(document.querySelector('#pdf') != null) {
+      document.querySelector('#pdf')!.textContent = fileURL;
+    }
+  }
 }

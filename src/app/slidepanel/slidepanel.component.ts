@@ -29,7 +29,7 @@ const right = [
   ]),
 ];
 
-//TODO add aniations
+
 @Component({
   selector: 'app-slidepanel',
   templateUrl: './slidepanel.component.html',
@@ -57,6 +57,7 @@ export class SlidepanelComponent {
     this.currSlide = slideService.getInitSlide();
     this.source = interval(this.SLIDEINTERVAL);
     this.startInterval();
+    this.initDots();
   }
 
   ngOnDestroy() {
