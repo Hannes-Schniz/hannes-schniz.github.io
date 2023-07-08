@@ -8,7 +8,7 @@ import { project } from '../models/project';
 })
 export class TranslatorService {
 
-  private allProjects: Array<project>;
+  private allProjects: project[];
 
   constructor() {
     this.allProjects = projectJson.projects;

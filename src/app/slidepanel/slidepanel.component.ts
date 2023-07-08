@@ -55,8 +55,6 @@ export class SlidepanelComponent {
 
   private wait;
 
-
-
   constructor(public slideService: SlidesService) {
     this.currSlide = slideService.getInitSlide();
     this.source = interval(this.SLIDEINTERVAL);

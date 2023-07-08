@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslatorService } from '../services/translator.service';
+import { project } from '../models/project';
 
 @Component({
   selector: 'app-project-component',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ProjectComponentComponent {
 
+  public projects: project[];
+
+  constructor(public translator: TranslatorService) {
+    this.projects = translator.getProjects();
+  }
 }
