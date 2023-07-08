@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SlidesService } from '../services/slides.service';
-import { slide } from '../models/slide';
+import { SlidesService } from '../../../shared/services/slides.service';
+import { slide } from '../../../shared/models/slide';
 import { Subscription, interval } from 'rxjs';
 import { trigger, transition, style, animate, group, query } from '@angular/animations';
 

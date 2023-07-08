@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import projectJson from "../jsons/projects.json"
+import projectJson from '../jsons/projects.json';
 import { slide } from '../models/slide';
 import { project } from '../models/project';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TranslatorService {
-
   private allProjects: project[];
 
   constructor() {
@@ -15,12 +14,10 @@ export class TranslatorService {
   }
 
   public getSlideObjects(): slide[] {
-
     let slides: Array<slide> = new Array<slide>(this.allProjects.length);
 
     for (let index = 0; index < this.allProjects.length; index++) {
-      slides[index] = this.allProjects[index].slide
-
+      slides[index] = this.allProjects[index].slide;
     }
     return slides;
   }

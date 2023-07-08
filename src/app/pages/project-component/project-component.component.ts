@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslatorService } from '../services/translator.service';
-import { project } from '../models/project';
+import { TranslatorService } from '../../shared/services/translator.service';
+import { project } from '../../shared/models/project';
 
 @Component({
   selector: 'app-project-component',

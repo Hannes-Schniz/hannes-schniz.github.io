@@ -2,7 +2,7 @@ import { Component, HostListener, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { ScrollService } from '../services/scroll.service';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-app-nav',

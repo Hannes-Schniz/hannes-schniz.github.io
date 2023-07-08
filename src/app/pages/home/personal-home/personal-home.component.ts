@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { localstorageHelper } from '../helper/localstorage.helper';
-import { TEST } from '../constants/localstorage.constants';
-import { LocalstorageModel } from '../models/localstorage.model';
+import { localstorageHelper } from '../../../shared/helper/localstorage.helper';
+import { TEST } from '../../../shared/constants/localstorage.constants';
+import { LocalstorageModel } from '../../../shared/models/localstorage.model';
 
 @Component({
   selector: 'app-personal-home',
