@@ -43,6 +43,8 @@ export class SlidepanelComponent {
 
   SLIDEINTERVAL = 7500;
 
+  TIMEOUT = 1500;
+
   public currSlide: slide;
 
   public dots : Array<boolean> = [];
@@ -51,11 +53,14 @@ export class SlidepanelComponent {
 
   private source;
 
+  private wait;
+
 
 
   constructor(public slideService: SlidesService) {
     this.currSlide = slideService.getInitSlide();
     this.source = interval(this.SLIDEINTERVAL);
+    this.wait = interval(this.TIMEOUT);
     this.startInterval();
     this.initDots();
   }
@@ -87,10 +92,11 @@ export class SlidepanelComponent {
   }
 
   private startInterval() {
-    this.subscription = this.source.subscribe(() => this.nextSlide());
+    this.subscription = this.source.subscribe(() => {this.nextSlide(); this.initDots()});
   }
 
   private stopInterval() {
     this.subscription.unsubscribe();
+    this.subscription = this.wait.subscribe(() => {this.startInterval});
   }
 }
