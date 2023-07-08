@@ -1,13 +1,12 @@
-.mainContainer {
+.navigation {
   width: 100%;
 }
-
-.slideContainer {
-  height: 10vh;
-}
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.button {
+  z-index: 9999;
+  position: fixed;
+  bottom: 1vh;
+  right: 1vh;
+  background: rgba(88, 88, 88, 0.466);
+  backdrop-filter: blur(1px);
+  color: white;
 }
