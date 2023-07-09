@@ -23,4 +23,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+  max-width: 50vw;
+  padding: 2%;
+}
+
+#linebreak {
+  word-wrap: break-word;
+  max-width: 50vw;
 }
