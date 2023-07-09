@@ -8,7 +8,11 @@
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
-      "project": {}
+      "projectPage": {
+        "title": "",
+        "picture": "",
+        "text": ""
+      }
     },
     {
       "slide": {
@@ -18,7 +22,11 @@
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
-      "project": {}
+      "projectPage": {
+        "title": "test",
+        "picture": "",
+        "text": "test"
+      }
     },
     {
       "slide": {
@@ -28,7 +36,11 @@
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
-      "project": {}
+      "projectPage": {
+        "title": "",
+        "picture": "",
+        "text": ""
+      }
     }
   ]
 }
