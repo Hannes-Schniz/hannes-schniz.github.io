@@ -8,7 +8,7 @@
 }
 
 .image {
-  height: 100vh;
+  height: inherit;
 }
 
 .project_content {
@@ -23,8 +23,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  max-width: 50vw;
   padding: 2%;
 }
 
