@@ -4,27 +4,27 @@
       "slide": {
         "position": 0,
         "title": "Brains",
-        "picture": "../../assets/pictures/projects/one.jpg",
+        "picture": "../../assets/pictures/projects/Slides/one.jpg",
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
       "projectPage": {
         "title": "",
-        "picture": "",
-        "text": ""
+        "picture": "../../assets/pictures/projects/ProjectPage/one.jpg",
+        "text": "hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
       }
     },
     {
       "slide": {
         "position": 1,
         "title": "Mr. Robot",
-        "picture": "../../assets/pictures/projects/two.jpg",
+        "picture": "../../assets/pictures/projects/Slides/two.jpg",
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
       "projectPage": {
         "title": "test",
-        "picture": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/two.jpg",
         "text": "test"
       }
     },
@@ -32,13 +32,13 @@
       "slide": {
         "position": 2,
         "title": "Nature",
-        "picture": "../../assets/pictures/projects/three.jpg",
+        "picture": "../../assets/pictures/projects/Slides/three.jpg",
         "text": "lorem ipsum text lul",
         "link": "/projects"
       },
       "projectPage": {
         "title": "",
-        "picture": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/three.jpg",
         "text": ""
       }
     }
