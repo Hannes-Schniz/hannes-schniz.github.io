@@ -1,0 +1,16 @@
+.personal_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "MyFont";
+}
+
+.half_width {
+  width: 70%;
+}
+
+.iframe {
+  width: 40%;
+  height: 100%;
+  z-index: 5;
+}

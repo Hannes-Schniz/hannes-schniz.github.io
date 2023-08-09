@@ -1,0 +1,11 @@
+<div class="mainContainer">
+  <div *ngFor="let item of this.projects; let i = index" class="home_card">
+    <div class="project_content">
+      <img class="image width_half" [src]="item.slide.picture" alt="" />
+      <div class="text width_half">
+        <h1>{{ item.slide.title }}</h1>
+        <p>{{ item.slide.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

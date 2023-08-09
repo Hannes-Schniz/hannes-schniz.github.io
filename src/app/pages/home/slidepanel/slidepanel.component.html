@@ -1,0 +1,39 @@
+<div class="home_card">
+  <div class="swipes">
+    <button mat-button class="swipeButton" (click)="this.navigated(false)">
+      <mat-icon class="icon">keyboard_arrow_left</mat-icon>
+    </button>
+    <button mat-button class="swipeButton" (click)="this.navigated(true)">
+      <mat-icon class="icon">keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+
+  <div [@animImageSlider]="this.slideService.slidePosition">
+    <div *ngFor="let img of this.slideService.getSlides(); let i = index">
+      <div *ngIf="i === this.slideService.slidePosition">
+        <img class="center-fit" [src]="this.currSlide.picture" />
+      </div>
+    </div>
+  </div>
+
+  <div class="textBlock">
+    <div class="header">
+      <h1>
+        {{ this.currSlide.title }}
+      </h1>
+      <a [href]="this.currSlide.link"><mat-icon>launch</mat-icon></a>
+    </div>
+    <div class="text">
+      <h2>{{ this.currSlide.text }}</h2>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="spacer"></div>
+    <div class="slideIndicator">
+      <div class="dot" *ngFor="let item of dots; let i = index">
+        <button mat-fab color="accent" [disabled]="dots[i]"></button>
+      </div>
+    </div>
+    <div class="progressSpinner"></div>
+  </div>
+</div>

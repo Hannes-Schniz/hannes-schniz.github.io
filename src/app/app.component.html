@@ -1,0 +1,12 @@
+<app-app-nav class="navigation"></app-app-nav>
+<router-outlet></router-outlet>
+<div>
+  <button
+    mat-fab
+    class="button"
+    *ngIf="this.scrollService.showScrollTop()"
+    (click)="this.scrollTop()"
+  >
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+</div>
