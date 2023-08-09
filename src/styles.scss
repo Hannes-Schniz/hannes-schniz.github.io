@@ -1,11 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+  font-family: "MyFont";
+  src: url("assets/fonts/Demo_Fonts/Fontspring-DEMO-geon-medium.otf");
+}
+
 body {
-  width: 100%;
+  width: 100vw;
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  min-height: 100vh;
+  min-height: 99vh;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif, MyFont !important;
 }
 
 .home_card {

@@ -1,0 +1,92 @@
+.sidenav-container {
+  height: 100vh;
+  top: 0;
+  z-index: 1000;
+  font-family: "MyFont";
+  background-color: rgba(39, 39, 39, 0);
+}
+
+.sidenav {
+  width: 15vw;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.row {
+  height: 5vh;
+  z-index: 1000;
+  backdrop-filter: blur(1px) !important;
+  background-color: rgba(88, 88, 88, 0) !important;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: inherit;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 35px;
+  object-fit: cover !important;
+}
+
+.mennuItems {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.picture {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2vh !important;
+}
+
+.progessBar {
+  z-index: 1000;
+}
+
+.bar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  width: 100vw;
+}
+
+.clear {
+  background-color: rgba(250, 235, 215, 0);
+}

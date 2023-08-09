@@ -20,6 +20,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ContactFormHomeComponent } from './pages/home/contact-form-home/contact-form-home.component';
 import { LsmComponent } from './pages/lsm/lsm.component';
 import {MatTableModule} from '@angular/material/table';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {MatTableModule} from '@angular/material/table';
     HomeComponent,
     PersonalHomeComponent,
     ContactFormHomeComponent,
-    LsmComponent
+    LsmComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import {MatTableModule} from '@angular/material/table';
     MatProgressBarModule,
     MatMenuModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

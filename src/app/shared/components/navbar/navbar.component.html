@@ -1,0 +1,44 @@
+<div class="bar">
+  <mat-toolbar class="clear">
+    <mat-toolbar-row class="row">
+      <div class="buttons">
+        <div class="left">
+          <button
+            type="button"
+            aria-label="Toggle sidenav"
+            (click)="this.toggle()"
+            mat-icon-button
+          >
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span><h1>portfolio</h1></span>
+        </div>
+        <div class="right"></div>
+      </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="row" *ngIf="this.showChips">
+      <div class="chips">
+        <mat-chip-listbox aria-label="Dog selection">
+          <mat-chip
+            [routerLink]="['/home']"
+            routerLinkActive="router-link-active"
+          >
+            home
+          </mat-chip>
+          <mat-chip
+            [routerLink]="['/LSM']"
+            routerLinkActive="router-link-active"
+          >
+            LSM
+          </mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-progress-bar
+    mode="determinate"
+    [value]="this.scrollService.barPosition"
+    class="progessBar"
+  >
+  </mat-progress-bar>
+</div>
