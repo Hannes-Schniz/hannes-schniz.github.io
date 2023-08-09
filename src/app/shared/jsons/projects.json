@@ -3,14 +3,14 @@
     {
       "slide": {
         "position": 0,
-        "title": "Brains",
-        "picture": "../../assets/pictures/projects/Slides/one.jpg",
+        "title": "LSM",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
         "text": "lorem ipsum text lul",
-        "link": "/projects"
+        "link": "/LSM"
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/one.jpg",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
         "text": ""
       }
     },

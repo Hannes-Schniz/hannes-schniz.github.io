@@ -1,5 +1,7 @@
 .navigation {
   width: 100%;
+  position: fixed;
+  z-index: 9999;
 }
 .button {
   z-index: 9999;
@@ -9,4 +11,8 @@
   background: rgba(88, 88, 88, 0.466);
   backdrop-filter: blur(1px);
   color: white;
+}
+
+router-outlet {
+  position: absolute;
 }
