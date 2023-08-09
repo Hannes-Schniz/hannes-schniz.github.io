@@ -12,17 +12,7 @@ export class PersonalHomeComponent {
   public storage: localstorageHelper;
 
   constructor() {
-    this.init();
     this.storage = localstorageHelper.register(TEST);
-  }
-
-  init() {
-    var fileURL = '../../assets/pdfs/Lebenslauf.pdf';
-    console.log('test');
-    console.log(document.querySelector('#pdf'), 'test');
-    if (document.querySelector('#pdf') != null) {
-      document.querySelector('#pdf')!.textContent = fileURL;
-    }
   }
 
   localstorageADD() {
