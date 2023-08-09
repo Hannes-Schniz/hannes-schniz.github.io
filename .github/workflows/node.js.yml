@@ -45,7 +45,7 @@ jobs:
       - name: Build
         run: |
           npm run build
-          cp dist/website/index.html dist/website/404.html
+          cp dist/portfolio/index.html dist/portfolio/404.html
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
