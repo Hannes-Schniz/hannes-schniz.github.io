@@ -46,6 +46,7 @@ jobs:
         run: |
           npm run build
           cp dist/portfolio/index.html dist/portfolio/404.html
+          cp CNAME dist/portfolio/CNAME
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
