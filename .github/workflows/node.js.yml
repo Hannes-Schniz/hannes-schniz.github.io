@@ -28,4 +28,4 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: run ng
-      run: ng serve
+      run: npx ng serve
