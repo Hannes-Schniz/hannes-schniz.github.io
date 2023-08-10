@@ -21,6 +21,7 @@ import { LsmComponent } from './pages/lsm/lsm.component';
 import {MatTableModule} from '@angular/material/table';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatMenuModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

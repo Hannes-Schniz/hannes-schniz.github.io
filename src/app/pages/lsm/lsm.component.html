@@ -6,8 +6,9 @@
       alt=""
     />
   </div>
+  <mat-divider horizontal class="dividerHorizontal"></mat-divider>
   <div class="textContent">
-    <mat-card class="contentCard standardCardColor">
+    <mat-card class="headerCard standardCardColor">
       <mat-card-header>
         <mat-card-title style="font-size: xx-large">
           Localstorage manager
@@ -34,12 +35,23 @@
           use the regular localstorage, with a couple of extra features.
         </p>
       </mat-card-content>
+      <mat-card-footer class="footer">
+        <div class="left"></div>
+        <div class="right">
+          <mat-chip-listbox>
+            <mat-chip> Software </mat-chip>
+            <mat-chip> Frontend </mat-chip>
+            <mat-chip> Angular </mat-chip>
+          </mat-chip-listbox>
+        </div>
+      </mat-card-footer>
     </mat-card>
+    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
     <mat-card class="contentCard standardCardColor">
       <mat-card-header>
         <mat-card-title> Core Features </mat-card-title>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content class="tableContent">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
@@ -69,46 +81,66 @@
         </table>
       </mat-card-content>
     </mat-card>
-    <mat-card class="contentCard standardCardColor">
-      <mat-card-header>
-        <mat-card-title> Additional Features </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item lines="2">
-            <span matListItemTitle class="standardCardColor"
-              >Localstorage-cleanup.service</span
+    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
+    <div class="bottom">
+      <mat-card class="contentCard standardCardColor">
+        <mat-card-header>
+          <mat-card-title>Progress</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="spinnerCard">
+          <div class="center">
+            <mat-progress-spinner
+              class="example-margin"
+              mode="determinate"
+              value="100"
             >
-            <span class="standardCardColor"
-              >This service can be run at any time if you are using the
-              localstorage manager. It will detect and remove any localstorage
-              token that is not registered with a componentID.</span
-            >
-          </mat-list-item>
-          <mat-list-item>
-            <span matListItemTitle class="standardCardColor"
-              >self repairing localstorage</span
-            >
-            <span class="standardCardColor"
-              >The localstorage Manager will make sure, that the tokens held in
-              the localstorage are valid. If a token cannot be parsed to a valid
-              object, the token will be deleted. This should prevent any
-              corruption of the localstorage tokens.</span
-            >
-          </mat-list-item>
-          <mat-list-item>
-            <span matListItemTitle class="standardCardColor">
-              no more JSON parsing
-            </span>
-            <span class="standardCardColor">
-              With the localstorage manager you don't have to worry about error
-              handling with JSON.parse or JSON.stringify. Any error should be
-              handled within the manager. It is also not necessary to parse any
-              in or output, by using the localstorageToken object.
-            </span>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
+            </mat-progress-spinner>
+            <h3 class="percent">100%</h3>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="contentCard standardCardColor">
+        <mat-card-header>
+          <mat-card-title> Additional Features </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item lines="2">
+              <span matListItemTitle class="standardCardColor"
+                >Localstorage-cleanup.service</span
+              >
+              <span class="standardCardColor"
+                >This service can be run at any time if you are using the
+                localstorage manager. It will detect and remove any localstorage
+                token that is not registered with a componentID.</span
+              >
+            </mat-list-item>
+            <mat-list-item>
+              <span matListItemTitle class="standardCardColor"
+                >self repairing localstorage</span
+              >
+              <span class="standardCardColor"
+                >The localstorage Manager will make sure, that the tokens held
+                in the localstorage are valid. If a token cannot be parsed to a
+                valid object, the token will be deleted. This should prevent any
+                corruption of the localstorage tokens.</span
+              >
+            </mat-list-item>
+            <mat-list-item>
+              <span matListItemTitle class="standardCardColor">
+                no more JSON parsing
+              </span>
+              <span class="standardCardColor">
+                With the localstorage manager you don't have to worry about
+                error handling with JSON.parse or JSON.stringify. Any error
+                should be handled within the manager. It is also not necessary
+                to parse any in or output, by using the localstorageToken
+                object.
+              </span>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>
