@@ -33,6 +33,11 @@ h1 {
   z-index: 1000;
 }
 
+.mat-mdc-progress-bar {
+  --mdc-linear-progress-active-indicator-color: #fadd6e;
+  --mdc-linear-progress-track-color: #7e7c77;
+}
+
 .bar {
   position: fixed;
   display: flex;

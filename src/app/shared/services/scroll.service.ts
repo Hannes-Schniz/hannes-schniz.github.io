@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵɵresolveBody } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class ScrollService {
   }
 
   public getCurrentScrollPosition() {
-    return ( 100 / ((this.numberElements - 1) * window.innerHeight) *  window.scrollY);
+    return ( 100 / (document.body.clientHeight - window.innerHeight ) * window.scrollY);
   }
 
   public showScrollTop() {
