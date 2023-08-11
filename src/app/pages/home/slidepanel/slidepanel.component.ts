@@ -97,4 +97,11 @@ export class SlidepanelComponent {
     this.subscription.unsubscribe();
     this.subscription = this.wait.subscribe(() => {this.startInterval});
   }
+
+  getDot(input: boolean){
+    if(input) {
+      return '../../../../assets/Symbols/icons8-round-96.png';
+    }
+    return '../../../../assets/Symbols/icons8-round-96-disabled.png';
+  }
 }
