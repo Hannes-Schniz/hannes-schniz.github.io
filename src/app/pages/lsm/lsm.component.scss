@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .mainContainer {
   position: relative;
 }
@@ -25,45 +27,6 @@
   width: 100vw;
   height: 35vh;
   object-fit: cover;
-}
-
-.standardCardColor {
-  background-color: #777a7a00;
-  color: #c9cfcf;
-  box-shadow: none;
-}
-
-.textContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mat-column-Syntax {
-  word-wrap: break-word !important;
-  white-space: nowrap !important;
-}
-.mat-column-Explanation {
-  word-wrap: break-word !important;
-  white-space: pre-wrap !important;
-}
-
-mat-card-title {
-  font-size: xx-large;
-}
-
-.mat-body {
-  font-size: 105%;
-}
-
-mat-chip {
-  background-color: #fadd6e !important;
-}
-
-.dividerHorizontal {
-  height: 1px;
-  width: 100%;
-  background-color: white !important;
 }
 
 .bottom {
@@ -102,7 +65,7 @@ mat-chip {
 }
 
 .mdc-data-table__header-cell {
-  color: white;
+  color: #fadd6e;
   border-bottom-color: white;
 }
 

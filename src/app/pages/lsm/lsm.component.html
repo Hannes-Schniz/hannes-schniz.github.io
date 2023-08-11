@@ -8,7 +8,7 @@
   </div>
   <mat-divider horizontal class="dividerHorizontal"></mat-divider>
   <div class="textContent">
-    <mat-card class="headerCard standardCardColor">
+    <mat-card class="headerCard standardCardColor standardTextColor">
       <mat-card-header>
         <mat-card-title style="font-size: xx-large">
           Localstorage manager
@@ -47,7 +47,7 @@
       </mat-card-footer>
     </mat-card>
     <mat-divider horizontal class="dividerHorizontal"></mat-divider>
-    <mat-card class="contentCard standardCardColor">
+    <mat-card class="contentCard standardCardColor standardTextColor">
       <mat-card-header>
         <mat-card-title> Core Features </mat-card-title>
       </mat-card-header>
@@ -83,7 +83,7 @@
     </mat-card>
     <mat-divider horizontal class="dividerHorizontal"></mat-divider>
     <div class="bottom">
-      <mat-card class="contentCard standardCardColor">
+      <mat-card class="contentCard standardCardColor standardTextColor">
         <mat-card-header>
           <mat-card-title>Progress</mat-card-title>
         </mat-card-header>
@@ -99,27 +99,27 @@
           </div>
         </mat-card-content>
       </mat-card>
-      <mat-card class="contentCard standardCardColor">
+      <mat-card class="contentCard standardCardColor standardTextColor">
         <mat-card-header>
           <mat-card-title> Additional Features </mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <mat-list>
-            <mat-list-item lines="2">
-              <span matListItemTitle class="standardCardColor"
+            <mat-list-item>
+              <span matListItemTitle class="standardTextColor"
                 >Localstorage-cleanup.service</span
               >
-              <span class="standardCardColor"
+              <span class="standardTextColor"
                 >This service can be run at any time if you are using the
                 localstorage manager. It will detect and remove any localstorage
                 token that is not registered with a componentID.</span
               >
             </mat-list-item>
             <mat-list-item>
-              <span matListItemTitle class="standardCardColor"
+              <span matListItemTitle class="standardTextColor"
                 >self repairing localstorage</span
               >
-              <span class="standardCardColor"
+              <span class="standardTextColor"
                 >The localstorage Manager will make sure, that the tokens held
                 in the localstorage are valid. If a token cannot be parsed to a
                 valid object, the token will be deleted. This should prevent any
@@ -127,10 +127,10 @@
               >
             </mat-list-item>
             <mat-list-item>
-              <span matListItemTitle class="standardCardColor">
+              <span matListItemTitle class="standardTextColor">
                 no more JSON parsing
               </span>
-              <span class="standardCardColor">
+              <span class="standardTextColor">
                 With the localstorage manager you don't have to worry about
                 error handling with JSON.parse or JSON.stringify. Any error
                 should be handled within the manager. It is also not necessary
