@@ -5,7 +5,7 @@
         "position": 0,
         "title": "LSM",
         "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
-        "text": "lorem ipsum text lul",
+        "text": "Localstorage management system",
         "link": "/LSM"
       },
       "projectPage": {
@@ -17,10 +17,10 @@
     {
       "slide": {
         "position": 1,
-        "title": "Mr. Robot",
+        "title": "TBA",
         "picture": "../../assets/pictures/projects/Slides/two.jpg",
-        "text": "lorem ipsum text lul",
-        "link": "/projects"
+        "text": "Not Yet Implemented",
+        "link": "/"
       },
       "projectPage": {
         "title": "test",
@@ -31,10 +31,10 @@
     {
       "slide": {
         "position": 2,
-        "title": "Nature",
+        "title": "TBA",
         "picture": "../../assets/pictures/projects/Slides/three.jpg",
-        "text": "lorem ipsum text lul",
-        "link": "/projects"
+        "text": "Not Yet Implemented",
+        "link": "/"
       },
       "projectPage": {
         "title": "",
