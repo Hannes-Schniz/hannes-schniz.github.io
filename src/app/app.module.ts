@@ -22,6 +22,8 @@ import {MatTableModule} from '@angular/material/table';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatProgressSpinnerModule,
     MatTableModule,
     MatChipsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
