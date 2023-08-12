@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "ProjectID": "LSM",
       "slide": {
         "position": 0,
         "title": "LSM",
@@ -11,10 +12,72 @@
       "projectPage": {
         "title": "",
         "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
-        "text": ""
+        "summary": {
+          "title": "Local storage maneger",
+          "text": [
+            "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
+            "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",
+            "The usage from a outside perspective is the exact same as if you would use the regular localstorage, with a couple of extra features. "
+          ],
+          "tags": ["Software", "Frontend", "Angular"]
+        },
+        "coreFeatures": [
+          {
+            "feature": "register",
+            "syntax": "static  register(componentID:  string)",
+            "explanation": "Registeres a namespace in the localstorage and returns a registered localstorage.helper object."
+          },
+          {
+            "feature": "add",
+            "syntax": "add(...newEntry: LocalstorageToken[])",
+            "explanation": "It will add a new localstorage token to the registered namespace if the key doesn't exist yet. It also supports manually passing multiple tokens at once."
+          },
+          {
+            "feature": "force",
+            "syntax": "force(...newEntry: LocalstorageToken[])",
+            "explanation": "Identical to localstorage.setItem(key, value) just using the localstorageToken objects, it adds and updates in the registered localstorage namespace. It also supports manually passing multiple tokens at once."
+          },
+          {
+            "feature": "update",
+            "syntax": "update(...newEntry: LocalstorageToken[])",
+            "explanation": "Updates a given token in the registered namespace with the value of the passed token. This only works if the token already existst. It also supports manually passing multiple tokens at once."
+          },
+          {
+            "feature": "delete",
+            "syntax": "delete(...key: string[])",
+            "explanation": "Deletes the token(s) in the registered namespace with the given key(s)."
+          },
+          {
+            "feature": "get",
+            "syntax": "get(key:  string)",
+            "explanation": "Returns the value of the token in the registered namespace with the given key."
+          },
+          {
+            "feature": "getAllEntries",
+            "syntax": "getAllEntries()",
+            "explanation": "Returns all localstorageToken objects in the registered namespace of the localstorage."
+          }
+        ],
+        "additionalFeatures": [
+          {
+            "title": "Localstorage-cleanup.service",
+            "text": "This service can be run at any time if you are using the localstorage manager. It will detect and remove any localstorage token that is not registered with a componentID."
+          },
+          {
+            "title": "self repairing localstorage",
+            "text": "The localstorage Manager will make sure, that the tokens held in the localstorage are valid. If a token cannot be parsed to a valid object, the token will be deleted. This should prevent any corruption of the localstorage tokens."
+          },
+          {
+            "title": "no more JSON parsing",
+            "text": "With the localstorage manager you don't have to worry about error handling with JSON.parse or JSON.stringify. Any error should be handled within the manager. It is also not necessary to parse any in or output, by using the localstorageToken object."
+          }
+        ],
+        "progress": 100,
+        "additionalPictures": [""]
       }
     },
     {
+      "ProjectID": "TBA1",
       "slide": {
         "position": 1,
         "title": "TBA",
@@ -23,12 +86,25 @@
         "link": "/"
       },
       "projectPage": {
-        "title": "test",
-        "picture": "../../assets/pictures/projects/ProjectPage/two.jpg",
-        "text": "test"
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Local storage maneger",
+          "text": [
+            "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
+            "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",
+            "The usage from a outside perspective is the exact same as if you would use the regular localstorage, with a couple of extra features. "
+          ],
+          "tags": ["Software", "Frontend", "Angular"]
+        },
+        "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
+        "additionalFeatures": [{ "title": "", "text": "" }],
+        "progress": 100,
+        "additionalPictures": [""]
       }
     },
     {
+      "ProjectID": "TBA2",
       "slide": {
         "position": 2,
         "title": "TBA",
@@ -38,8 +114,20 @@
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/three.jpg",
-        "text": ""
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Local storage maneger",
+          "text": [
+            "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
+            "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",
+            "The usage from a outside perspective is the exact same as if you would use the regular localstorage, with a couple of extra features. "
+          ],
+          "tags": ["Software", "Frontend", "Angular"]
+        },
+        "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
+        "additionalFeatures": [{ "title": "", "text": "" }],
+        "progress": 100,
+        "additionalPictures": [""]
       }
     }
   ]

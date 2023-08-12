@@ -11,8 +11,8 @@ export class SlidesService {
 
   public slidePosition = 0;
 
-  constructor(private translationService: TranslatorService) {
-    this.slides = translationService.getSlideObjects();
+  constructor() {
+    this.slides = TranslatorService.getSlideObjects();
   }
 
   public getInitSlide():slide{

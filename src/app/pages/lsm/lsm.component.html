@@ -1,47 +1,27 @@
 <div class="mainContainer">
   <div>
-    <img
-      class="banner"
-      src="../../../assets/pictures/projects/ProjectPage/LSM_Picture.png"
-      alt=""
-    />
+    <img class="banner" [src]="this.projectPage.picture" alt="" />
   </div>
   <mat-divider horizontal class="dividerHorizontal"></mat-divider>
   <div class="textContent">
     <mat-card class="headerCard standardCardColor standardTextColor">
       <mat-card-header>
         <mat-card-title style="font-size: xx-large">
-          Localstorage manager
+          {{ this.projectPage.summary.title }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">
-          This Software adds an abstraction layer between the programm and the
-          localstorage. This helps with managing the creation, manipulation and
-          deletion of localstorage tokens. It simpulates a partitioning of the
-          localstorage by using localstorage token objects as the values. If you
-          want to use it you will have to use the register command to
-          instantiate and register the component, then it will create a
-          localstorage token where the key is the component name you registered.
-          This will be referred to as a localstorage namespace in this document.
-        </p>
-        <p class="mat-body">
-          Structure Localstorage Token Key: &#60;registered name&#62;, Value:
-          [&#123;key: &#60;name of token&#62;, value:&#60;value of
-          token&#62;&#125;,...]
-        </p>
-        <p class="mat-body">
-          The usage from a outside perspective is the exact same as if you would
-          use the regular localstorage, with a couple of extra features.
+        <p class="mat-body" *ngFor="let text of this.projectPage.summary.text">
+          {{ text }}
         </p>
       </mat-card-content>
       <mat-card-footer class="footer">
         <div class="left"></div>
         <div class="right">
           <mat-chip-listbox>
-            <mat-chip> Software </mat-chip>
-            <mat-chip> Frontend </mat-chip>
-            <mat-chip> Angular </mat-chip>
+            <mat-chip *ngFor="let tag of projectPage.summary.tags">
+              {{ tag }}
+            </mat-chip>
           </mat-chip-listbox>
         </div>
       </mat-card-footer>
@@ -53,29 +33,15 @@
       </mat-card-header>
       <mat-card-content class="tableContent">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-
-          <!-- Position Column -->
-          <ng-container matColumnDef="Feature">
-            <th mat-header-cell *matHeaderCellDef>Feature</th>
-            <td mat-cell *matCellDef="let element">{{ element.Feature }}</td>
-          </ng-container>
-
-          <!-- Name Column -->
-          <ng-container matColumnDef="Syntax">
-            <th mat-header-cell *matHeaderCellDef>Syntax</th>
-            <td mat-cell *matCellDef="let element">{{ element.Syntax }}</td>
-          </ng-container>
-
-          <!-- Weight Column -->
-          <ng-container matColumnDef="Explanation">
-            <th mat-header-cell *matHeaderCellDef>Explanation</th>
+          <ng-container
+            *ngFor="let header of displayedColumns"
+            [matColumnDef]="header"
+          >
+            <th mat-header-cell *matHeaderCellDef>{{ header }}</th>
             <td mat-cell *matCellDef="let element">
-              {{ element.Explanation }}
+              {{ getCell(element, header) }}
             </td>
           </ng-container>
-
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         </table>
@@ -92,10 +58,10 @@
             <mat-progress-spinner
               class="example-margin"
               mode="determinate"
-              value="100"
+              [value]="this.projectPage.progress"
             >
             </mat-progress-spinner>
-            <h3 class="percent">100%</h3>
+            <h3 class="percent">{{ this.projectPage.progress }}%</h3>
           </div>
         </mat-card-content>
       </mat-card>
@@ -105,38 +71,13 @@
         </mat-card-header>
         <mat-card-content>
           <mat-list>
-            <mat-list-item>
-              <span matListItemTitle class="standardTextColor"
-                >Localstorage-cleanup.service</span
-              >
-              <span class="standardTextColor"
-                >This service can be run at any time if you are using the
-                localstorage manager. It will detect and remove any localstorage
-                token that is not registered with a componentID.</span
-              >
-            </mat-list-item>
-            <mat-list-item>
-              <span matListItemTitle class="standardTextColor"
-                >self repairing localstorage</span
-              >
-              <span class="standardTextColor"
-                >The localstorage Manager will make sure, that the tokens held
-                in the localstorage are valid. If a token cannot be parsed to a
-                valid object, the token will be deleted. This should prevent any
-                corruption of the localstorage tokens.</span
-              >
-            </mat-list-item>
-            <mat-list-item>
-              <span matListItemTitle class="standardTextColor">
-                no more JSON parsing
-              </span>
-              <span class="standardTextColor">
-                With the localstorage manager you don't have to worry about
-                error handling with JSON.parse or JSON.stringify. Any error
-                should be handled within the manager. It is also not necessary
-                to parse any in or output, by using the localstorageToken
-                object.
-              </span>
+            <mat-list-item
+              *ngFor="let item of this.projectPage.additionalFeatures"
+            >
+              <span matListItemTitle class="standardTextColor">{{
+                item.title
+              }}</span>
+              <span class="standardTextColor">{{ item.text }}</span>
             </mat-list-item>
           </mat-list>
         </mat-card-content>

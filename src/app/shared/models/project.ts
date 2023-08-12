@@ -1,6 +1,6 @@
-import { projectPageModel } from "./projectFile.model";
+import { ProjectFileModel } from "./projectFile.model";
 import { slide } from "./slide";
 
 export class project{
-  constructor(public slide:slide, public projectPage:projectPageModel){}
+  constructor(public ProjectID:string,public slide:slide, public projectPage:ProjectFileModel){}
 }
