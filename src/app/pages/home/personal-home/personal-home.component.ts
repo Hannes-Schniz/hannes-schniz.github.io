@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-personal-home',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class PersonalHomeComponent {
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar){}
+  openSnackbar() {
+    this._snackBar.open('Copied eMail', 'close')
   }
 }

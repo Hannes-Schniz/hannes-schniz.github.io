@@ -28,6 +28,9 @@ import { NextcloudComponent } from './pages/nextcloud/nextcloud.component';
 import { RPIClockComponent } from './pages/rpiclock/rpiclock.component';
 import { ScriptRunnerComponent } from './pages/script-runner/script-runner.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
     MatChipsModule,
     MatDividerModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClipboardModule,
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
