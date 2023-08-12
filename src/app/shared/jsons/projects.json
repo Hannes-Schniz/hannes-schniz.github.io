@@ -87,7 +87,7 @@
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/Nextcloud.png",
+        "picture": "../../assets/pictures/projects/ProjectPage/RPI.JPG",
         "summary": {
           "title": "Nextcloud server",
           "text": ["tba"],
@@ -97,7 +97,7 @@
         "additionalFeatures": [{ "title": "", "text": "" }],
         "progress": 100,
         "additionalPictures": [
-          "../../assets/pictures/projects/ProjectPage/RPI.JPG"
+          "../../assets/pictures/projects/ProjectPage/Nextcloud.png"
         ]
       }
     },
