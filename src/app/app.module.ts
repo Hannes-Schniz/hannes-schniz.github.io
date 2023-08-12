@@ -25,6 +25,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NextcloudComponent } from './pages/nextcloud/nextcloud.component';
+import { RPIClockComponent } from './pages/rpiclock/rpiclock.component';
+import { ScriptRunnerComponent } from './pages/script-runner/script-runner.component';
+import { AboutMeComponent } from './pages/about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { NextcloudComponent } from './pages/nextcloud/nextcloud.component';
     ContactFormHomeComponent,
     LsmComponent,
     NavbarComponent,
-    NextcloudComponent
+    NextcloudComponent,
+    RPIClockComponent,
+    ScriptRunnerComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
