@@ -8,7 +8,7 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./rpiclock.component.scss']
 })
 export class RPIClockComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('Nextcloud')!;
+  projectPage: ProjectFileModel = TranslatorService.getProjectPage('RPICLock')!;
   constructor(){
   }
 }

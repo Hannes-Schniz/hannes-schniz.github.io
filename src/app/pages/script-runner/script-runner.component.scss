@@ -10,6 +10,12 @@
   padding: 0.5%;
 }
 
+.contentCardSpinner {
+  width: 30vw;
+  margin: 1%;
+  padding: 0.5%;
+}
+
 .headerCard {
   width: 80vw;
   margin: 1%;
@@ -32,20 +38,24 @@
 .bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 90vw;
-  padding-left: 10vw;
+  margin-top: 2%;
 }
 
 .mat-mdc-progress-spinner {
   --mdc-circular-progress-active-indicator-color: #fadd6e !important;
 }
 
-.spinnerCard {
+.spinnerCardContent {
   margin-top: 10%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.spinnerCard {
+  width: 30vw;
 }
 
 .percent {

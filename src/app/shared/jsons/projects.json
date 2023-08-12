@@ -108,28 +108,26 @@
         "title": "RPI CLock",
         "picture": "../../assets/pictures/projects/Slides/RPI_clock.JPG",
         "text": "A smart clock based on MagicMirror for RPI",
-        "link": "/"
+        "link": "/RPI_Clock"
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/ProjectPage/RPI.JPG",
         "summary": {
-          "title": "Local storage maneger",
-          "text": [
-            "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
-            "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",
-            "The usage from a outside perspective is the exact same as if you would use the regular localstorage, with a couple of extra features. "
-          ],
-          "tags": ["Software", "Frontend", "Angular"]
+          "title": "RaspberryPi Smart Clock",
+          "text": ["tba"],
+          "tags": ["RaspberyPi", "Hardware"]
         },
         "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
         "additionalFeatures": [{ "title": "", "text": "" }],
         "progress": 100,
-        "additionalPictures": [""]
+        "additionalPictures": [
+          "../../assets/pictures/projects/ProjectPage/RPI_clock.JPG"
+        ]
       }
     },
     {
-      "ProjectID": "TBA2",
+      "ProjectID": "Script_Runner",
       "slide": {
         "position": 3,
         "title": "Python Script runner",
@@ -139,18 +137,44 @@
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/ProjectPage/Python_Code.PNG",
         "summary": {
-          "title": "Local storage maneger",
-          "text": [
-            "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
-            "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",
-            "The usage from a outside perspective is the exact same as if you would use the regular localstorage, with a couple of extra features. "
-          ],
-          "tags": ["Software", "Frontend", "Angular"]
+          "title": "ScriptRunner",
+          "text": ["TBA"],
+          "tags": ["Software", "Scripting", "Python"]
         },
-        "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
-        "additionalFeatures": [{ "title": "", "text": "" }],
+        "coreFeatures": [
+          {
+            "feature": "ping",
+            "syntax": "-",
+            "explanation": "Pings google.com until it successfully receives the ping back"
+          },
+          {
+            "feature": "rename",
+            "syntax": "-",
+            "explanation": "Renames all files in a folder with a given name and an index"
+          },
+          {
+            "feature": "semester setup",
+            "syntax": "-",
+            "explanation": "Sets up a folder structure"
+          },
+          {
+            "feature": "sort date",
+            "syntax": "-",
+            "explanation": "Sorts all files in a folder corrosponding to eather the create or modify date"
+          }
+        ],
+        "additionalFeatures": [
+          {
+            "title": "Easy to add new scripts",
+            "text": "To add more scripts they only need to be added to the scripts folder."
+          },
+          {
+            "title": "Easy to run Scripts",
+            "text": "The runner has a interactive input to make running scripts as easy as possible."
+          }
+        ],
         "progress": 100,
         "additionalPictures": [""]
       }

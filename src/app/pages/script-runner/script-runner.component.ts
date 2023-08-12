@@ -9,7 +9,7 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./script-runner.component.scss']
 })
 export class ScriptRunnerComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('LSM')!;
+  projectPage: ProjectFileModel = TranslatorService.getProjectPage('Script_Runner')!;
   constructor(){
   }
 
