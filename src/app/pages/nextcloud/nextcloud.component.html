@@ -1,46 +1,53 @@
 <div class="mainContainer">
   <div>
     <img class="banner" [src]="this.projectPage.picture" alt="" />
+    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
   </div>
-  <mat-divider horizontal class="dividerHorizontal"></mat-divider>
-  <div class="textContentAlter">
-    <mat-card class="headerCard standardCardColor standardTextColor">
-      <mat-card-header>
-        <mat-card-title style="font-size: xx-large">
-          {{ this.projectPage.summary.title }}
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p class="mat-body" *ngFor="let text of this.projectPage.summary.text">
-          {{ text }}
-        </p>
-      </mat-card-content>
-      <mat-card-footer class="footer">
-        <div class="left"></div>
-        <div class="right">
-          <mat-chip-listbox>
-            <mat-chip *ngFor="let tag of projectPage.summary.tags">
-              {{ tag }}
-            </mat-chip>
-          </mat-chip-listbox>
-        </div>
-      </mat-card-footer>
-    </mat-card>
-    <mat-card class="standardCardColor standardTextColor">
-      <mat-card-header>
-        <mat-card-title>Progress</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="spinnerCard">
-        <div class="center">
-          <mat-progress-spinner
-            class="example-margin"
-            mode="determinate"
-            [value]="this.projectPage.progress"
+  <div class="textContent">
+    <div class="textContentAlter">
+      <mat-card class="headerCard standardCardColor standardTextColor">
+        <mat-card-header>
+          <mat-card-title style="font-size: xx-large">
+            {{ this.projectPage.summary.title }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p
+            class="mat-body"
+            *ngFor="let text of this.projectPage.summary.text"
           >
-          </mat-progress-spinner>
-          <h3 class="percent">{{ this.projectPage.progress }}%</h3>
-        </div>
-      </mat-card-content>
-    </mat-card>
+            {{ text }}
+          </p>
+        </mat-card-content>
+        <mat-card-footer class="footer">
+          <div class="left"></div>
+          <div class="right">
+            <mat-chip-listbox>
+              <mat-chip *ngFor="let tag of projectPage.summary.tags">
+                {{ tag }}
+              </mat-chip>
+            </mat-chip-listbox>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+      <mat-card class="standardCardColor standardTextColor">
+        <mat-card-header>
+          <mat-card-title>Progress</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="spinnerCard">
+          <div class="center">
+            <mat-progress-spinner
+              class="example-margin"
+              mode="determinate"
+              [value]="this.projectPage.progress"
+            >
+            </mat-progress-spinner>
+            <h3 class="percent">{{ this.projectPage.progress }}%</h3>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
+    <img class="additionImage" [src]="this.projectPage.additionalPictures[0]" />
   </div>
 </div>

@@ -96,7 +96,9 @@
         "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
         "additionalFeatures": [{ "title": "", "text": "" }],
         "progress": 100,
-        "additionalPictures": [""]
+        "additionalPictures": [
+          "../../assets/pictures/projects/ProjectPage/RPI.JPG"
+        ]
       }
     },
     {
