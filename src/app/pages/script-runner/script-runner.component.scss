@@ -1,0 +1,94 @@
+@import "../../../styles.scss";
+
+.mainContainer {
+  position: relative;
+}
+
+.contentCard {
+  width: 70vw;
+  margin: 1%;
+  padding: 0.5%;
+}
+
+.contentCardSpinner {
+  width: 30vw;
+  margin: 1%;
+  padding: 0.5%;
+}
+
+.headerCard {
+  width: 80vw;
+  margin: 1%;
+  padding: 1%;
+}
+
+.footer {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.banner {
+  width: 100vw;
+  height: 35vh;
+  object-fit: cover;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90vw;
+  margin-top: 2%;
+}
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #fadd6e !important;
+}
+
+.spinnerCardContent {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.spinnerCard {
+  width: 30vw;
+}
+
+.percent {
+  text-align: center;
+}
+
+.mat-mdc-table {
+  background: #2f2d27;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.tableContent {
+  margin-top: 1%;
+}
+
+.mdc-data-table__header-cell {
+  color: #fadd6e;
+  border-bottom-color: white;
+}
+
+.mdc-data-table__cell {
+  border-bottom-color: white;
+  color: white;
+}
+
+.gitLink {
+  color: #fadd6e;
+}
+
+.gitLinkContainer {
+  display: flex;
+  align-items: center;
+}

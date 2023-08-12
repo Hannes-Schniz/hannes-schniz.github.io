@@ -54,6 +54,10 @@
   left: 10%;
   top: -50vh;
   max-width: fit-content;
+  backdrop-filter: blur(0.5px) !important;
+  background-color: #2f2d2731;
+  padding: 1%;
+  border-radius: 10%;
 }
 
 .header {
@@ -63,7 +67,7 @@
 }
 
 h1 {
-  font-size: 100px !important;
+  font-size: 75px !important;
   color: white;
   margin-bottom: 0;
   margin-top: 0;
@@ -76,7 +80,7 @@ h2 {
 
 a {
   color: white;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .image {
