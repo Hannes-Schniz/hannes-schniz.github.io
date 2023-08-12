@@ -77,25 +77,21 @@
       }
     },
     {
-      "ProjectID": "TBA1",
+      "ProjectID": "Nextcloud",
       "slide": {
         "position": 1,
-        "title": "TBA",
-        "picture": "../../assets/pictures/projects/Slides/two.jpg",
-        "text": "Not Yet Implemented",
-        "link": "/"
+        "title": "Nextcloud",
+        "picture": "../../assets/pictures/projects/Slides/Nextcloud.png",
+        "text": "local Nextcloud server",
+        "link": "/Nextcloud"
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/ProjectPage/Nextcloud.png",
         "summary": {
-          "title": "Local storage maneger",
-          "text": [
-            "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
-            "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",
-            "The usage from a outside perspective is the exact same as if you would use the regular localstorage, with a couple of extra features. "
-          ],
-          "tags": ["Software", "Frontend", "Angular"]
+          "title": "Nextcloud server",
+          "text": ["tba"],
+          "tags": ["Server", "RaspberryPi", "SQL", "Networking"]
         },
         "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
         "additionalFeatures": [{ "title": "", "text": "" }],

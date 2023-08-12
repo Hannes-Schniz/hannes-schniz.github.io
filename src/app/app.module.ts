@@ -24,6 +24,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NextcloudComponent } from './pages/nextcloud/nextcloud.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PersonalHomeComponent,
     ContactFormHomeComponent,
     LsmComponent,
-    NavbarComponent
+    NavbarComponent,
+    NextcloudComponent
   ],
   imports: [
     BrowserModule,
