@@ -9,5 +9,6 @@ export class ProjectFileModel {
     public coreFeatures: coreFeature[],
     public additionalFeatures: additionalFeature[],
     public progress: number,
-    public additionalPictures: string[]){}
+    public additionalPictures: string[],
+    public gitLink: string){}
 }

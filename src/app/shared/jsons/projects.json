@@ -73,7 +73,8 @@
           }
         ],
         "progress": 100,
-        "additionalPictures": [""]
+        "additionalPictures": [""],
+        "gitLink": ""
       }
     },
     {
@@ -98,7 +99,8 @@
         "progress": 100,
         "additionalPictures": [
           "../../assets/pictures/projects/ProjectPage/Nextcloud.png"
-        ]
+        ],
+        "gitLink": ""
       }
     },
     {
@@ -123,7 +125,8 @@
         "progress": 100,
         "additionalPictures": [
           "../../assets/pictures/projects/ProjectPage/RPI_clock.JPG"
-        ]
+        ],
+        "gitLink": ""
       }
     },
     {
@@ -133,7 +136,7 @@
         "title": "Python Script runner",
         "picture": "../../assets/pictures/projects/Slides/Python_Code.PNG",
         "text": "A tool that runs pythong scripts automatically",
-        "link": "/"
+        "link": "/ScriptRunner"
       },
       "projectPage": {
         "title": "",
@@ -176,7 +179,8 @@
           }
         ],
         "progress": 100,
-        "additionalPictures": [""]
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/skript_runner"
       }
     }
   ]

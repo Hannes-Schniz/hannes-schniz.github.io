@@ -15,8 +15,14 @@
           {{ text }}
         </p>
       </mat-card-content>
-      <mat-card-footer class="footer">
-        <div class="left"></div>
+      <mat-card-actions class="footer">
+        <div class="left">
+          <a class="gitLink" [href]="this.projectPage.gitLink" target="_blank">
+            <div class="gitLinkContainer">
+              <mat-icon class="gitLink">link</mat-icon>Git Link
+            </div></a
+          >
+        </div>
         <div class="right">
           <mat-chip-listbox>
             <mat-chip *ngFor="let tag of projectPage.summary.tags">
@@ -24,7 +30,7 @@
             </mat-chip>
           </mat-chip-listbox>
         </div>
-      </mat-card-footer>
+      </mat-card-actions>
     </mat-card>
     <mat-divider horizontal class="dividerHorizontal"></mat-divider>
     <mat-card class="contentCard standardCardColor standardTextColor">
