@@ -73,6 +73,13 @@
     </mat-card-content>
     <mat-card-footer>
       <div class="listIcons">
+        <a
+          style="cursor: pointer"
+          cdkCopyToClipboard="contact@hannesschniz.de"
+          (click)="openSnackbar()"
+        >
+          <img src="../../../../assets/Symbols/icons8-email-50.png" />
+        </a>
         <a href="https://www.github.com/TheXample" target="_blank">
           <img src="../../../../assets/Symbols/icons8-github-50.png" />
         </a>
