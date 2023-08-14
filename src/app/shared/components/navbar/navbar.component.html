@@ -16,8 +16,8 @@
         <div class="right"></div>
       </div>
     </mat-toolbar-row>
-    <mat-toolbar-row class="row" *ngIf="this.showChips">
-      <div class="chips">
+    <mat-toolbar-row class="row chips" *ngIf="this.showChips">
+      <div>
         <mat-chip-listbox aria-label="Dog selection">
           <mat-chip
             [routerLink]="['/home']"
