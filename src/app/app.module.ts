@@ -31,6 +31,8 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     NextcloudComponent,
     RPIClockComponent,
     ScriptRunnerComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    ImpressumPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

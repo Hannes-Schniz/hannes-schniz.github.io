@@ -1,0 +1,21 @@
+@import "../../../styles.scss";
+
+.marginTop {
+  padding-top: 3vh;
+}
+
+.cardDimentions {
+  width: 50vw;
+}
+
+.home_flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.maxheight {
+  max-height: 85vh;
+  flex-wrap: wrap;
+}

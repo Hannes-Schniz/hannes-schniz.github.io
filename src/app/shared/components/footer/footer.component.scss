@@ -1,0 +1,27 @@
+.row {
+  height: 3vh;
+  background-color: #fadd6e !important;
+}
+
+.listIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 5vw;
+  height: inherit;
+  padding-top: 0.2%;
+}
+
+.logo {
+  transform: scale(0.7);
+}
+
+.flexContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+}
