@@ -10,7 +10,7 @@ body {
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  min-height: 99vh;
+  max-height: 99vh;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif, MyFont !important;
   background-color: #201f1a;
   overflow-x: hidden;
@@ -19,6 +19,7 @@ body {
 .home_card {
   width: 100vw;
   height: 100vh;
+  max-height: inherit;
 }
 
 .standardCardColor {
@@ -70,4 +71,12 @@ mat-chip {
 
 .mat-mdc-list-base {
   --mdc-list-list-item-hover-label-text-color: inherit;
+}
+
+.darkText {
+  color: #2f2d27;
+}
+
+.yellowColor {
+  color: #fadd6e;
 }
