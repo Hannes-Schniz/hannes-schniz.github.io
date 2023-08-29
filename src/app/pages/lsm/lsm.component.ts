@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
-import { TranslatorService } from 'src/app/shared/services/translator.service';
+import { ImportService } from 'src/app/shared/services/import.service';
 
 @Component({
   selector: 'app-lsm',
@@ -9,7 +9,7 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./lsm.component.scss']
 })
 export class LsmComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('LSM')!;
+  projectPage: ProjectFileModel = ImportService.getProjectPage('LSM')!;
   constructor(){
   }
 

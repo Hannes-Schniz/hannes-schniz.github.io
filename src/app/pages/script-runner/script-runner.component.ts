@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
-import { TranslatorService } from 'src/app/shared/services/translator.service';
+import { ImportService } from 'src/app/shared/services/import.service';
 
 @Component({
   selector: 'app-script-runner',
@@ -9,7 +9,7 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./script-runner.component.scss']
 })
 export class ScriptRunnerComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('Script_Runner')!;
+  projectPage: ProjectFileModel = ImportService.getProjectPage('Script_Runner')!;
   constructor(){
   }
 
