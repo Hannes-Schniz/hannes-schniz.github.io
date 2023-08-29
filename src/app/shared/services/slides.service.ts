@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { slide } from '../models/slide';
-import { TranslatorService } from './translator.service';
+import { ImportService } from './import.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class SlidesService {
   public slidePosition = 0;
 
   constructor() {
-    this.slides = TranslatorService.getSlideObjects();
+    this.slides = ImportService.getSlideObjects();
   }
 
   public getInitSlide():slide{
