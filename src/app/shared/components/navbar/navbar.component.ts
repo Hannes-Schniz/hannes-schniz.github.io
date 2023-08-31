@@ -22,6 +22,5 @@ export class NavbarComponent {
 
   languageSwitch(newLanguage: languages) {
     this.importService.switchLanguage(newLanguage);
-    window.location.reload();
   }
 }

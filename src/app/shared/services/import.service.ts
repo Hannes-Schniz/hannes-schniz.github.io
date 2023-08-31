@@ -66,9 +66,13 @@ export class ImportService {
   }
 
   switchLanguage(newLanguage: languages) {
+    let reload = !(this.currentLanguage == newLanguage);
     this.currentLanguage = newLanguage;
     this.store();
     this.selectLanguage();
+    if(reload) {
+      window.location.reload();
+    }
   }
 
   store() {
