@@ -8,7 +8,7 @@ import { ImportService } from 'src/app/shared/services/import.service';
   styleUrls: ['./rpiclock.component.scss']
 })
 export class RPIClockComponent {
-  projectPage: ProjectFileModel = ImportService.getProjectPage('RPICLock')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('RPICLock')!;
+  constructor(public importService: ImportService){
   }
 }

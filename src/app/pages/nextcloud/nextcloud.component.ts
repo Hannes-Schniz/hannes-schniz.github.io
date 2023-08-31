@@ -9,7 +9,7 @@ import { ImportService } from 'src/app/shared/services/import.service';
   styleUrls: ['./nextcloud.component.scss']
 })
 export class NextcloudComponent {
-  projectPage: ProjectFileModel = ImportService.getProjectPage('Nextcloud')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('Nextcloud')!;
+  constructor(public importService: ImportService){
   }
 }

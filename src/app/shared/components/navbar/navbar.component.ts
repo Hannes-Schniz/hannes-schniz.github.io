@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { languages } from '../../constants/languages.constants';
+import { ImportService } from '../../services/import.service';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
@@ -9,9 +11,17 @@ import { ScrollService } from '../../services/scroll.service';
 export class NavbarComponent {
 
   showChips: boolean = false;
-  constructor(public scrollService: ScrollService){}
+
+  en = languages.EN;
+  de = languages.DE;
+  constructor(public scrollService: ScrollService, public importService: ImportService){}
 
   toggle() {
     this.showChips = !this.showChips;
+  }
+
+  languageSwitch(newLanguage: languages) {
+    this.importService.switchLanguage(newLanguage);
+    window.location.reload();
   }
 }

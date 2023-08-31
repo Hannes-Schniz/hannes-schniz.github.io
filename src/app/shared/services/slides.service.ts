@@ -11,8 +11,8 @@ export class SlidesService {
 
   public slidePosition = 0;
 
-  constructor() {
-    this.slides = ImportService.getSlideObjects();
+  constructor(public importService: ImportService) {
+    this.slides = importService.getSlideObjects();
   }
 
   public getInitSlide():slide{

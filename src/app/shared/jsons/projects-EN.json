@@ -13,7 +13,7 @@
         "title": "",
         "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
         "summary": {
-          "title": "Local storage maneger",
+          "title": "Local storage manager",
           "text": [
             "This Software adds an abstraction layer between the programm and the localstorage. This helps with managing the creation, manipulation and deletion of localstorage tokens. It simpulates a partitioning of the localstorage by using localstorage token objects as the values. If you want to use it you will have to use the register command to instantiate and register the component, then it will create a localstorage token where the key is the component name you registered. This will be referred to as a localstorage namespace in this document. ",
             "Structure Localstorage Token Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...] ",

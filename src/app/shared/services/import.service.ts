@@ -1,46 +1,91 @@
 import { Injectable } from '@angular/core';
-import projectJson from '../jsons/projects.json';
+import projectENJson from '../jsons/projects-EN.json';
+import projectDEJson from '../jsons/projects-DE.json';
 import { slide } from '../models/slide';
 import { project } from '../models/project';
 import { ProjectFileModel } from '../models/projectFile.model';
+import { defaultLanguage, languages } from '../constants/languages.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ImportService {
-  private static allProjects: project[] = projectJson.projects;
+  private currentProjects = projectENJson.projects;
+  private allProjectsEN: project[] = projectENJson.projects;
+  private allProjectsDE: project[] = projectDEJson.projects;
+
+  currentLanguage = this.load();
+
 
   constructor() {
+    this.selectLanguage();
   }
 
-  static getSlideObjects(): slide[] {
-    let slides: Array<slide> = new Array<slide>(this.allProjects.length);
+  getSlideObjects(): slide[] {
+    let slides: Array<slide> = new Array<slide>(this.currentProjects.length);
 
-    for (let index = 0; index < this.allProjects.length; index++) {
-      slides[index] = this.allProjects[index].slide;
+    for (let index = 0; index < this.currentProjects.length; index++) {
+      slides[index] = this.currentProjects[index].slide;
     }
     return slides;
   }
 
-  static getProjects(): project[] {
-    return this.allProjects;
+    getProjects(): project[] {
+    return this.currentProjects;
   }
 
-  static getProjectPages(): ProjectFileModel[] {
+    getProjectPages(): ProjectFileModel[] {
     let projectPages: ProjectFileModel[] = [];
-    for (const project of this.allProjects) {
+    for (const project of this.currentProjects) {
       projectPages.push(project.projectPage);
     }
     return projectPages;
   }
 
-  static getProjectPage(ID: string) {
-    for (const project of this.allProjects) {
+    getProjectPage(ID: string) {
+    for (const project of this.currentProjects) {
       if (project.ProjectID == ID) {
         return project.projectPage;
       }
     }
     return null;
+  }
+
+  selectLanguage(){
+    switch (this.getLanguage()) {
+      case languages.EN:
+        this.currentProjects = this.allProjectsEN;
+        break;
+      case languages.DE:
+        this.currentProjects = this.allProjectsDE;
+        break;
+      default:
+        this.currentProjects = this.allProjectsEN;
+        break;
+    }
+  }
+
+  switchLanguage(newLanguage: languages) {
+    this.currentLanguage = newLanguage;
+    this.store();
+    this.selectLanguage();
+  }
+
+  store() {
+    localStorage.setItem('language', JSON.stringify(this.currentLanguage));
+  }
+
+  getLanguage() {
+    this.load();
+    return this.currentLanguage;
+  }
+
+  load() {
+    let store = localStorage.getItem('language');
+    if(store == null) {
+      return defaultLanguage;
+    }
+    return JSON.parse(store);
   }
 
 }

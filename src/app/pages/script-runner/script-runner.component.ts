@@ -9,8 +9,8 @@ import { ImportService } from 'src/app/shared/services/import.service';
   styleUrls: ['./script-runner.component.scss']
 })
 export class ScriptRunnerComponent {
-  projectPage: ProjectFileModel = ImportService.getProjectPage('Script_Runner')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('Script_Runner')!;
+  constructor(public importService: ImportService){
   }
 
   getCell(element: coreFeature, header: string) {

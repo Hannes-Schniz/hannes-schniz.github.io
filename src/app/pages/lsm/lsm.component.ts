@@ -9,8 +9,8 @@ import { ImportService } from 'src/app/shared/services/import.service';
   styleUrls: ['./lsm.component.scss']
 })
 export class LsmComponent {
-  projectPage: ProjectFileModel = ImportService.getProjectPage('LSM')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('LSM')!;
+  constructor(public importService: ImportService){
   }
 
   getCell(element: coreFeature, header: string) {
