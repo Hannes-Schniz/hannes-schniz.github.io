@@ -1,9 +1,13 @@
 .row {
-  height: 5vh;
+  height: 50px;
   z-index: 1000;
   backdrop-filter: blur(2px) !important;
   background-color: #7e7c7723 !important;
   color: white;
+}
+
+.toolbar {
+  min-height: 50px !important;
 }
 
 .buttons {
@@ -26,7 +30,7 @@
 }
 
 h1 {
-  font-size: 2vh !important;
+  font-size: 25px !important;
 }
 
 .progessBar {
