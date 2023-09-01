@@ -1,0 +1,199 @@
+{
+  "projects": [
+    {
+      "ProjectID": "LSM",
+      "slide": {
+        "position": 0,
+        "title": "LSM",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "text": "Localstorage Verwaltungssystem",
+        "link": "/LSM"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Localstorage Verwaltung",
+          "text": [
+            "Diese Anwendung stellt eine Abstraktionsschicht zwischen dem Program und dem Localstorage des Browsers dar. Diese übernimmt das Anlegen, Verändern und Löschen von Localstorage Token. Es Simuliert die Partitionierung des Localstorage indem es Localstorage Token Objekte als Wert verwendet. Um eine neue Partition anzulegen wird der register command verwendet um eine neue Komponente zu registrieren. Die wird als 'Namespace' bezeichnet. ",
+            "Struktur Localstorage Token {Key: <registered name>, Value: [{key: <name of token>, value:<value of token>},...]} ",
+            "Die Nutzung der Anwendung ist identisch zu der Nutzung des Localstorage, lediglich um einige Features erweitert."
+          ],
+          "tags": ["Software", "Frontend", "Angular"]
+        },
+        "coreFeatures": [
+          {
+            "feature": "register",
+            "syntax": "static  register(componentID:  string)",
+            "explanation": "Registriert einen neuen Namespace und gibt ein localstorage.helper Objekt zurück."
+          },
+          {
+            "feature": "add",
+            "syntax": "add(...newEntry: LocalstorageToken[])",
+            "explanation": "Fügt neue localstorage Token zu dem registrierten Namespace hinzu, überschreibt jedoch keine Werte von bereits vorhandenen Keys."
+          },
+          {
+            "feature": "force",
+            "syntax": "force(...newEntry: LocalstorageToken[])",
+            "explanation": "Fügt neue Localstorage Token Objekte zu dem registrierten Namespace hinzu und überschreibt dabei Werte von bereits vorhandenen Keys."
+          },
+          {
+            "feature": "update",
+            "syntax": "update(...newEntry: LocalstorageToken[])",
+            "explanation": "Überschreibt die Werte von bereits vorhandenen Keys im registrierten Namespace."
+          },
+          {
+            "feature": "delete",
+            "syntax": "delete(...key: string[])",
+            "explanation": "Löscht Token mit den übergebenen Keys aus dem registrierten Namespace."
+          },
+          {
+            "feature": "get",
+            "syntax": "get(key:  string)",
+            "explanation": "Gibt den Wert eines Keys aus dem registrierten Namespace zurück."
+          },
+          {
+            "feature": "getAllEntries",
+            "syntax": "getAllEntries()",
+            "explanation": "Gibt die Localstorage Tokens des registrierten Namespcaes zurück."
+          }
+        ],
+        "additionalFeatures": [
+          {
+            "title": "Localstorage-cleanup.service",
+            "text": "Dieser Service kann parallel zum Localstorage Verwalter verwendet werden. Der Service wird beim Aufrufen alle nicht registrierten Token im Localstorage erkennen und diese entfernen."
+          },
+          {
+            "title": "self repairing localstorage",
+            "text": "Die Localstorage Verwaltung wird Korrupierte Einträge erkennen und diese löschen. Dies dient der vermeidung der Korruption des Localstorage."
+          },
+          {
+            "title": "no more JSON parsing",
+            "text": "Die Localstorage Verwaltung arbeitet mit Localstorage Token Objekten. Diese akzeptieren Strings als Key und einen beliebigen Wert als Value. Diese müssen der Verwaltung lediglich übergeben werden, diese übernimmt dann das Parsen und das Error handling."
+          }
+        ],
+        "progress": 100,
+        "additionalPictures": [""],
+        "gitLink": ""
+      }
+    },
+    {
+      "ProjectID": "Nextcloud",
+      "slide": {
+        "position": 1,
+        "title": "Nextcloud",
+        "picture": "../../assets/pictures/projects/Slides/Nextcloud.png",
+        "text": "Lokaler Nextcloud Server",
+        "link": "/Nextcloud"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/RPI.JPG",
+        "summary": {
+          "title": "Nextcloud Server",
+          "text": [
+            "Mit diesem Projekt wollte ich der Serveradministration sowie der IT-Sicherheit etwas näher kommen.",
+            "Ich verwalte auf einem RaspberryPI 3b+ eine NextcloudInstanz sowie einen Cups Drucker Server, welcher meinen Mitbewohnern den Zugriff auf den gemeinsamen Drucker ermöglicht.",
+            "Mit diesem Projekt sammele ich viel praktische Erfahrung mit dem Administrieren von Servern auf einem micro scale. Ich versuche die Installationstetig weiter zu entwickeln und kümmere mich beispielsweise auch um Hardware Update.",
+            "Dieses Projekt ist eines meiner Herzensangelegenheiten, da ich der festen Überzeugung bin, dass persönliche Daten auch persönlich bleiben sollten. Allerdings sehe ich ebenfalls die Vorteile, welche eine Cloud mit sich bringt. Um diese Ansichten zu vereinen habe ich mich dazu entschieden selbst eine Cloud zu hosten.",
+            "'The cloud is only someone elses Computer'"
+          ],
+          "tags": ["Server", "RaspberryPi", "SQL", "Networking"]
+        },
+        "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
+        "additionalFeatures": [{ "title": "", "text": "" }],
+        "progress": 100,
+        "additionalPictures": [
+          "../../assets/pictures/projects/ProjectPage/Nextcloud.png"
+        ],
+        "gitLink": ""
+      }
+    },
+    {
+      "ProjectID": "RPICLock",
+      "slide": {
+        "position": 2,
+        "title": "RPI Uhr",
+        "picture": "../../assets/pictures/projects/Slides/RPI_clock.JPG",
+        "text": "Eine Smart Uhr basierend auf MagicMirror für den RPI",
+        "link": "/RPI_Clock"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/RPI.JPG",
+        "summary": {
+          "title": "RaspberryPi Smart Uhr",
+          "text": [
+            "Dieses Projekt war ein kleines Bastler Projekt, welches ich stetig weiter entwickle. Ich wollte eine Anzeige, auf welcher ich nicht nur die Zeit sondern auch einige Informationen wie anstehende Termine einsehen kann. Nach etwas Recherche bin ich auf die MagicMirror anwendung gestoßen und das Projket war geboren.",
+            "Zu dieser Zeit hatte ich günstig einen RaspberryPi 2b gekauft und musste lediglich ein kleines Display und einen Wifi Stick anschaffen um das Projekt in die Tat umzusetzen. Seither steht die Uhr auf meinem Schreibtisch und ist täglich in Nutzung."
+          ],
+          "tags": ["RaspberyPi", "Hardware"]
+        },
+        "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
+        "additionalFeatures": [{ "title": "", "text": "" }],
+        "progress": 100,
+        "additionalPictures": [
+          "../../assets/pictures/projects/ProjectPage/RPI_clock.JPG"
+        ],
+        "gitLink": ""
+      }
+    },
+    {
+      "ProjectID": "Script_Runner",
+      "slide": {
+        "position": 3,
+        "title": "Python Skriptverwaltung",
+        "picture": "../../assets/pictures/projects/Slides/Python_Code.PNG",
+        "text": "Ein Werkzeug, welches alle Python Skripte verwaltet und ausgeählte Skripte ausführt.",
+        "link": "/ScriptRunner"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/Python_Code.PNG",
+        "summary": {
+          "title": "Skriptverwaltung",
+          "text": [
+            "Mithilfe dieses Tools können mehrere Python Skripte, welche in einem Ordner abgelegt sind ausgeführt werden.",
+            "dies ermöglicht eine schnelle und einfache Übersicht über alle vorhandenen Skripte sowie eine schnelle Ausführung dieser. Ebenfalls kann ein Makro zu diesem Skript runner gesetzt werden um Zugriff auf alle Skripte über nur einen Makro zu bekommen."
+          ],
+          "tags": ["Software", "Scripting", "Python"]
+        },
+        "coreFeatures": [
+          {
+            "feature": "ping",
+            "syntax": "-",
+            "explanation": "Sended Pings an google.com bis eine Ping erfolgreich ist."
+          },
+          {
+            "feature": "rename",
+            "syntax": "-",
+            "explanation": "Benennt alle Elemente innerhalb eines Ordners zu einem Namen mit Fortlaufendem Index um."
+          },
+          {
+            "feature": "semester setup",
+            "syntax": "-",
+            "explanation": "Erstellt eine Ordnerstruktur."
+          },
+          {
+            "feature": "sort date",
+            "syntax": "-",
+            "explanation": "Sortiert alle Elemente eines Ordners in Ordner, welche mit entweder dem Erstell oder dem Änderungsdatum der Dateil Korrospondieren."
+          }
+        ],
+        "additionalFeatures": [
+          {
+            "title": "Einfacher Erweiterung",
+            "text": "Neue Skripte müssen lediglich in dem vorgesehenen Ordner abgelegt werden und werden automatisch in die Verwaltung aufgenommen."
+          },
+          {
+            "title": "Einfache Ausführung der Skripte",
+            "text": "Durch ein interaktives Konsoleninterfaces können die Skripte sehr einfach ausgeführt werden."
+          }
+        ],
+        "progress": 100,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/skript_runner"
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
-import { TranslatorService } from 'src/app/shared/services/translator.service';
+import { ImportService } from 'src/app/shared/services/import.service';
 
 @Component({
   selector: 'app-script-runner',
@@ -9,11 +9,12 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./script-runner.component.scss']
 })
 export class ScriptRunnerComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('Script_Runner')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('Script_Runner')!;
+  constructor(public importService: ImportService){
   }
 
   getCell(element: coreFeature, header: string) {
+    this.projectPage = this.importService.getProjectPage('Script_Runner')!;
     if (header == 'feature') {
       return element.feature;
     }
@@ -24,6 +25,10 @@ export class ScriptRunnerComponent {
       return element.explanation;
     }
     return '';
+  }
+
+  getTexts() {
+    return this.importService.getProjectPage('Script_Runner')!;
   }
 
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];

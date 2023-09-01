@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
-import { TranslatorService } from 'src/app/shared/services/translator.service';
+import { ImportService } from 'src/app/shared/services/import.service';
 
 @Component({
   selector: 'app-lsm',
@@ -9,11 +9,12 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./lsm.component.scss']
 })
 export class LsmComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('LSM')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('LSM')!;
+  constructor(public importService: ImportService){
   }
 
   getCell(element: coreFeature, header: string) {
+    this.projectPage = this.importService.getProjectPage('LSM')!;
     if (header == 'feature') {
       return element.feature;
     }
@@ -24,6 +25,10 @@ export class LsmComponent {
       return element.explanation;
     }
     return '';
+  }
+
+  getTexts() {
+    return this.importService.getProjectPage('LSM')!;
   }
 
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];

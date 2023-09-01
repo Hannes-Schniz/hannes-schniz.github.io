@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ImportService } from 'src/app/shared/services/import.service';
 
 @Component({
   selector: 'app-personal-home',
@@ -8,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PersonalHomeComponent {
 
-  constructor(private _snackBar: MatSnackBar){}
+  constructor(private _snackBar: MatSnackBar, public importService: ImportService){}
   openSnackbar() {
     this._snackBar.open('Copied eMail', 'close')
   }

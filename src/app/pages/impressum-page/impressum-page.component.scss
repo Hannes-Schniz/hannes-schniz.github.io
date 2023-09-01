@@ -13,9 +13,9 @@
   align-items: center;
   flex-direction: column;
   overflow-y: hidden;
+  min-height: 100vh;
 }
 
 .maxheight {
-  max-height: 85vh;
   flex-wrap: wrap;
 }

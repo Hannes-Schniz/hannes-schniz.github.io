@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
-import { TranslatorService } from 'src/app/shared/services/translator.service';
+import { ImportService } from 'src/app/shared/services/import.service';
 
 @Component({
   selector: 'app-nextcloud',
@@ -9,7 +9,11 @@ import { TranslatorService } from 'src/app/shared/services/translator.service';
   styleUrls: ['./nextcloud.component.scss']
 })
 export class NextcloudComponent {
-  projectPage: ProjectFileModel = TranslatorService.getProjectPage('Nextcloud')!;
-  constructor(){
+  projectPage: ProjectFileModel = this.importService.getProjectPage('Nextcloud')!;
+  constructor(public importService: ImportService){
+  }
+
+  getTexts() {
+    return this.importService.getProjectPage('Nextcloud')!;
   }
 }
