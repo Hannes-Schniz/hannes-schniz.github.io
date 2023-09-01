@@ -14,6 +14,7 @@ export class ScriptRunnerComponent {
   }
 
   getCell(element: coreFeature, header: string) {
+    this.projectPage = this.importService.getProjectPage('Script_Runner')!;
     if (header == 'feature') {
       return element.feature;
     }
@@ -24,6 +25,10 @@ export class ScriptRunnerComponent {
       return element.explanation;
     }
     return '';
+  }
+
+  getTexts() {
+    return this.importService.getProjectPage('Script_Runner')!;
   }
 
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];

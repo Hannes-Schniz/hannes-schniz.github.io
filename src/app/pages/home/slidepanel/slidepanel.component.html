@@ -19,14 +19,14 @@
   <div class="textBlock">
     <div class="header">
       <h1>
-        {{ this.currSlide.title }}
+        {{ this.getTexts().title }}
       </h1>
       <a [href]="this.currSlide.link" class="link"
         ><mat-icon>launch</mat-icon></a
       >
     </div>
     <div class="text">
-      <h2>{{ this.currSlide.text }}</h2>
+      <h2>{{ this.getTexts().text }}</h2>
     </div>
   </div>
   <div class="footer">

@@ -20,6 +20,7 @@ export class SlidesService {
   }
 
   public getNextSlide(): slide{
+    this.slides = this.importService.getSlideObjects();
     if(this.slidePosition == this.slides.length - 1){
       this.slidePosition = 0;
     }
@@ -30,6 +31,7 @@ export class SlidesService {
   }
 
   public getPrevSlide(): slide{
+    this.slides = this.importService.getSlideObjects();
     this.slidePosition--;
     if(this.slidePosition == -1){
       this.slidePosition = this.slides.length - 1;
@@ -42,6 +44,11 @@ export class SlidesService {
   }
 
   public getSlides() {
+    this.slides = this.importService.getSlideObjects();
     return this.slides;
   }
+
+  public updateSlidesAndReturnCurrent() {
+    this.slides = this.importService.getSlideObjects();
+    return this.slides[this.slidePosition];  }
 }

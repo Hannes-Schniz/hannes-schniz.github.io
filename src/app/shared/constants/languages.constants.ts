@@ -1,7 +1,7 @@
 
 export enum languages {
-  EN = "projects.english.json",
-  DE = "projects.german.json"
+  EN = "projects-EN.json",
+  DE = "projects-DE.json"
 }
 
 export const defaultLanguage = languages.DE;

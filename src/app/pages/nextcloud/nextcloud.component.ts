@@ -12,4 +12,8 @@ export class NextcloudComponent {
   projectPage: ProjectFileModel = this.importService.getProjectPage('Nextcloud')!;
   constructor(public importService: ImportService){
   }
+
+  getTexts() {
+    return this.importService.getProjectPage('Nextcloud')!;
+  }
 }

@@ -14,6 +14,7 @@ export class LsmComponent {
   }
 
   getCell(element: coreFeature, header: string) {
+    this.projectPage = this.importService.getProjectPage('LSM')!;
     if (header == 'feature') {
       return element.feature;
     }
@@ -24,6 +25,10 @@ export class LsmComponent {
       return element.explanation;
     }
     return '';
+  }
+
+  getTexts() {
+    return this.importService.getProjectPage('LSM')!;
   }
 
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];

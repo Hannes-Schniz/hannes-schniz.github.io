@@ -11,4 +11,8 @@ export class RPIClockComponent {
   projectPage: ProjectFileModel = this.importService.getProjectPage('RPICLock')!;
   constructor(public importService: ImportService){
   }
+
+  getText() {
+    return this.importService.getProjectPage('RPICLock')!;
+  }
 }
