@@ -28,8 +28,8 @@ body {
 
 .home_card {
   width: 100vw;
-  height: 100vh;
-  max-height: inherit;
+  min-height: 100vh;
+  //max-height: inherit;
 }
 
 .standardCardColor {

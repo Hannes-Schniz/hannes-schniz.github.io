@@ -21,11 +21,11 @@
       <h1>
         {{ this.getTexts().title }}
       </h1>
-      <a [href]="this.currSlide.link" class="link"
+      <a [href]="this.currSlide.link" class="link" *ngIf="showPanel()"
         ><mat-icon>launch</mat-icon></a
       >
     </div>
-    <div class="text">
+    <div class="text" *ngIf="showPanel()">
       <h2>{{ this.getTexts().text }}</h2>
     </div>
   </div>
