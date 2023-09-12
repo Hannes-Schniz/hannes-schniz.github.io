@@ -5,8 +5,7 @@
 }
 
 .contentCard {
-  width: 70vw;
-  margin: 1%;
+  margin: 5%;
   padding: 0.5%;
 }
 
@@ -72,4 +71,23 @@
 .mdc-data-table__cell {
   border-bottom-color: white;
   color: var(--textColor);
+}
+
+.overflow {
+  white-space: pre-wrap;
+}
+
+.mdc-list-item.mdc-list-item--with-two-lines {
+  height: fit-content;
+  margin-bottom: 20px;
+}
+
+.mdc-list-item__primary-text {
+  font-size: larger;
+}
+
+.mobileLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

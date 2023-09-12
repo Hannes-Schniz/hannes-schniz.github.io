@@ -3,14 +3,14 @@
     <img
       class="personalPicture"
       src="../../../../assets/pictures/personal/Hannes_Schniz.jpg"
-      *ngIf="this.screenSize.showPanel()"
+      *ngIf="this.screenSize.hidePanel()"
     />
   </div>
   <div>
     <img
       class="mobile-picture"
       src="../../../../assets/pictures/personal/Hannes_Schniz.jpg"
-      *ngIf="!this.screenSize.showPanel()"
+      *ngIf="!this.screenSize.hidePanel()"
     />
 
     <mat-card class="introText standardTextColor">
