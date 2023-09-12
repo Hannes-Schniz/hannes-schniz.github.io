@@ -113,7 +113,7 @@ export class SlidepanelComponent implements OnInit{
     return this.slideService.updateSlidesAndReturnCurrent();
   }
 
-  showPanel(){
-    return this.screenSize.hidePanel();
+  hidden() {
+    return IsMobileService.hidePanel();
   }
 }

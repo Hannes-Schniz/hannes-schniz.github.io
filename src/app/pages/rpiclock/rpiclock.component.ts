@@ -16,4 +16,8 @@ export class RPIClockComponent {
   getTexts() {
     return this.importService.getProjectPage('RPICLock')!;
   }
+
+  hidden() {
+    return IsMobileService.hidePanel();
+  }
 }

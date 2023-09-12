@@ -32,6 +32,10 @@ export class LsmComponent {
     return this.importService.getProjectPage('LSM')!;
   }
 
+  hidden() {
+    return IsMobileService.hidePanel();
+  }
+
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];
   dataSource = this.projectPage.coreFeatures;
 }

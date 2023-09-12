@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class IsMobileService {
 
-  screenSizeCutoff = 500;
+  static screenSizeCutoff = 800;
 
   constructor() { }
 
-  hidePanel(){
+  static hidePanel(){
     return document.body.clientWidth > this.screenSizeCutoff;
   }
 }
