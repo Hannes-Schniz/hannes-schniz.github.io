@@ -5,6 +5,16 @@
   src: url("assets/fonts/Demo_Fonts/Fontspring-DEMO-geon-medium.otf");
 }
 
+:root {
+  --primary: #fadd6e;
+  --background: #201f1a;
+  --cardBackground: #2f2d27;
+  --transparent: #ffffff00;
+  --textColor: white;
+  --headerBackgournd: #7e7c7723;
+  --progressBar: #7e7c77;
+}
+
 body {
   max-width: 100vw;
   margin-top: 0 !important;
@@ -12,28 +22,28 @@ body {
   margin-right: 0 !important;
   max-height: 99vh;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif, MyFont !important;
-  background-color: #201f1a;
+  background-color: var(--background);
   overflow-x: hidden;
 }
 
 .home_card {
   width: 100vw;
   height: 100vh;
-  max-height: inherit;
+  //max-height: inherit;
 }
 
 .standardCardColor {
-  background-color: #777a7a00;
+  background-color: var(--transparent);
   box-shadow: none;
 }
 
 .raisedCardColor {
-  background-color: #2f2d27;
+  background-color: var(--cardBackground);
   box-shadow: inset;
 }
 
 .standardTextColor {
-  color: #c9cfcf;
+  color: var(--textColor);
 }
 
 .textContent {
@@ -60,7 +70,7 @@ mat-card-title {
 }
 
 mat-chip {
-  background-color: #fadd6e !important;
+  background-color: var(--primary) !important;
 }
 
 .dividerHorizontal {
@@ -74,9 +84,9 @@ mat-chip {
 }
 
 .darkText {
-  color: #2f2d27;
+  color: var(--cardBackground);
 }
 
 .yellowColor {
-  color: #fadd6e;
+  color: var(--primary);
 }

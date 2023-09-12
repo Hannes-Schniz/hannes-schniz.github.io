@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
 import { ImportService } from 'src/app/shared/services/import.service';
+import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
 
 @Component({
   selector: 'app-lsm',
@@ -10,7 +11,7 @@ import { ImportService } from 'src/app/shared/services/import.service';
 })
 export class LsmComponent {
   projectPage: ProjectFileModel = this.importService.getProjectPage('LSM')!;
-  constructor(public importService: ImportService){
+  constructor(public importService: ImportService, public screenSize: IsMobileService){
   }
 
   getCell(element: coreFeature, header: string) {
@@ -29,6 +30,10 @@ export class LsmComponent {
 
   getTexts() {
     return this.importService.getProjectPage('LSM')!;
+  }
+
+  hidden() {
+    return IsMobileService.hidePanel();
   }
 
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];

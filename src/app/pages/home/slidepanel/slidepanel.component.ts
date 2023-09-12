@@ -3,6 +3,7 @@ import { SlidesService } from '../../../shared/services/slides.service';
 import { slide } from '../../../shared/models/slide';
 import { Subscription, interval } from 'rxjs';
 import { trigger, transition, style, animate, group, query } from '@angular/animations';
+import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
 
 '@angular/animations'
 const left = [
@@ -55,7 +56,7 @@ export class SlidepanelComponent implements OnInit{
 
   private wait;
 
-  constructor(public slideService: SlidesService) {
+  constructor(public slideService: SlidesService, public screenSize: IsMobileService) {
     this.currSlide = slideService.getInitSlide();
     this.source = interval(this.SLIDEINTERVAL);
     this.wait = interval(this.TIMEOUT);
@@ -110,5 +111,9 @@ export class SlidepanelComponent implements OnInit{
 
   getTexts() {
     return this.slideService.updateSlidesAndReturnCurrent();
+  }
+
+  hidden() {
+    return IsMobileService.hidePanel();
   }
 }

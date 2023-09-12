@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { languages } from '../../constants/languages.constants';
 import { ImportService } from '../../services/import.service';
 import { ScrollService } from '../../services/scroll.service';
+import { IsMobileService } from '../../services/is-mobile.service';
 
 @Component({
   selector: 'app-navbar',
@@ -23,4 +24,5 @@ export class NavbarComponent {
   languageSwitch(newLanguage: languages) {
     this.importService.switchLanguage(newLanguage);
   }
+
 }

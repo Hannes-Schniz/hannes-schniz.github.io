@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { coreFeature } from 'src/app/shared/models/projectCoreFeature.model';
 import { ProjectFileModel } from 'src/app/shared/models/projectFile.model';
 import { ImportService } from 'src/app/shared/services/import.service';
+import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
 
 @Component({
   selector: 'app-script-runner',
@@ -10,7 +11,7 @@ import { ImportService } from 'src/app/shared/services/import.service';
 })
 export class ScriptRunnerComponent {
   projectPage: ProjectFileModel = this.importService.getProjectPage('Script_Runner')!;
-  constructor(public importService: ImportService){
+  constructor(public importService: ImportService , public screenSize: IsMobileService){
   }
 
   getCell(element: coreFeature, header: string) {
@@ -29,6 +30,10 @@ export class ScriptRunnerComponent {
 
   getTexts() {
     return this.importService.getProjectPage('Script_Runner')!;
+  }
+
+  hidden() {
+    return IsMobileService.hidePanel();
   }
 
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];

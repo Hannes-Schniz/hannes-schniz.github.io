@@ -4,14 +4,8 @@
   position: relative;
 }
 
-.contentCard {
-  width: 70vw;
-  margin: 1%;
-  padding: 0.5%;
-}
-
 .headerCard {
-  width: 60vw;
+  width: 80vw;
   margin: 1%;
   padding: 1%;
 }
@@ -38,7 +32,7 @@
 }
 
 .mat-mdc-progress-spinner {
-  --mdc-circular-progress-active-indicator-color: #fadd6e !important;
+  --mdc-circular-progress-active-indicator-color: var(--primary) !important;
 }
 
 .spinnerCard {
@@ -53,7 +47,7 @@
 }
 
 .mat-mdc-table {
-  background: #2f2d27;
+  background: var(--cardBackground);
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2%;
@@ -65,7 +59,7 @@
 }
 
 .mdc-data-table__header-cell {
-  color: #fadd6e;
+  color: var(--primary);
   border-bottom-color: white;
 }
 
@@ -84,8 +78,8 @@
 }
 
 .additionImage {
-  width: 60vw;
-  height: 60vh;
+  width: 75vw;
+  height: 75vw;
   object-fit: cover;
   margin-top: 5%;
   margin-bottom: 5%;

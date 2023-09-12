@@ -2,7 +2,7 @@
   height: 50px;
   z-index: 1000;
   backdrop-filter: blur(2px) !important;
-  background-color: #7e7c7723 !important;
+  background-color: var(--headerBackgournd) !important;
   color: white;
 }
 
@@ -38,8 +38,8 @@ h1 {
 }
 
 .mat-mdc-progress-bar {
-  --mdc-linear-progress-active-indicator-color: #fadd6e;
-  --mdc-linear-progress-track-color: #7e7c77;
+  --mdc-linear-progress-active-indicator-color: var(--primary);
+  --mdc-linear-progress-track-color: var(--progressBar);
 }
 
 .bar {
@@ -51,7 +51,7 @@ h1 {
 }
 
 .clear {
-  background-color: rgba(250, 235, 215, 0);
+  background-color: var(--transparent);
 }
 
 .buttons {
@@ -70,4 +70,8 @@ h1 {
 .languageIcon {
   transform: scale(1.5);
   color: white;
+}
+
+.chipsRow {
+  height: fit-content;
 }
