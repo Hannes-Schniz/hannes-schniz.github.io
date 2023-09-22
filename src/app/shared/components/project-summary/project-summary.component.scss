@@ -1,0 +1,19 @@
+@import url("../../../../styles.scss");
+
+.contentCard {
+  margin: 5%;
+  padding: 0.5%;
+}
+
+.headerCard {
+  width: 80vw;
+  margin: 1%;
+  padding: 1%;
+}
+
+.footer {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

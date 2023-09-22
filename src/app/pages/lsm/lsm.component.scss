@@ -31,41 +31,14 @@
 .bottom {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   width: 90vw;
   padding-left: 10vw;
 }
 
-.mat-mdc-progress-spinner {
-  --mdc-circular-progress-active-indicator-color: var(--primary) !important;
-}
-
-.spinnerCard {
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.percent {
-  text-align: center;
-}
-
 .tableContent {
   margin-top: 1%;
-}
-
-.overflow {
-  white-space: pre-wrap;
-}
-
-.mdc-list-item.mdc-list-item--with-two-lines {
-  height: fit-content;
-  margin-bottom: 20px;
-}
-
-.mdc-list-item__primary-text {
-  font-size: larger;
 }
 
 .mobileLayout {
@@ -73,6 +46,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 70vw;
 }
 
 .gitLink {
