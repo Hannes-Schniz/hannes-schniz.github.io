@@ -39,6 +39,9 @@ import { ProgressWheelComponent } from './shared/components/progress-wheel/progr
 import { FeatureListComponent } from './shared/components/feature-list/feature-list.component';
 import { ProjectSummaryComponent } from './shared/components/project-summary/project-summary.component';
 import { BannerComponent } from './shared/components/banner/banner.component';
+import { ImageComponent } from './shared/components/image/image.component';
+import { RoundPictureComponent } from './shared/components/round-picture/round-picture.component';
+import { IntroTextComponent } from './shared/components/intro-text/intro-text.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { BannerComponent } from './shared/components/banner/banner.component';
     ProgressWheelComponent,
     FeatureListComponent,
     ProjectSummaryComponent,
-    BannerComponent
+    BannerComponent,
+    ImageComponent,
+    RoundPictureComponent,
+    IntroTextComponent
   ],
   imports: [
     BrowserModule,

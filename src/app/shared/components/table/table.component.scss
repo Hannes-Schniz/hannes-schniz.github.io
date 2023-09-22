@@ -11,6 +11,7 @@
 .mdc-data-table__header-cell {
   color: var(--primary);
   border-bottom-color: white;
+  font-size: var(--mdc-typography-subtitle2-font-size, 18px) !important;
 }
 
 .mdc-data-table__cell {

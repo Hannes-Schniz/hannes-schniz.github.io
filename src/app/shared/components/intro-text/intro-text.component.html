@@ -1,0 +1,78 @@
+<mat-card class="introText standardTextColor">
+  <mat-card-header
+    ><mat-card-title class="introductionHeader"
+      >Hi!</mat-card-title
+    ></mat-card-header
+  >
+  <mat-card-content>
+    <p class="mat-body">
+      {{ importService.getPersonal().texts[0] }}
+    </p>
+    <p class="mat-body">
+      {{ importService.getPersonal().texts[1] }}
+    </p>
+
+    <p class="mat-body">
+      {{ importService.getPersonal().texts[2] }}
+    </p>
+
+    <div class="lists">
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor">OOP</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor">Java</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor"> Javascript </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor"> Python </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor"> C# </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor"> C </span>
+        </mat-list-item>
+      </mat-list>
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor">SQL</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor">
+            Linux Distros
+          </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle class="standardTextColor">
+            Microcontroller
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="footer">
+    <div></div>
+    <div class="listIcons">
+      <a
+        style="cursor: pointer"
+        cdkCopyToClipboard="contact@hannesschniz.de"
+        (click)="openSnackbar()"
+      >
+        <img src="../../../../assets/Symbols/icons8-email-50.png" />
+      </a>
+      <a href="https://www.github.com/TheXample" target="_blank">
+        <img src="../../../../assets/Symbols/icons8-github-50.png" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/hannes-schniz-a61269280/"
+        target="_blank"
+      >
+        <img src="../../../../assets/Symbols/icons8-linkedin-50.png" />
+      </a>
+    </div>
+  </mat-card-footer>
+</mat-card>

@@ -1,27 +1,5 @@
 @import "../../../styles.scss";
 
-.introductionHeader {
-  font-size: 50px;
-}
-
-mat-card-header {
-  height: fit-content;
-  margin-bottom: 2%;
-}
-
-.introText {
-  margin: 5%;
-  min-width: 30vw;
-  background-color: var(--cardBackground);
-  box-shadow: inset;
-  padding-top: 1%;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-bottom: 1%;
-  max-width: 500px;
-  //max-height: 100vh;
-}
-
 .personal_container {
   display: flex;
   flex-direction: row;
@@ -31,33 +9,17 @@ mat-card-header {
 }
 
 .personalPicture {
-  border-radius: 50%;
-  border-color: var(--primary);
-  border-width: 3px;
-  border-style: solid;
   height: 500px;
   width: 500px;
-  object-fit: cover;
-  overflow: hidden;
 }
 
-.mobile-picture {
-  margin: 5%;
-  border-radius: 50%;
-  border-color: var(--primary);
-  border-width: 3px;
-  border-style: solid;
+.mobilePicture {
   height: 80vw;
   width: 80vw;
-  object-fit: cover;
-  overflow: hidden;
 }
 
-.lists {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.blocker {
+  height: 60px;
 }
 
 .leftSide {
@@ -67,19 +29,4 @@ mat-card-header {
   align-items: center;
   justify-content: space-around;
   height: 50vh;
-}
-
-.listIcons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 150px;
-  //margin-left: 0;
-}
-
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
