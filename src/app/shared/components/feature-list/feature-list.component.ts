@@ -16,9 +16,7 @@ export class FeatureListComponent implements AfterViewInit{
   constructor(public importService: ImportService){
   }
   ngAfterViewInit(): void {
-    console.log(this.project);
     this.projectPage = this.importService.getProjectPage(this.project)!;
-    console.log(this.projectPage);
   }
 
   getTexts() {
