@@ -45,26 +45,10 @@
         *ngIf="hidden()"
       ></app-progress-wheel>
       <div class="mobileLayout">
-        <mat-card class="contentCard standardCardColor standardTextColor">
-          <mat-card-header>
-            <mat-card-title>
-              {{ this.importService.getTexts().AdditionalFeatures }}
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <mat-list>
-              <mat-list-item
-                *ngFor="let item of this.getTexts().additionalFeatures"
-                class="listItem"
-              >
-                <span matListItemTitle class="standardTextColor overflow">{{
-                  item.title
-                }}</span>
-                <span class="standardTextColor overflow">{{ item.text }}</span>
-              </mat-list-item>
-            </mat-list>
-          </mat-card-content>
-        </mat-card>
+        <app-feature-list
+          [project]="project"
+          *ngIf="!this.hidden()"
+        ></app-feature-list>
         <mat-card
           class="contentCard standardCardColor standardTextColor"
           *ngIf="!this.hidden()"
