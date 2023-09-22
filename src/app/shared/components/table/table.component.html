@@ -1,0 +1,22 @@
+<mat-card class="contentCard standardCardColor standardTextColor">
+  <mat-card-header>
+    <mat-card-title>
+      {{ this.importService.getTexts().CoreFeature }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="tableContent">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container
+        *ngFor="let header of displayedColumns"
+        [matColumnDef]="header"
+      >
+        <th mat-header-cell *matHeaderCellDef>{{ header }}</th>
+        <td mat-cell *matCellDef="let element">
+          {{ getCell(element, header) }}
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

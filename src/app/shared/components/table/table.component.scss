@@ -1,0 +1,29 @@
+@import url("../../../../styles.scss");
+
+.mat-mdc-table {
+  background: var(--cardBackground);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.mdc-data-table__header-cell {
+  color: var(--primary);
+  border-bottom-color: white;
+  font-size: var(--mdc-typography-subtitle2-font-size, 18px) !important;
+}
+
+.mdc-data-table__cell {
+  border-bottom-color: white;
+  color: var(--textColor);
+}
+
+.contentCard {
+  margin: 70px;
+  padding: 5px;
+}
+
+.tableContent {
+  margin-top: 1%;
+}

@@ -1,0 +1,19 @@
+@import url("../../../../styles.scss");
+
+.contentCard {
+  margin: 5%;
+  padding: 0.5%;
+}
+
+.overflow {
+  white-space: pre-wrap;
+}
+
+.mdc-list-item.mdc-list-item--with-two-lines {
+  height: fit-content;
+  margin-bottom: 20px;
+}
+
+.mdc-list-item__primary-text {
+  font-size: larger;
+}

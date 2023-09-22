@@ -1,0 +1,10 @@
+.personalPicture {
+  border-radius: 50%;
+  border-color: var(--primary);
+  border-width: 3px;
+  border-style: solid;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  overflow: hidden;
+}

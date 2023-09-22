@@ -1,0 +1,45 @@
+@import url("../../../../styles.scss");
+
+.introductionHeader {
+  font-size: 50px;
+}
+
+mat-card-header {
+  height: fit-content;
+  margin-bottom: 2%;
+}
+
+.introText {
+  margin: 5%;
+  min-width: 30vw;
+  background-color: var(--cardBackground);
+  box-shadow: inset;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 1%;
+  max-width: 500px;
+  //max-height: 100vh;
+}
+
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.listIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 150px;
+  //margin-left: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

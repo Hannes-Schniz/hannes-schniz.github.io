@@ -9,12 +9,8 @@ import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
   styleUrls: ['./rpiclock.component.scss']
 })
 export class RPIClockComponent {
-  projectPage: ProjectFileModel = this.importService.getProjectPage('RPICLock')!;
-  constructor(public importService: ImportService, public screenSize: IsMobileService){
-  }
-
-  getTexts() {
-    return this.importService.getProjectPage('RPICLock')!;
+  project = 'RPICLock';
+  constructor(public screenSize: IsMobileService){
   }
 
   hidden() {

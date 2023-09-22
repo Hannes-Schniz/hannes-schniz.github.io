@@ -4,70 +4,6 @@
   position: relative;
 }
 
-.headerCard {
-  width: 80vw;
-  margin: 1%;
-  padding: 1%;
-}
-
-.footer {
-  margin-top: 1%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.banner {
-  width: 100vw;
-  height: 35vh;
-  object-fit: cover;
-}
-
-.bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90vw;
-  padding-left: 10vw;
-}
-
-.mat-mdc-progress-spinner {
-  --mdc-circular-progress-active-indicator-color: var(--primary) !important;
-}
-
-.spinnerCard {
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.percent {
-  text-align: center;
-}
-
-.mat-mdc-table {
-  background: var(--cardBackground);
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-
-.tableContent {
-  margin-top: 1%;
-}
-
-.mdc-data-table__header-cell {
-  color: var(--primary);
-  border-bottom-color: white;
-}
-
-.mdc-data-table__cell {
-  border-bottom-color: white;
-  color: white;
-}
-
 .textContentAlter {
   display: flex;
   flex-direction: row;
@@ -75,16 +11,4 @@
   justify-content: space-evenly;
   margin-top: 5%;
   width: 100vw;
-}
-
-.additionImage {
-  width: 75vw;
-  height: 75vw;
-  object-fit: cover;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-color: white;
-  border-width: 2px;
-  border-style: solid;
-  box-shadow: inset;
 }

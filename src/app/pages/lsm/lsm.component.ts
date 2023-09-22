@@ -10,34 +10,15 @@ import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
   styleUrls: ['./lsm.component.scss']
 })
 export class LsmComponent {
-  projectPage: ProjectFileModel = this.importService.getProjectPage('LSM')!;
-  constructor(public importService: ImportService, public screenSize: IsMobileService){
-  }
 
-  getCell(element: coreFeature, header: string) {
-    this.projectPage = this.importService.getProjectPage('LSM')!;
-    if (header == 'feature') {
-      return element.feature;
-    }
-    if (header == 'syntax') {
-      return element.syntax;
-    }
-    if (header == 'explanation') {
-      return element.explanation;
-    }
-    return '';
-  }
+  project = 'LSM';
 
-  getTexts() {
-    return this.importService.getProjectPage('LSM')!;
+  constructor(public screenSize: IsMobileService){
   }
 
   hidden() {
     return IsMobileService.hidePanel();
   }
-
-  displayedColumns: string[] = ['feature', 'syntax', 'explanation'];
-  dataSource = this.projectPage.coreFeatures;
 }
 
 

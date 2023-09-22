@@ -1,0 +1,22 @@
+<mat-card class="headerCard standardCardColor standardTextColor">
+  <mat-card-header>
+    <mat-card-title style="font-size: xx-large">
+      {{ this.getTexts().summary.title }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="mat-body" *ngFor="let text of this.getTexts().summary.text">
+      {{ text }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer class="footer">
+    <div class="left"></div>
+    <div class="right">
+      <mat-chip-listbox>
+        <mat-chip *ngFor="let tag of projectPage.summary.tags">
+          {{ tag }}
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+  </mat-card-footer>
+</mat-card>
