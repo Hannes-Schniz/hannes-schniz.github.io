@@ -1,6 +1,6 @@
 <div class="mainContainer">
   <app-banner [project]="project"></app-banner>
-  <mat-divider horizontal class="dividerHorizontal"></mat-divider>
+  <app-divider></app-divider>
   <div class="textContent">
     <div class="textContentAlter">
       <div class="textContent">
@@ -15,7 +15,7 @@
         *ngIf="this.hidden()"
       ></app-progress-wheel>
     </div>
-    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
+    <app-divider></app-divider>
     <app-image [project]="project"></app-image>
   </div>
 </div>
