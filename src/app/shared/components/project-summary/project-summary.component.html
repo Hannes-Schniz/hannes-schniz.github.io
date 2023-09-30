@@ -10,7 +10,20 @@
     </p>
   </mat-card-content>
   <mat-card-footer class="footer">
-    <div class="left"></div>
+    <div class="left">
+      <a
+        mat-chip
+        [href]="projectPage.gitLink"
+        target="_blank"
+        class="gitChip"
+        *ngIf="projectPage.gitLink != ''"
+      >
+        <div class="gitLink">
+          <mat-icon>link</mat-icon>
+          <div>Git Link</div>
+        </div>
+      </a>
+    </div>
     <div class="right">
       <mat-chip-listbox>
         <mat-chip *ngFor="let tag of projectPage.summary.tags">

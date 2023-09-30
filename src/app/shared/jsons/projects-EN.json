@@ -182,6 +182,30 @@
         "additionalPictures": [""],
         "gitLink": "https://github.com/TheXample/skript_runner"
       }
+    },
+    {
+      "ProjectID": "RUNA",
+      "slide": {
+        "position": 4,
+        "title": "Runa",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "text": "Dungeoncrawler Cardgame",
+        "link": "/Runa"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Runa",
+          "text": ["tba"],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [],
+        "additionalFeatures": [],
+        "progress": 60,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Runa"
+      }
     }
   ]
 }
