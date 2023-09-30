@@ -1,0 +1,37 @@
+{
+  "entries": [
+    {
+      "id": 1,
+
+      "body": {
+        "title": "Hello World",
+        "text": ["This is my second entry", "This is my second entry"],
+        "tags": ["tag1", "tag2"]
+      },
+      "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "date": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "id": 2,
+
+      "body": {
+        "title": "Hello World 2",
+        "text": ["This is my second entry", "This is my second entry"],
+        "tags": ["tag1", "tag2"]
+      },
+      "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "date": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "id": 3,
+
+      "body": {
+        "title": "Hello World 3",
+        "text": ["This is my second entry", "This is my second entry"],
+        "tags": ["tag1", "tag2"]
+      },
+      "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "date": "2012-04-23T18:25:43.511Z"
+    }
+  ]
+}
