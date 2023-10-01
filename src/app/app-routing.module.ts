@@ -8,6 +8,7 @@ import { NextcloudComponent } from './pages/nextcloud/nextcloud.component';
 import { RPIClockComponent } from './pages/rpiclock/rpiclock.component';
 import { ScriptRunnerComponent } from './pages/script-runner/script-runner.component';
 import { RunaComponent } from './pages/runa/runa.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'AboutMe', component: AboutMeComponent },
   { path: 'Impressum', component: ImpressumPageComponent },
   { path: 'Runa', component: RunaComponent },
+  { path: 'Blog', component: BlogComponent },
+
 { path: '', redirectTo: '/home', pathMatch: 'full' }];
 
 @NgModule({
