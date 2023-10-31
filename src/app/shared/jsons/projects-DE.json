@@ -194,6 +194,87 @@
         "additionalPictures": [""],
         "gitLink": "https://github.com/TheXample/skript_runner"
       }
+    },
+    {
+      "ProjectID": "RUNA",
+      "slide": {
+        "position": 4,
+        "title": "Runa",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "text": "Dungeoncrawler Kartenspiel",
+        "link": "/Runa"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Runa",
+          "text": [
+            "Dieses Spiel habe ich als Abschlussprojekt des Moduls 'Programmieren 1' an dem Karlsruher Institut für Technologie entwickelt.",
+            "Man spielt den Charakter Runa, welcher sich durch einen Dungeon kämpfen muss. Dabei kann er verschiedene Karten sammeln, welche ihm im Kampf gegen die Monster helfen. Das Spiel ist ein Kartenspiel, welches auf dem Spielprinzip von 'Slay the Spire' basiert.",
+            "Diese Karten können offensive oder passive Fähigkeiten sein und können im Kampf gegen Monster erspielt werden.",
+            "Bei der Entwicklung des Spiels habe ich einen großen Wert auf die Modularität gelegt. So ist es möglich das Spiel um neue Karten, Monster und Fähigkeiten zu erweitern ohne den Code des Spiels zu verändern.",
+            "Das Spiel ist in Java geschrieben und ist ausschließlich über die Konsole spielbar. Kann aber durch eine grafische Oberfläche erweitert werden."
+          ],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [],
+        "additionalFeatures": [],
+        "progress": 60,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Runa"
+      }
+    },
+    {
+      "ProjectID": "HANGMAN",
+      "slide": {
+        "position": 5,
+        "title": "Galgenmännchen",
+        "picture": "../../assets/pictures/projects/Slides/Hangman.png",
+        "text": "Einfaches, Konsolen basiertes Galgenmännchen Spiel",
+        "link": "/Hangman"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/Hangman.png",
+        "summary": {
+          "title": "Galgenmännchen",
+          "text": [
+            "Galgenmännchen ist ein einfaches, besonders in Schulen sehr beliebtes Spiel.",
+            "Ein Spieler denkt sich ein Wort aus, welches der Gegenspieler erraten muss. Der Spieler, welcher das Wort ausgedacht hat, gibt dem Gegenspieler die Anzahl der Buchstaben des Wortes an und der Gegenspieler muss nun Buchstaben raten.",
+            "Falls der ratende Spieler einen Buchstaben richtig errät wird dieser angeschrieben, falls nicht wird ein Teil des Galgenmännchens gezeichnet.",
+            "Das Spiel ist beendet, wenn der ratende Spieler das Wort erraten hat oder das Galgenmännchen vollständig gezeichnet wurde.",
+            "Dieses Spiel wurde im Rahmen eines Java Kurses für Beginner erstellt, an welchem ich ausgeholfen hatte. Ich wollte veranschaulichen, wie man gut lesbaren modularen Code schreibt, welcher leicht erweiterbar ist."
+          ],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [
+          {
+            "feature": "Seed basierter Zufallsgenerator",
+            "syntax": "-",
+            "explanation": "Der Zufallsgenerator wird mit einem Seed initialisiert, welcher die Zufallszahlen bestimmt. Dies ermöglicht es, dass das Spiel immer gleich abläuft, wenn der gleiche Seed verwendet wird."
+          },
+          {
+            "feature": "Sprache Wählbar",
+            "syntax": "-",
+            "explanation": "Das Spiel kann in verschiedenen Sprachen gespielt werden. Die Sprache kann beim Start des Spiels gewählt werden."
+          },
+          {
+            "feature": "Solo und Multiplayer",
+            "syntax": "-",
+            "explanation": "Das Spiel kann sowohl alleine gegen einen 'KI' gegener als, auch zu zweit gespielt werden."
+          },
+          {
+            "feature": "Einfache Erweiterbarkeit",
+            "syntax": "-",
+            "explanation": "Das Spiel ist stark modular aufgebaut und kann sehr einfach erweitert werden. So können beispielsweise neue Sprachen oder neue Wörter, als auch neue Funktionen über vordefinierte Schnittstellen hinzugefügt werden."
+          }
+        ],
+        "additionalFeatures": [],
+        "progress": 100,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Hangman"
+      }
     }
   ]
 }

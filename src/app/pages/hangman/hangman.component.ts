@@ -2,20 +2,18 @@ import { Component } from '@angular/core';
 import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
 
 @Component({
-  selector: 'app-lsm',
-  templateUrl: './lsm.component.html',
-  styleUrls: ['./lsm.component.scss']
+  selector: 'app-hangman',
+  templateUrl: './hangman.component.html',
+  styleUrls: ['./hangman.component.scss']
 })
-export class LsmComponent {
+export class HangmanComponent {
 
-  project = 'LSM';
+  project = 'HANGMAN';
 
-  constructor(public screenSize: IsMobileService){
+  constructor(){
   }
 
   hidden() {
     return IsMobileService.hidePanel();
   }
 }
-
-

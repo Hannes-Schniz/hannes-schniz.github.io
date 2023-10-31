@@ -96,7 +96,7 @@
         },
         "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
         "additionalFeatures": [{ "title": "", "text": "" }],
-        "progress": 100,
+        "progress": 80,
         "additionalPictures": [
           "../../assets/pictures/projects/ProjectPage/Nextcloud.png"
         ],
@@ -181,6 +181,81 @@
         "progress": 100,
         "additionalPictures": [""],
         "gitLink": "https://github.com/TheXample/skript_runner"
+      }
+    },
+    {
+      "ProjectID": "RUNA",
+      "slide": {
+        "position": 4,
+        "title": "Runa",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "text": "Dungeoncrawler Cardgame",
+        "link": "/Runa"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Runa",
+          "text": ["tba"],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [],
+        "additionalFeatures": [],
+        "progress": 60,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Runa"
+      }
+    },
+    {
+      "ProjectID": "HANGMAN",
+      "slide": {
+        "position": 5,
+        "title": "Hangman",
+        "picture": "../../assets/pictures/projects/Slides/Hangman.png",
+        "text": "Simple, console based implementation of Hangman",
+        "link": "/Hangman"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/Hangman.png",
+        "summary": {
+          "title": "Hangman",
+          "text": [
+            "Hangman is a simple and popular game, especially in Schools.",
+            "A player thinks of a word and draws a underscore for each letter of the word. Then the other players need to guess the letters of the chosen word.",
+            "If they choose correctly the underscores are replaced with the letter, if the guess is wrong a hangman will appear step by step.",
+            "The game is won by the guessers, if the word is correctly guessed and the game is lost by the guessers, if a full hangman is visible.",
+            "This was a small object orientated coding project for a beginner coding seminar, in which i was helping as a teacher. I wanted to showcase how you can take a simple game which can be implemented easily and make it modular and write understandable, clean code."
+          ],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [
+          {
+            "feature": "Seed based randomization",
+            "syntax": "-",
+            "explanation": "The game randomizer is set by a seed, so a game can be replayed if given the same seed."
+          },
+          {
+            "feature": "Support for multiple languages",
+            "syntax": "-",
+            "explanation": "The game can be played in multiple languages. More can be added easily by adding lists of words."
+          },
+          {
+            "feature": "Support for multi- and soloplayer",
+            "syntax": "-",
+            "explanation": "The game can be playing in AI(solo)mode where it randomly chooses a word from a list or in Multiplayer mode."
+          },
+          {
+            "feature": "Easy extentions",
+            "syntax": "-",
+            "explanation": "If you choose to extend the game with more features, it was built in a very modular approach and allows replacements or extentions of features easily."
+          }
+        ],
+        "additionalFeatures": [],
+        "progress": 100,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Hangman"
       }
     }
   ]
