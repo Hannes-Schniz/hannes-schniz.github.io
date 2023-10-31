@@ -22,7 +22,6 @@ export class ScrollService {
   public getCurrentScrollPosition() {
     var limit = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     return Math.floor(100 / limit * window.scrollY);
-    //return 100;
   }
 
   public showScrollTop() {
