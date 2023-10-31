@@ -9,6 +9,7 @@
         "tags": ["tag1", "tag2"]
       },
       "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "sidePicture": "http://www.google.com/images/srpr/logo3w.png",
       "date": "2012-04-23T18:25:43.511Z"
     },
     {
@@ -20,6 +21,7 @@
         "tags": ["tag1", "tag2"]
       },
       "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "sidePicture": "http://www.google.com/images/srpr/logo3w.png",
       "date": "2012-04-23T18:25:43.511Z"
     },
     {
@@ -31,6 +33,7 @@
         "tags": ["tag1", "tag2"]
       },
       "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "sidePicture": "http://www.google.com/images/srpr/logo3w.png",
       "date": "2012-04-23T18:25:43.511Z"
     }
   ]

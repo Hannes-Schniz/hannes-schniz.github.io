@@ -44,6 +44,8 @@ import { RunaComponent } from './pages/runa/runa.component';
 import { HangmanComponent } from './pages/hangman/hangman.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { DividerComponent } from './shared/components/divider/divider.component';
+import { EntryComponent } from './pages/blog/entry/entry.component';
+import { HeaderComponent } from './pages/blog/header/header.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { DividerComponent } from './shared/components/divider/divider.component'
     ProgressWheelComponent,
     HangmanComponent,
     BlogComponent,
-    DividerComponent
+    DividerComponent,
+    EntryComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

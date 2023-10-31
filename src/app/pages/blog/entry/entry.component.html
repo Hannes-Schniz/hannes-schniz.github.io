@@ -1,0 +1,27 @@
+<mat-card class="blogEntry standardCardColor standardTextColor">
+  <app-banner [src]="blogPost.picture"></app-banner>
+  <mat-card-header>
+    <mat-card-title>{{ blogPost.body.title }}</mat-card-title>
+    <mat-card-subtitle class="standardTextColor">
+      {{ blogPost.date }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <div class="text">
+      <p class="mat-body" *ngFor="let text of this.blogPost.body.text">
+        {{ text }}
+      </p>
+    </div>
+    <img class="image" [src]="blogPost.sidePicture" alt="" />
+  </mat-card-content>
+  <mat-card-footer class="footer">
+    <div class="left"></div>
+    <div class="right">
+      <mat-chip-listbox>
+        <mat-chip *ngFor="let tag of blogPost.body.tags">
+          {{ tag }}
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+  </mat-card-footer>
+</mat-card>

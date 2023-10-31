@@ -1,28 +1,8 @@
 <div class="mainCard">
   <div *ngFor="let item of blogEntries; let i = index">
-    <div class="blogEntry">
-      <app-banner
-        src="../../../assets/pictures/projects/ProjectPage/LSM_Picture.png"
-      ></app-banner>
-      <div class="blogEntryTitle">{{ blogEntries[i].body.title }}</div>
-      <div class="blogEntryDate">{{ blogEntries[i].date }}</div>
-      <div class="blogEntryContent">
-        <div class="blogEntryText">
-          <div class="blogEntryTextContent">
-            <div class="blogEntryTextContentText">
-              {{ blogEntries[i].body.text }}
-            </div>
-            <div class="blogEntryTextContentImage">
-              <img [src]="blogEntries[i].picture" />
-            </div>
-          </div>
-        </div>
-        <div class="blogEntryImage">
-          <img [src]="blogEntries[i].picture" />
-        </div>
-      </div>
+    <app-entry [blogPost]="item"></app-entry>
+    <div *ngIf="i < blogEntries.length - 1" class="blogEntryDivider">
+      <app-divider></app-divider>
     </div>
-    <div *ngIf="i < blogEntries.length - 1" class="blogEntryDivider"></div>
-    <app-divider></app-divider>
   </div>
 </div>
