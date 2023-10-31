@@ -200,13 +200,13 @@
       "slide": {
         "position": 4,
         "title": "Runa",
-        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/Slides/Runa.png",
         "text": "Dungeoncrawler Kartenspiel",
         "link": "/Runa"
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/ProjectPage/Runa.png",
         "summary": {
           "title": "Runa",
           "text": [
