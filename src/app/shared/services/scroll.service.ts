@@ -9,6 +9,8 @@ export class ScrollService {
 
   numberElements: number = 3;
 
+  private DISPLAYPERCENT = 50;
+
 
 
   constructor() { }
@@ -18,12 +20,11 @@ export class ScrollService {
   }
 
   public getCurrentScrollPosition() {
-    //return Math.floor(100 / window.innerHeight * window.scrollY);
-    return 100;
+    var limit = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    return Math.floor(100 / limit * window.scrollY);
   }
 
   public showScrollTop() {
-    //return this.getCurrentScrollPosition() > 30;
-    return Math.floor(100 / window.innerHeight * window.scrollY) > 30;
+    return Math.floor(100 / window.innerHeight * window.scrollY) > this.DISPLAYPERCENT;
   }
 }

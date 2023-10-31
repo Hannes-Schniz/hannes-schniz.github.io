@@ -9,6 +9,7 @@ import { RPIClockComponent } from './pages/rpiclock/rpiclock.component';
 import { ScriptRunnerComponent } from './pages/script-runner/script-runner.component';
 import { RunaComponent } from './pages/runa/runa.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { HangmanComponent } from './pages/hangman/hangman.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'Impressum', component: ImpressumPageComponent },
   { path: 'Runa', component: RunaComponent },
   { path: 'Blog', component: BlogComponent },
-
+  { path: 'Hangman', component: HangmanComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' }];
 
 @NgModule({

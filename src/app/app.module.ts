@@ -41,6 +41,7 @@ import { ImageComponent } from './shared/components/image/image.component';
 import { RoundPictureComponent } from './shared/components/round-picture/round-picture.component';
 import { IntroTextComponent } from './shared/components/intro-text/intro-text.component';
 import { RunaComponent } from './pages/runa/runa.component';
+import { HangmanComponent } from './pages/hangman/hangman.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { DividerComponent } from './shared/components/divider/divider.component';
 
@@ -67,6 +68,8 @@ import { DividerComponent } from './shared/components/divider/divider.component'
     RoundPictureComponent,
     IntroTextComponent,
     RunaComponent,
+    ProgressWheelComponent,
+    HangmanComponent,
     BlogComponent,
     DividerComponent
   ],
