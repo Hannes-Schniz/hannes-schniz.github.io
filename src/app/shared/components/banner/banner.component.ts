@@ -9,10 +9,20 @@ import { ImportService } from '../../services/import.service';
 })
 export class BannerComponent implements OnInit{
   @Input() project!: string;
+  @Input() src!: string;
   projectPage!: ProjectFileModel;
   constructor(public importService: ImportService){
   }
   ngOnInit(): void {
-    this.projectPage = this.importService.getProjectPage(this.project)!;
+    if(this.project != undefined) {
+      this.projectPage = this.importService.getProjectPage(this.project)!;
+    }
+  }
+
+  getSrc() {
+    if(this.projectPage != undefined) {
+      return this.projectPage.picture;
+    }
+    return this.src;
   }
 }

@@ -1,6 +1,9 @@
 <div class="mainCard">
   <div *ngFor="let item of blogEntries; let i = index">
     <div class="blogEntry">
+      <app-banner
+        src="../../../assets/pictures/projects/ProjectPage/LSM_Picture.png"
+      ></app-banner>
       <div class="blogEntryTitle">{{ blogEntries[i].body.title }}</div>
       <div class="blogEntryDate">{{ blogEntries[i].date }}</div>
       <div class="blogEntryContent">
