@@ -8,7 +8,7 @@
         "text": ["This is my second entry", "This is my second entry"],
         "tags": ["tag1", "tag2"]
       },
-      "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "picture": "../../../assets/pictures/blog/blog-01.jpg",
       "sidePicture": "http://www.google.com/images/srpr/logo3w.png",
       "date": "2012-04-23T18:25:43.511Z"
     },
@@ -20,7 +20,7 @@
         "text": ["This is my second entry", "This is my second entry"],
         "tags": ["tag1", "tag2"]
       },
-      "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "picture": "../../../assets/pictures/blog/blog-02.jpg",
       "sidePicture": "http://www.google.com/images/srpr/logo3w.png",
       "date": "2012-04-23T18:25:43.511Z"
     },
@@ -32,7 +32,7 @@
         "text": ["This is my second entry", "This is my second entry"],
         "tags": ["tag1", "tag2"]
       },
-      "picture": "http://www.google.com/images/srpr/logo3w.png",
+      "picture": "../../../assets/pictures/blog/blog-03.jpg",
       "sidePicture": "http://www.google.com/images/srpr/logo3w.png",
       "date": "2012-04-23T18:25:43.511Z"
     }
