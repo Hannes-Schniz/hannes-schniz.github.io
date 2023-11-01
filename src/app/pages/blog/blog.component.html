@@ -1,8 +1,8 @@
 <div class="mainCard">
   <app-header [blogTitle]="blogTitle" class="title"></app-header>
-  <mat-grid-list cols="2" class="grid">
-    <mat-grid-tile *ngFor="let item of blogEntries; let i = index">
+  <div class="cssCol">
+    <div *ngFor="let item of blogEntries; let i = index">
       <app-entry [blogPost]="item" class="entry"></app-entry>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 </div>

@@ -9,7 +9,9 @@
 
 .entry {
   width: 50vw;
-  display: block;
+  break-inside: avoid-column;
+  float: left;
+  min-width: 400px;
 }
 
 .grid {
@@ -20,5 +22,9 @@
   margin-top: 10vh;
   width: 60vw;
   height: fit-content;
-  margin-bottom: 2%;
+}
+
+.cssCol {
+  -moz-column-count: 2;
+  column-count: 2;
 }

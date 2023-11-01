@@ -1,6 +1,7 @@
 @import "../../../../styles.scss";
 .footer {
-  margin: 1%;
+  margin-bottom: 2px;
+  width: 98%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,9 +14,11 @@
 .image {
   width: 50%;
   object-fit: cover;
+  height: inherit;
 }
 
 .blogEntry {
   width: inherit;
+  height: inherit;
   margin: 1%;
 }
