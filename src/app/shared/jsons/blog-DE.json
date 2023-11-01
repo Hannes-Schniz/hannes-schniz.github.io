@@ -1,4 +1,9 @@
 {
+  "title": {
+    "header": "BlogHeader",
+    "text": ["Blog", "Blog"],
+    "picture": "../../../assets/pictures/personal/Hannes_Schniz.jpg"
+  },
   "entries": [
     {
       "id": 1,

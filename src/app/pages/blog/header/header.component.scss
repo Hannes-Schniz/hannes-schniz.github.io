@@ -1,0 +1,35 @@
+@import "../../../../styles.scss";
+
+.text {
+  width: 50%;
+}
+
+.blogTitle {
+  margin: 1%;
+}
+
+.headerCard {
+  width: inherit;
+  height: inherit;
+  margin: 1%;
+  padding: 1%;
+}
+
+.footer {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gitLink {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gitChip {
+  background-color: var(--primary) !important;
+  margin-left: 10%;
+}

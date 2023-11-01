@@ -46,6 +46,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { DividerComponent } from './shared/components/divider/divider.component';
 import { EntryComponent } from './pages/blog/entry/entry.component';
 import { HeaderComponent } from './pages/blog/header/header.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { HeaderComponent } from './pages/blog/header/header.component';
     ReactiveFormsModule,
     ClipboardModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

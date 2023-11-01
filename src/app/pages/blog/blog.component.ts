@@ -10,6 +10,8 @@ export class BlogComponent {
 
   public blogEntries = this.blogService.getBlogEntries();
 
+  public blogTitle = this.blogService.getBlogTitle();
+
   constructor(public blogService: BlogService) {
 
   }

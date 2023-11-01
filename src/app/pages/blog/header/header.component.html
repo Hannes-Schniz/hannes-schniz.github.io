@@ -1,1 +1,35 @@
-<p>header works!</p>
+<mat-card class="headerCard raisedCardColor standardTextColor">
+  <mat-card-header class="textContent">
+    <mat-card-title style="font-size: xx-large">
+      {{ blogTitle.header }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="textContent">
+    <p class="mat-body" *ngFor="let text of blogTitle.text">
+      {{ text }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer class="footer">
+    <div class="left"></div>
+    <div class="right">
+      <div class="listIcons">
+        <a
+          style="cursor: pointer"
+          cdkCopyToClipboard="contact@hannesschniz.de"
+          (click)="openSnackbar()"
+        >
+          <img src="../../../../../assets/Symbols/icons8-email-50.png" />
+        </a>
+        <a href="https://www.github.com/TheXample" target="_blank">
+          <img src="../../../../../assets/Symbols/icons8-github-50.png" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/hannes-schniz-a61269280/"
+          target="_blank"
+        >
+          <img src="../../../../../assets/Symbols/icons8-linkedin-50.png" />
+        </a>
+      </div>
+    </div>
+  </mat-card-footer>
+</mat-card>

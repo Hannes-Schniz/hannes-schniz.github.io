@@ -3,27 +3,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-bottom: 5px;
 }
 
-.footer {
-  margin-top: 1%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.entry {
+  width: 50vw;
+  display: block;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.grid {
+  width: 100vw;
 }
 
-.text {
-  width: 50%;
-}
-
-.image {
-  width: 50%;
-  object-fit: cover;
+.title {
+  margin-top: 10vh;
+  width: 60vw;
+  height: fit-content;
+  margin-bottom: 2%;
 }
