@@ -200,13 +200,13 @@
       "slide": {
         "position": 4,
         "title": "Runa",
-        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/Slides/Runa.png",
         "text": "Dungeoncrawler Kartenspiel",
         "link": "/Runa"
       },
       "projectPage": {
         "title": "",
-        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "picture": "../../assets/pictures/projects/ProjectPage/Runa.png",
         "summary": {
           "title": "Runa",
           "text": [
@@ -223,6 +223,57 @@
         "progress": 60,
         "additionalPictures": [""],
         "gitLink": "https://github.com/TheXample/Runa"
+      }
+    },
+    {
+      "ProjectID": "HANGMAN",
+      "slide": {
+        "position": 5,
+        "title": "Galgenmännchen",
+        "picture": "../../assets/pictures/projects/Slides/Hangman.png",
+        "text": "Einfaches, Konsolen basiertes Galgenmännchen Spiel",
+        "link": "/Hangman"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/Hangman.png",
+        "summary": {
+          "title": "Galgenmännchen",
+          "text": [
+            "Galgenmännchen ist ein einfaches, besonders in Schulen sehr beliebtes Spiel.",
+            "Ein Spieler denkt sich ein Wort aus, welches der Gegenspieler erraten muss. Der Spieler, welcher das Wort ausgedacht hat, gibt dem Gegenspieler die Anzahl der Buchstaben des Wortes an und der Gegenspieler muss nun Buchstaben raten.",
+            "Falls der ratende Spieler einen Buchstaben richtig errät wird dieser angeschrieben, falls nicht wird ein Teil des Galgenmännchens gezeichnet.",
+            "Das Spiel ist beendet, wenn der ratende Spieler das Wort erraten hat oder das Galgenmännchen vollständig gezeichnet wurde.",
+            "Dieses Spiel wurde im Rahmen eines Java Kurses für Beginner erstellt, an welchem ich ausgeholfen hatte. Ich wollte veranschaulichen, wie man gut lesbaren modularen Code schreibt, welcher leicht erweiterbar ist."
+          ],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [
+          {
+            "feature": "Seed basierter Zufallsgenerator",
+            "syntax": "-",
+            "explanation": "Der Zufallsgenerator wird mit einem Seed initialisiert, welcher die Zufallszahlen bestimmt. Dies ermöglicht es, dass das Spiel immer gleich abläuft, wenn der gleiche Seed verwendet wird."
+          },
+          {
+            "feature": "Sprache Wählbar",
+            "syntax": "-",
+            "explanation": "Das Spiel kann in verschiedenen Sprachen gespielt werden. Die Sprache kann beim Start des Spiels gewählt werden."
+          },
+          {
+            "feature": "Solo und Multiplayer",
+            "syntax": "-",
+            "explanation": "Das Spiel kann sowohl alleine gegen einen 'KI' gegener als, auch zu zweit gespielt werden."
+          },
+          {
+            "feature": "Einfache Erweiterbarkeit",
+            "syntax": "-",
+            "explanation": "Das Spiel ist stark modular aufgebaut und kann sehr einfach erweitert werden. So können beispielsweise neue Sprachen oder neue Wörter, als auch neue Funktionen über vordefinierte Schnittstellen hinzugefügt werden."
+          }
+        ],
+        "additionalFeatures": [],
+        "progress": 100,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Hangman"
       }
     }
   ]
