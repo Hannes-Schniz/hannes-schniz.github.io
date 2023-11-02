@@ -51,7 +51,12 @@
   </button>
 </div>
 <mat-drawer-container>
-  <mat-drawer #drawer mode="side" opened="false" class="drawer"></mat-drawer>
+  <mat-drawer #drawer mode="over" opened="true" class="drawer">
+    <app-links
+      class="links"
+      [slides]="this.importService.getSlideObjects()"
+    ></app-links>
+  </mat-drawer>
   <router-outlet></router-outlet>
-  <app-footer></app-footer>
 </mat-drawer-container>
+<app-footer></app-footer>

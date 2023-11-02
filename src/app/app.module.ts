@@ -18,7 +18,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ContactFormHomeComponent } from './pages/home/contact-form-home/contact-form-home.component';
 import { LsmComponent } from './pages/lsm/lsm.component';
 import {MatTableModule} from '@angular/material/table';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
@@ -42,6 +41,7 @@ import { RoundPictureComponent } from './shared/components/round-picture/round-p
 import { IntroTextComponent } from './shared/components/intro-text/intro-text.component';
 import { RunaComponent } from './pages/runa/runa.component';
 import { HangmanComponent } from './pages/hangman/hangman.component';
+import { LinksComponent } from './shared/components/links/links.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,6 @@ import { HangmanComponent } from './pages/hangman/hangman.component';
     HomeComponent,
     ContactFormHomeComponent,
     LsmComponent,
-    NavbarComponent,
     NextcloudComponent,
     RPIClockComponent,
     ScriptRunnerComponent,
@@ -66,7 +65,8 @@ import { HangmanComponent } from './pages/hangman/hangman.component';
     RoundPictureComponent,
     IntroTextComponent,
     RunaComponent,
-    HangmanComponent
+    HangmanComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,
