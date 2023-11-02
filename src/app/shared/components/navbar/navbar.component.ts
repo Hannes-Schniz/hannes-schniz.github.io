@@ -13,12 +13,15 @@ export class NavbarComponent {
 
   showChips: boolean = false;
 
+  public showDrawer = false;
+
   en = languages.EN;
   de = languages.DE;
   constructor(public scrollService: ScrollService, public importService: ImportService){}
 
   toggle() {
     this.showChips = !this.showChips;
+    this.showDrawer = !this.showDrawer;
   }
 
   languageSwitch(newLanguage: languages) {
