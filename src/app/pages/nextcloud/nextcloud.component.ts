@@ -17,4 +17,8 @@ export class NextcloudComponent {
   getTexts() {
     return this.importService.getProjectPage('Nextcloud')!;
   }
+
+  hidden() {
+    return IsMobileService.hidePanel();
+  }
 }

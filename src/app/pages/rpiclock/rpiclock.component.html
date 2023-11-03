@@ -33,7 +33,7 @@
         </mat-card>
         <mat-card
           class="standardCardColor standardTextColor"
-          *ngIf="!this.screenSize.hidePanel()"
+          *ngIf="!this.hidden()"
         >
           <mat-card-header>
             <mat-card-title>{{
@@ -55,7 +55,7 @@
       </div>
       <mat-card
         class="standardCardColor standardTextColor"
-        *ngIf="this.screenSize.hidePanel()"
+        *ngIf="this.hidden()"
       >
         <mat-card-header>
           <mat-card-title>{{

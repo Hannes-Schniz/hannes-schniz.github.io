@@ -32,6 +32,10 @@ export class ScriptRunnerComponent {
     return this.importService.getProjectPage('Script_Runner')!;
   }
 
+  hidden() {
+    return IsMobileService.hidePanel();
+  }
+
   displayedColumns: string[] = ['feature', 'syntax', 'explanation'];
   dataSource = this.projectPage.coreFeatures;
 }

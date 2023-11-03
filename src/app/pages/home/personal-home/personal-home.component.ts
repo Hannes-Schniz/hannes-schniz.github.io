@@ -14,4 +14,8 @@ export class PersonalHomeComponent {
   openSnackbar() {
     this._snackBar.open('Copied eMail', 'close')
   }
+
+  hidden() {
+    return IsMobileService.hidePanel();
+  }
 }

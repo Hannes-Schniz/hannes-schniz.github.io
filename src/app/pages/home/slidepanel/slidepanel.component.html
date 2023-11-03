@@ -21,15 +21,15 @@
       <h1>
         {{ this.getTexts().title }}
       </h1>
-      <a [href]="this.currSlide.link" class="link" *ngIf="showPanel()"
+      <a [href]="this.currSlide.link" class="link" *ngIf="hidden()"
         ><mat-icon>launch</mat-icon></a
       >
     </div>
-    <div class="text" *ngIf="showPanel()">
+    <div class="text" *ngIf="hidden()">
       <h2>{{ this.getTexts().text }}</h2>
     </div>
   </div>
-  <div class="footer" *ngIf="showPanel()">
+  <div class="footer" *ngIf="hidden()">
     <div class="spacer"></div>
     <div class="slideIndicator">
       <div class="dot" *ngFor="let item of dots; let i = index">
