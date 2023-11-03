@@ -4,17 +4,34 @@
   margin: 10px;
   display: flex;
   flex-direction: column;
+  max-width: inherit;
   a {
     width: 100%;
-    background-color: var(--primary);
+    max-width: inherit;
+    background-color: var(--cardBackground);
+    color: var(--primary);
     margin: 2px 0 2px 0;
+    white-space: nowrap;
+    &:hover {
+      background-color: var(--primary);
+      color: var(--cardBackground);
+    }
+    .buttonText {
+      text-overflow: ellipsis;
+      overflow: hidden !important;
+      max-width: 150px;
+    }
+  }
+  .mdc-button {
+    justify-content: unset !important;
   }
 }
 
 #home {
   background-color: white;
-}
-
-#baby {
-  background-color: #cf0279;
+  color: black;
+  &:hover {
+    background-color: var(--primary);
+    color: var(--cardBackground);
+  }
 }

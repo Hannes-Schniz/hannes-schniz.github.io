@@ -87,7 +87,12 @@ h1 {
 }
 
 .drawer {
-  width: 15vw;
+  width: 20vw;
+  min-width: 200px;
   background-color: var(--cardBackground);
   position: fixed;
+}
+
+.links {
+  width: 100%;
 }
