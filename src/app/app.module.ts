@@ -33,6 +33,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { TableComponent } from './shared/components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     ScriptRunnerComponent,
     AboutMeComponent,
     ImpressumPageComponent,
-    FooterComponent
+    FooterComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
