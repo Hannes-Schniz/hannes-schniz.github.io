@@ -107,7 +107,7 @@
       "ProjectID": "RPICLock",
       "slide": {
         "position": 2,
-        "title": "RPI CLock",
+        "title": "RPI Clock",
         "picture": "../../assets/pictures/projects/Slides/RPI_clock.JPG",
         "text": "A smart clock based on MagicMirror for RPI",
         "link": "/RPI_Clock"
