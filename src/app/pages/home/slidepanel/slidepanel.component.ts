@@ -111,4 +111,8 @@ export class SlidepanelComponent implements OnInit{
   getTexts() {
     return this.slideService.updateSlidesAndReturnCurrent();
   }
+
+  showPanel(){
+    return document.body.clientWidth > 500;
+  }
 }
