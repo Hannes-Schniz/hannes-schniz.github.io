@@ -194,6 +194,36 @@
         "additionalPictures": [""],
         "gitLink": "https://github.com/TheXample/skript_runner"
       }
+    },
+    {
+      "ProjectID": "RUNA",
+      "slide": {
+        "position": 4,
+        "title": "Runa",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
+        "text": "Dungeoncrawler Kartenspiel",
+        "link": "/Runa"
+      },
+      "projectPage": {
+        "title": "",
+        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
+        "summary": {
+          "title": "Runa",
+          "text": [
+            "Dieses Spiel habe ich als Abschlussprojekt des Moduls 'Programmieren 1' an dem Karlsruher Institut für Technologie entwickelt.",
+            "Man spielt den Charakter Runa, welcher sich durch einen Dungeon kämpfen muss. Dabei kann er verschiedene Karten sammeln, welche ihm im Kampf gegen die Monster helfen. Das Spiel ist ein Kartenspiel, welches auf dem Spielprinzip von 'Slay the Spire' basiert.",
+            "Diese Karten können offensive oder passive Fähigkeiten sein und können im Kampf gegen Monster erspielt werden.",
+            "Bei der Entwicklung des Spiels habe ich einen großen Wert auf die Modularität gelegt. So ist es möglich das Spiel um neue Karten, Monster und Fähigkeiten zu erweitern ohne den Code des Spiels zu verändern.",
+            "Das Spiel ist in Java geschrieben und ist ausschließlich über die Konsole spielbar. Kann aber durch eine grafische Oberfläche erweitert werden."
+          ],
+          "tags": ["Software", "Game", "Java", "OOP"]
+        },
+        "coreFeatures": [],
+        "additionalFeatures": [],
+        "progress": 60,
+        "additionalPictures": [""],
+        "gitLink": "https://github.com/TheXample/Runa"
+      }
     }
   ]
 }

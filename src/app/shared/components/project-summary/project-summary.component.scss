@@ -17,3 +17,15 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.gitLink {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gitChip {
+  background-color: var(--primary) !important;
+  margin-left: 10%;
+}
