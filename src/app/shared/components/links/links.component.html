@@ -1,0 +1,8 @@
+<div class="main">
+  <a mat-flat-button [routerLink]="['/home']">Home</a>
+  <div *ngFor="let slide of slides; let i = index">
+    <a mat-flat-button [routerLink]="[slide.link]">{{ slide.title }}</a>
+  </div>
+  <a mat-flat-button [routerLink]="['/LSM']">LSM</a>
+  <a mat-flat-button id="baby" [routerLink]="['/hello world']">Hello World</a>
+</div>

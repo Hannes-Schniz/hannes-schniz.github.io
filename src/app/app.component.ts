@@ -9,7 +9,7 @@ import { ImportService } from './shared/services/import.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent{
 
   en = languages.EN;
   de = languages.DE;
@@ -17,9 +17,6 @@ export class AppComponent implements AfterViewInit{
   constructor(public scrollService: ScrollService, public importService: ImportService){
   }
 
-
-  ngAfterViewInit() {
-  }
   scrollTop() {
     window.scrollTo(0,0);
   }
@@ -31,4 +28,5 @@ export class AppComponent implements AfterViewInit{
   languageSwitch(newLanguage: languages) {
     this.importService.switchLanguage(newLanguage);
   }
+
 }
