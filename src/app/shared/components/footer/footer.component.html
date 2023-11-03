@@ -1,7 +1,7 @@
 <mat-toolbar class="row">
   <div class="flexContainer">
     <a class="darkText" href="Impressum">Impressum</a>
-    <div class="listIcons">
+    <div class="listIcons" *ngIf="this.screenSize.showPanel()">
       <a
         class="logo"
         style="cursor: pointer"
