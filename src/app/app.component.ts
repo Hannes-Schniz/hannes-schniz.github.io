@@ -11,9 +11,6 @@ import { ImportService } from './shared/services/import.service';
 })
 export class AppComponent{
 
-  en = languages.EN;
-  de = languages.DE;
-
   constructor(public scrollService: ScrollService, public importService: ImportService){
   }
 
@@ -25,8 +22,6 @@ export class AppComponent{
     this.scrollService.updateScrollPosition();
   }
 
-  languageSwitch(newLanguage: languages) {
-    this.importService.switchLanguage(newLanguage);
-  }
+
 
 }

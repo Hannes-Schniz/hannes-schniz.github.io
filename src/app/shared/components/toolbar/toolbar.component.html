@@ -1,0 +1,42 @@
+<mat-toolbar class="clear toolbar">
+  <mat-toolbar-row class="row">
+    <div class="buttons">
+      <div class="left">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          (click)="drawer.toggle()"
+          mat-icon-button
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span><h1>portfolio</h1></span>
+      </div>
+      <div class="right">
+        <button
+          mat-icon-button
+          class="languageSwitcher"
+          [matMenuTriggerFor]="menu"
+        >
+          <mat-icon class="languageIcon"
+            ><span class="material-symbols-outlined">
+              g_translate
+            </span></mat-icon
+          >
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="this.languageSwitch(this.en)">
+            <img
+              src="../../../../assets/Symbols/icons8-großbritannien-16.png"
+            />
+            English
+          </button>
+          <button mat-menu-item (click)="this.languageSwitch(this.de)">
+            <img src="../../../../assets/Symbols/icons8-deutschland-16.png" />
+            German
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
