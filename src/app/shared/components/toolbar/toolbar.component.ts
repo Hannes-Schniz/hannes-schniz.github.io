@@ -20,4 +20,5 @@ export class ToolbarComponent {
   languageSwitch(newLanguage: languages) {
     this.importService.switchLanguage(newLanguage);
   }
+
 }
