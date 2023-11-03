@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImportService } from 'src/app/shared/services/import.service';
+import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
 
 @Component({
   selector: 'app-personal-home',
@@ -9,7 +10,7 @@ import { ImportService } from 'src/app/shared/services/import.service';
 })
 export class PersonalHomeComponent {
 
-  constructor(private _snackBar: MatSnackBar, public importService: ImportService){}
+  constructor(private _snackBar: MatSnackBar, public importService: ImportService, public screenSize: IsMobileService){}
   openSnackbar() {
     this._snackBar.open('Copied eMail', 'close')
   }
