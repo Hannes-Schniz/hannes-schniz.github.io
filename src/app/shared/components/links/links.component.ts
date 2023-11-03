@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { slide } from '../../models/slide';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-links',
@@ -9,6 +10,8 @@ import { slide } from '../../models/slide';
 export class LinksComponent {
 
   @Input() slides!: slide[];
+
+  @Input() drawer!: MatDrawer;
 
   constructor() { }
 

@@ -8,6 +8,7 @@
     [routerLink]="[slide.link]"
     [matTooltip]="slide.text"
     matTooltipPosition="right"
+    (click)="drawer.close()"
     ><div class="buttonText">{{ slide.title }}</div></a
   >
 </div>

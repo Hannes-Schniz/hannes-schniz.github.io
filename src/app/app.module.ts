@@ -42,6 +42,7 @@ import { IntroTextComponent } from './shared/components/intro-text/intro-text.co
 import { RunaComponent } from './pages/runa/runa.component';
 import { HangmanComponent } from './pages/hangman/hangman.component';
 import { LinksComponent } from './shared/components/links/links.component';
+import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { LinksComponent } from './shared/components/links/links.component';
     IntroTextComponent,
     RunaComponent,
     HangmanComponent,
-    LinksComponent
+    LinksComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
