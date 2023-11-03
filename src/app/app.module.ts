@@ -92,7 +92,8 @@ import { SearchWindowComponent } from './shared/components/search-window/search-
     ReactiveFormsModule,
     ClipboardModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

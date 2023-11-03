@@ -1,5 +1,10 @@
 <div class="main">
   <div class="row left"></div>
-  <div class="row center"></div>
+  <div class="row center">
+    <div class="searchForm">
+      <input id="name" type="text" [formControl]="searchTerm" />
+      <button type="button" (click)="search()">Search</button>
+    </div>
+  </div>
   <div class="row right"></div>
 </div>
