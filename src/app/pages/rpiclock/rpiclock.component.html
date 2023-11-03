@@ -8,14 +8,11 @@
       <mat-card class="headerCard standardCardColor standardTextColor">
         <mat-card-header>
           <mat-card-title style="font-size: xx-large">
-            {{ this.projectPage.summary.title }}
+            {{ this.getText().summary.title }}
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p
-            class="mat-body"
-            *ngFor="let text of this.projectPage.summary.text"
-          >
+          <p class="mat-body" *ngFor="let text of this.getText().summary.text">
             {{ text }}
           </p>
         </mat-card-content>
@@ -23,7 +20,7 @@
           <div class="left"></div>
           <div class="right">
             <mat-chip-listbox>
-              <mat-chip *ngFor="let tag of projectPage.summary.tags">
+              <mat-chip *ngFor="let tag of this.getText().summary.tags">
                 {{ tag }}
               </mat-chip>
             </mat-chip-listbox>
@@ -32,7 +29,9 @@
       </mat-card>
       <mat-card class="standardCardColor standardTextColor">
         <mat-card-header>
-          <mat-card-title>Progress</mat-card-title>
+          <mat-card-title>{{
+            this.importService.getTexts().progress
+          }}</mat-card-title>
         </mat-card-header>
         <mat-card-content class="spinnerCard">
           <div class="center">

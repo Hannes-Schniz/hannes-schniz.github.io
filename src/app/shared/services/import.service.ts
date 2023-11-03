@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import projectENJson from '../jsons/projects-EN.json';
 import projectDEJson from '../jsons/projects-DE.json';
+import textsENJSON from '../jsons/texts-EN.json';
+import textsDEJSON from '../jsons/texts-DE.json';
+import personalENJSON from '../jsons/personal-EN.json';
+import personalDEJSON from '../jsons/personal-DE.json';
 import { slide } from '../models/slide';
 import { project } from '../models/project';
 import { ProjectFileModel } from '../models/projectFile.model';
@@ -71,7 +75,7 @@ export class ImportService {
     this.store();
     this.selectLanguage();
     if(reload) {
-      window.location.reload();
+      //window.location.reload();
     }
   }
 
@@ -90,6 +94,20 @@ export class ImportService {
       return defaultLanguage;
     }
     return JSON.parse(store);
+  }
+
+  getTexts() {
+    if (this.currentLanguage == languages.DE) {
+      return textsDEJSON;
+    }
+    return textsENJSON;
+  }
+
+  getPersonal() {
+    if (this.currentLanguage == languages.DE) {
+      return personalDEJSON;
+    }
+    return personalENJSON;
   }
 
 }

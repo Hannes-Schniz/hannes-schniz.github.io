@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SlidesService } from '../../../shared/services/slides.service';
 import { slide } from '../../../shared/models/slide';
 import { Subscription, interval } from 'rxjs';
@@ -39,7 +39,7 @@ const right = [
     transition(':decrement', left),
   ]),]
 })
-export class SlidepanelComponent {
+export class SlidepanelComponent implements OnInit{
 
   SLIDEINTERVAL = 7500;
 
@@ -61,6 +61,9 @@ export class SlidepanelComponent {
     this.wait = interval(this.TIMEOUT);
     this.startInterval();
     this.initDots();
+  }
+  ngOnInit(): void {
+    this.currSlide = this.slideService.getInitSlide();
   }
 
   ngOnDestroy() {
@@ -103,5 +106,9 @@ export class SlidepanelComponent {
       return '../../../../assets/Symbols/icons8-round-96.png';
     }
     return '../../../../assets/Symbols/icons8-round-96-disabled.png';
+  }
+
+  getTexts() {
+    return this.slideService.updateSlidesAndReturnCurrent();
   }
 }

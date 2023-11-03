@@ -7,11 +7,11 @@
     <mat-card class="headerCard standardCardColor standardTextColor">
       <mat-card-header>
         <mat-card-title style="font-size: xx-large">
-          {{ this.projectPage.summary.title }}
+          {{ this.getTexts().summary.title }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body" *ngFor="let text of this.projectPage.summary.text">
+        <p class="mat-body" *ngFor="let text of this.getTexts().summary.text">
           {{ text }}
         </p>
       </mat-card-content>
@@ -35,7 +35,9 @@
     <mat-divider horizontal class="dividerHorizontal"></mat-divider>
     <mat-card class="contentCard standardCardColor standardTextColor">
       <mat-card-header>
-        <mat-card-title> Core Features </mat-card-title>
+        <mat-card-title>
+          {{ this.importService.getTexts().CoreFeature }}
+        </mat-card-title>
       </mat-card-header>
       <mat-card-content class="tableContent">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -57,7 +59,9 @@
     <div class="bottom">
       <mat-card class="spinnerCard standardCardColor standardTextColor">
         <mat-card-header>
-          <mat-card-title>Progress</mat-card-title>
+          <mat-card-title>{{
+            this.importService.getTexts().progress
+          }}</mat-card-title>
         </mat-card-header>
         <mat-card-content class="spinnerCardContent">
           <div class="center">
@@ -73,12 +77,14 @@
       </mat-card>
       <mat-card class="contentCardSpinner standardCardColor standardTextColor">
         <mat-card-header>
-          <mat-card-title> Additional Features </mat-card-title>
+          <mat-card-title>
+            {{ this.importService.getTexts().AdditionalFeatures }}
+          </mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <mat-list>
             <mat-list-item
-              *ngFor="let item of this.projectPage.additionalFeatures"
+              *ngFor="let item of this.getTexts().additionalFeatures"
             >
               <span matListItemTitle class="standardTextColor">{{
                 item.title
