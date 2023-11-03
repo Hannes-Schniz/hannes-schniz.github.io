@@ -12,4 +12,8 @@ export class FooterComponent {
   openSnackbar() {
     this._snackBar.open('Copied eMail', 'close')
   }
+
+  showPanel() {
+    return window.location.href.match('.*home')?.length == undefined;
+  }
 }
