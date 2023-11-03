@@ -34,33 +34,16 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content class="tableContent">
-        <app-table project="LSM"></app-table>
+        <app-table [project]="project"></app-table>
       </mat-card-content>
     </mat-card>
 
     <mat-divider horizontal class="dividerHorizontal"></mat-divider>
     <div class="bottom">
-      <mat-card
-        class="contentCard standardCardColor standardTextColor"
-        *ngIf="this.hidden()"
-      >
-        <mat-card-header>
-          <mat-card-title>
-            {{ this.importService.getTexts().progress }}</mat-card-title
-          >
-        </mat-card-header>
-        <mat-card-content class="spinnerCard">
-          <div class="center">
-            <mat-progress-spinner
-              class="example-margin"
-              mode="determinate"
-              [value]="this.projectPage.progress"
-            >
-            </mat-progress-spinner>
-            <h3 class="percent">{{ this.projectPage.progress }}%</h3>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <app-progress-wheel
+        [project]="project"
+        *ngIf="hidden()"
+      ></app-progress-wheel>
       <div class="mobileLayout">
         <mat-card class="contentCard standardCardColor standardTextColor">
           <mat-card-header>

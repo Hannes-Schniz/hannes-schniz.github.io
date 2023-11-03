@@ -34,6 +34,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { TableComponent } from './shared/components/table/table.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { ProgressWheelComponent } from './shared/components/progress-wheel/progress-wheel.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { TableComponent } from './shared/components/table/table.component';
     AboutMeComponent,
     ImpressumPageComponent,
     FooterComponent,
-    TableComponent
+    TableComponent,
+    SpinnerComponent,
+    ProgressWheelComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,7 @@ import { ImportService } from '../../services/import.service';
 })
 export class TableComponent implements AfterViewInit{
 
-  @Input()
-  project!: string;
+  @Input() project!: string;
 
 
   projectPage!: ProjectFileModel;

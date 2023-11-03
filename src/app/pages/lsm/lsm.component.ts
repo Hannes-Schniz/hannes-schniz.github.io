@@ -10,6 +10,9 @@ import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
   styleUrls: ['./lsm.component.scss']
 })
 export class LsmComponent {
+
+  project = 'LSM';
+
   projectPage: ProjectFileModel = this.importService.getProjectPage('LSM')!;
   constructor(public importService: ImportService, public screenSize: IsMobileService){
   }
