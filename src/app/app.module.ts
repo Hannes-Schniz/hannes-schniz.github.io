@@ -14,7 +14,6 @@ import { SlidepanelComponent } from './pages/home/slidepanel/slidepanel.componen
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { HomeComponent } from './pages/home/home.component';
 import {MatMenuModule} from '@angular/material/menu';
-import { PersonalHomeComponent } from './pages/home/personal-home/personal-home.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ContactFormHomeComponent } from './pages/home/contact-form-home/contact-form-home.component';
 import { LsmComponent } from './pages/lsm/lsm.component';
@@ -34,7 +33,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { TableComponent } from './shared/components/table/table.component';
-import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { ProgressWheelComponent } from './shared/components/progress-wheel/progress-wheel.component';
 import { FeatureListComponent } from './shared/components/feature-list/feature-list.component';
 import { ProjectSummaryComponent } from './shared/components/project-summary/project-summary.component';
@@ -48,7 +46,6 @@ import { IntroTextComponent } from './shared/components/intro-text/intro-text.co
     AppComponent,
     SlidepanelComponent,
     HomeComponent,
-    PersonalHomeComponent,
     ContactFormHomeComponent,
     LsmComponent,
     NavbarComponent,
@@ -59,7 +56,6 @@ import { IntroTextComponent } from './shared/components/intro-text/intro-text.co
     ImpressumPageComponent,
     FooterComponent,
     TableComponent,
-    SpinnerComponent,
     ProgressWheelComponent,
     FeatureListComponent,
     ProjectSummaryComponent,
