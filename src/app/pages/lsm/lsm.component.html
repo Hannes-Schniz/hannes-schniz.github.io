@@ -4,28 +4,7 @@
   </div>
   <mat-divider horizontal class="dividerHorizontal"></mat-divider>
   <div class="textContent">
-    <mat-card class="headerCard standardCardColor standardTextColor">
-      <mat-card-header>
-        <mat-card-title style="font-size: xx-large">
-          {{ this.getTexts().summary.title }}
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p class="mat-body" *ngFor="let text of this.getTexts().summary.text">
-          {{ text }}
-        </p>
-      </mat-card-content>
-      <mat-card-footer class="footer">
-        <div class="left"></div>
-        <div class="right">
-          <mat-chip-listbox>
-            <mat-chip *ngFor="let tag of projectPage.summary.tags">
-              {{ tag }}
-            </mat-chip>
-          </mat-chip-listbox>
-        </div>
-      </mat-card-footer>
-    </mat-card>
+    <app-project-summary [project]="project"></app-project-summary>
     <mat-divider horizontal class="dividerHorizontal"></mat-divider>
     <mat-card class="contentCard standardCardColor standardTextColor">
       <mat-card-header>
@@ -45,31 +24,11 @@
         *ngIf="hidden()"
       ></app-progress-wheel>
       <div class="mobileLayout">
-        <app-feature-list
+        <app-feature-list [project]="project"></app-feature-list>
+        <app-progress-wheel
           [project]="project"
-          *ngIf="!this.hidden()"
-        ></app-feature-list>
-        <mat-card
-          class="contentCard standardCardColor standardTextColor"
-          *ngIf="!this.hidden()"
-        >
-          <mat-card-header>
-            <mat-card-title>
-              {{ this.importService.getTexts().progress }}</mat-card-title
-            >
-          </mat-card-header>
-          <mat-card-content class="spinnerCard">
-            <div class="center">
-              <mat-progress-spinner
-                class="example-margin"
-                mode="determinate"
-                [value]="this.projectPage.progress"
-              >
-              </mat-progress-spinner>
-              <h3 class="percent">{{ this.projectPage.progress }}%</h3>
-            </div>
-          </mat-card-content>
-        </mat-card>
+          *ngIf="!hidden()"
+        ></app-progress-wheel>
       </div>
     </div>
   </div>

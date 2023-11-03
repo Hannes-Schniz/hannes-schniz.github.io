@@ -37,6 +37,7 @@ import { TableComponent } from './shared/components/table/table.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { ProgressWheelComponent } from './shared/components/progress-wheel/progress-wheel.component';
 import { FeatureListComponent } from './shared/components/feature-list/feature-list.component';
+import { ProjectSummaryComponent } from './shared/components/project-summary/project-summary.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { FeatureListComponent } from './shared/components/feature-list/feature-l
     TableComponent,
     SpinnerComponent,
     ProgressWheelComponent,
-    FeatureListComponent
+    FeatureListComponent,
+    ProjectSummaryComponent
   ],
   imports: [
     BrowserModule,
