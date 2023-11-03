@@ -1,0 +1,27 @@
+<div class="main">
+  <a
+    mat-flat-button
+    id="home"
+    [routerLink]="['/home']"
+    (click)="drawer.close()"
+  >
+    <mat-icon>home</mat-icon>Home</a
+  >
+  <a
+    mat-flat-button
+    *ngFor="let slide of slides; let i = index"
+    [routerLink]="[slide.link]"
+    [matTooltip]="slide.text"
+    matTooltipPosition="right"
+    (click)="drawer.close()"
+    ><div class="buttonText">{{ slide.title }}</div></a
+  >
+  <a
+    mat-flat-button
+    id="personal"
+    [routerLink]="['/AboutMe']"
+    (click)="drawer.close()"
+  >
+    <mat-icon>person</mat-icon>About Me</a
+  >
+</div>

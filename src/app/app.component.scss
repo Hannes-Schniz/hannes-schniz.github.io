@@ -1,3 +1,4 @@
+@import url(../styles.scss);
 .button {
   z-index: 9999;
   position: fixed;
@@ -6,4 +7,20 @@
   background: rgba(88, 88, 88, 0.466);
   backdrop-filter: blur(1px);
   color: var(--textColor);
+}
+
+.mat-drawer-container {
+  background-color: var(--backgroundColor);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.drawer {
+  width: 20vw;
+  min-width: 200px;
+  background-color: var(--cardBackground);
+  position: fixed;
+}
+
+.links {
+  width: 100%;
 }

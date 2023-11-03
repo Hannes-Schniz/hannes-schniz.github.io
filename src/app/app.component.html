@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-toolbar [drawer]="this.drawer"></app-toolbar>
 <div>
   <button
     mat-fab
@@ -9,5 +9,14 @@
     <mat-icon>arrow_upward</mat-icon>
   </button>
 </div>
-<router-outlet></router-outlet>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over" opened="false" class="drawer">
+    <app-links
+      class="links"
+      [slides]="this.importService.getSlideObjects()"
+      [drawer]="this.drawer"
+    ></app-links>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
 <app-footer></app-footer>
