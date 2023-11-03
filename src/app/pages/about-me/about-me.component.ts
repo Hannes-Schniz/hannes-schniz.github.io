@@ -9,10 +9,7 @@ import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent {
-  constructor(private _snackBar: MatSnackBar, public importService: ImportService, public screenSize: IsMobileService){}
-  openSnackbar() {
-    this._snackBar.open('Copied eMail', 'close')
-  }
+  constructor(public screenSize: IsMobileService){}
 
   hidden() {
     return IsMobileService.hidePanel();
