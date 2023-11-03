@@ -18,7 +18,7 @@ export class ScrollService {
   }
 
   public getCurrentScrollPosition() {
-    return ( 100 / (document.body.clientHeight - window.innerHeight ) * window.scrollY);
+    return ( 100 / window.innerHeight * window.scrollY);
   }
 
   public showScrollTop() {
