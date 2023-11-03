@@ -17,9 +17,7 @@ export class TableComponent implements AfterViewInit{
   constructor(public importService: ImportService){
   }
   ngAfterViewInit(): void {
-    console.log(this.project);
     this.projectPage = this.importService.getProjectPage(this.project)!;
-    console.log(this.projectPage);
     this.dataSource = this.projectPage.coreFeatures;
   }
   getCell(element: coreFeature, header: string) {

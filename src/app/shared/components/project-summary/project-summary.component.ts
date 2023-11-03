@@ -16,9 +16,7 @@ export class ProjectSummaryComponent implements OnInit{
   constructor(public importService: ImportService){
   }
   ngOnInit(): void {
-    console.log(this.project);
     this.projectPage = this.importService.getProjectPage(this.project)!;
-    console.log(this.projectPage);
   }
 
   getTexts() {
