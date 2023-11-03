@@ -18,7 +18,8 @@ mat-card-header {
   padding-left: 2%;
   padding-right: 2%;
   padding-bottom: 1%;
-  max-height: 100vh;
+  max-width: 500px;
+  //max-height: 100vh;
 }
 
 .personal_container {
@@ -26,6 +27,7 @@ mat-card-header {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  min-height: 100vh;
 }
 
 .personalPicture {
@@ -73,7 +75,6 @@ mat-card-header {
   align-items: center;
   justify-content: space-evenly;
   width: 150px;
-  margin-left: 20vw;
 }
 
 .footer {
