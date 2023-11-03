@@ -36,6 +36,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { TableComponent } from './shared/components/table/table.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { ProgressWheelComponent } from './shared/components/progress-wheel/progress-wheel.component';
+import { FeatureListComponent } from './shared/components/feature-list/feature-list.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ProgressWheelComponent } from './shared/components/progress-wheel/progr
     FooterComponent,
     TableComponent,
     SpinnerComponent,
-    ProgressWheelComponent
+    ProgressWheelComponent,
+    FeatureListComponent
   ],
   imports: [
     BrowserModule,
