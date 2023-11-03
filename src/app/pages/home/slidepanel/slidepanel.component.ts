@@ -114,6 +114,6 @@ export class SlidepanelComponent implements OnInit{
   }
 
   showPanel(){
-    return this.screenSize.showPanel();
+    return this.screenSize.hidePanel();
   }
 }
