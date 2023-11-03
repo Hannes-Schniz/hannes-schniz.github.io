@@ -11,7 +11,7 @@ mat-card-header {
 
 .introText {
   width: 30vw;
-  background-color: #2f2d27;
+  background-color: var(--cardBackground);
   box-shadow: inset;
   padding-top: 1%;
   padding-left: 2%;
@@ -29,7 +29,7 @@ mat-card-header {
 
 .personalPicture {
   border-radius: 50%;
-  border-color: #fadd6e;
+  border-color: var(--primary);
   border-width: 3px;
   border-style: solid;
   height: 500px;

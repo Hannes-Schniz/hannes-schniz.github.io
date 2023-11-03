@@ -44,7 +44,7 @@
 }
 
 .mat-mdc-progress-spinner {
-  --mdc-circular-progress-active-indicator-color: #fadd6e !important;
+  --mdc-circular-progress-active-indicator-color: var(--primary) !important;
 }
 
 .spinnerCardContent {
@@ -63,7 +63,7 @@
 }
 
 .mat-mdc-table {
-  background: #2f2d27;
+  background: var(--cardBackground);
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2%;
@@ -75,7 +75,7 @@
 }
 
 .mdc-data-table__header-cell {
-  color: #fadd6e;
+  color: var(--primary);
   border-bottom-color: white;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .gitLink {
-  color: #fadd6e;
+  color: var(--primary);
 }
 
 .gitLinkContainer {

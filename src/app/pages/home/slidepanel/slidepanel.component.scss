@@ -55,7 +55,7 @@
   top: -50vh;
   max-width: fit-content;
   backdrop-filter: blur(0.5px) !important;
-  background-color: #2f2d2731;
+  background-color: var(--cardbackground);
   padding: 1%;
   border-radius: 10%;
 }
@@ -68,18 +68,18 @@
 
 h1 {
   font-size: 75px !important;
-  color: white;
+  color: var(--textColor);
   margin-bottom: 0;
   margin-top: 0;
 }
 
 h2 {
   font-size: 30px !important;
-  color: white;
+  color: var(--textColor);
 }
 
 a {
-  color: white;
+  color: var(--textColor);
   margin-bottom: 5%;
 }
 

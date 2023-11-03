@@ -29,9 +29,9 @@ mat-card-header {
 
 .mat-mdc-outlined-button:not(:disabled) {
   border-color: white;
-  color: white;
+  color: var(--textColor);
 }
 
 .mat-mdc-outlined-button.mat-unthemed {
-  --mdc-outlined-button-label-text-color: white;
+  --mdc-outlined-button-label-text-color: var(--textColor);
 }
