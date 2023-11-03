@@ -9,5 +9,8 @@
     <mat-icon>arrow_upward</mat-icon>
   </button>
 </div>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side" opened="false" class="drawer"></mat-drawer>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</mat-drawer-container>
