@@ -36,3 +36,12 @@
     color: var(--cardBackground);
   }
 }
+
+#personal {
+  background-color: var(--cardBackground);
+  color: var(--primary);
+  &:hover {
+    background-color: var(--primary);
+    color: var(--cardBackground);
+  }
+}

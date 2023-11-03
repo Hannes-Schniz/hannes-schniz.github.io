@@ -16,4 +16,12 @@
     (click)="drawer.close()"
     ><div class="buttonText">{{ slide.title }}</div></a
   >
+  <a
+    mat-flat-button
+    id="personal"
+    [routerLink]="['/AboutMe']"
+    (click)="drawer.close()"
+  >
+    <mat-icon>person</mat-icon>About Me</a
+  >
 </div>
