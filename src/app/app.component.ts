@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, HostListener, Input, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ScrollService } from './shared/services/scroll.service';
+import { languages } from './shared/constants/languages.constants';
+import { ImportService } from './shared/services/import.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +11,14 @@ import { ScrollService } from './shared/services/scroll.service';
 })
 export class AppComponent implements AfterViewInit{
 
-  @ViewChild('sidenav') public sidenav!: MatSidenav;
+  en = languages.EN;
+  de = languages.DE;
 
-  constructor(public scrollService: ScrollService){
+  constructor(public scrollService: ScrollService, public importService: ImportService){
   }
 
 
   ngAfterViewInit() {
-
   }
   scrollTop() {
     window.scrollTo(0,0);
@@ -24,5 +26,9 @@ export class AppComponent implements AfterViewInit{
 
   @HostListener("window:scroll", []) onWindowScroll() {
     this.scrollService.updateScrollPosition();
+  }
+
+  languageSwitch(newLanguage: languages) {
+    this.importService.switchLanguage(newLanguage);
   }
 }

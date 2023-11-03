@@ -20,8 +20,8 @@ export class NavbarComponent {
   constructor(public scrollService: ScrollService, public importService: ImportService){}
 
   toggle() {
-    this.showChips = !this.showChips;
-    this.showDrawer = !this.showDrawer;
+    //this.showChips = !this.showChips;
+    //this.showDrawer = !this.showDrawer;
   }
 
   languageSwitch(newLanguage: languages) {

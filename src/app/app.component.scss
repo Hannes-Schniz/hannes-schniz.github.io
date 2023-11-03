@@ -1,3 +1,4 @@
+@import url(../styles.scss);
 .button {
   z-index: 9999;
   position: fixed;
@@ -6,4 +7,86 @@
   background: rgba(88, 88, 88, 0.466);
   backdrop-filter: blur(1px);
   color: var(--textColor);
+}
+
+.mat-drawer-container {
+  background-color: var(--backgroundColor);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.row {
+  height: 50px;
+  z-index: 1000;
+  backdrop-filter: blur(2px) !important;
+  background-color: var(--headerBackgournd) !important;
+  color: white;
+}
+
+.toolbar {
+  min-height: 50px !important;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  width: 100vw;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1 {
+  font-size: 25px !important;
+}
+
+.progessBar {
+  z-index: 1000;
+}
+
+.mat-mdc-progress-bar {
+  --mdc-linear-progress-active-indicator-color: var(--primary);
+  --mdc-linear-progress-track-color: var(--progressBar);
+}
+
+.bar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  width: 100vw;
+}
+
+.clear {
+  background-color: var(--transparent);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.languageSwitcher {
+  margin-right: 10px;
+  padding: 0%;
+}
+
+.languageIcon {
+  transform: scale(1.5);
+  color: white;
+}
+
+.drawer {
+  width: 20vw;
+  background-color: var(--cardBackground);
 }
