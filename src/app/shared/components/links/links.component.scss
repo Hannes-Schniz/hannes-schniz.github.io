@@ -1,6 +1,4 @@
 .main {
-  height: inherit;
-  width: inherit;
   top: 50px;
   position: relative;
   margin: 10px;
@@ -11,6 +9,10 @@
     background-color: var(--primary);
     margin: 2px 0 2px 0;
   }
+}
+
+#home {
+  background-color: white;
 }
 
 #baby {
