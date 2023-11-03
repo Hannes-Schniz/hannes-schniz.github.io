@@ -29,22 +29,46 @@ export class SearchService {
         finds = this.searchTags(term.substring(1));
         break;
       case "=":
-        finds = this.searchAuthors(term.substring(1));
+        finds = this.searchTerms(term.substring(1));
         break;
       default:
         finds = this.searchTitle(term);
         break;
     }
+    return finds;
   }
 
   private searchTags(term: string): project[] {
     var finds = [];
-    for (const project of this.currentProjects) {
-      for (const tag of project.tags) {
+    for (const project of this.importService.getProjects()) {
+      for (const tag of project.projectPage.summary.tags) {
         if (tag.toLowerCase().includes(term.toLowerCase())) {
           finds.push(project);
           break;
         }
+      }
+    }
+    return finds;
+  }
+
+  private searchTerms(term: string): project[] {
+    var finds = [];
+    for (const project of this.importService.getProjects()) {
+      for (const text of project.projectPage.summary.text) {
+        if (text.toLowerCase().includes(term.toLowerCase())) {
+          finds.push(project);
+          break;
+        }
+      }
+    }
+    return finds;
+  }
+
+  private searchTitle(term: string): project[] {
+    var finds = [];
+    for (const project of this.importService.getProjects()) {
+      if (project.projectPage.summary.title.toLowerCase().includes(term.toLowerCase())) {
+        finds.push(project);
       }
     }
     return finds;
