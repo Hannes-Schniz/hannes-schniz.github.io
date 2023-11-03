@@ -41,6 +41,7 @@ import { ImageComponent } from './shared/components/image/image.component';
 import { RoundPictureComponent } from './shared/components/round-picture/round-picture.component';
 import { IntroTextComponent } from './shared/components/intro-text/intro-text.component';
 import { RunaComponent } from './pages/runa/runa.component';
+import { HangmanComponent } from './pages/hangman/hangman.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { RunaComponent } from './pages/runa/runa.component';
     ImageComponent,
     RoundPictureComponent,
     IntroTextComponent,
-    RunaComponent
+    RunaComponent,
+    HangmanComponent
   ],
   imports: [
     BrowserModule,
