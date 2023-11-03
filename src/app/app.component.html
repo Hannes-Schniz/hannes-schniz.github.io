@@ -1,3 +1,7 @@
+<app-search-window
+  class="search"
+  *ngIf="searchService.showState()"
+></app-search-window>
 <app-toolbar [drawer]="this.drawer"></app-toolbar>
 <div>
   <button

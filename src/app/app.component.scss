@@ -1,6 +1,6 @@
 @import url(../styles.scss);
 .button {
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   bottom: 1vh;
   right: 1vh;
@@ -23,4 +23,9 @@
 
 .links {
   width: 100%;
+}
+
+.search {
+  z-index: 200;
+  position: absolute;
 }
