@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, HostListener, Input, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import {  Component, HostListener} from '@angular/core';
 import { ScrollService } from './shared/services/scroll.service';
-import { languages } from './shared/constants/languages.constants';
 import { ImportService } from './shared/services/import.service';
+import { languages } from './shared/constants/languages.constants';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +21,10 @@ export class AppComponent{
     this.scrollService.updateScrollPosition();
   }
 
+  @HostListener('window:keydown.control.alt.s', ['$event'])
+  bigFont(event: KeyboardEvent) {
+    event.preventDefault();
 
+  }
 
 }
