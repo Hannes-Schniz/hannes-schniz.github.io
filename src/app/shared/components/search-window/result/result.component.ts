@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { project } from 'src/app/shared/models/project';
+import { SearchService } from 'src/app/shared/services/search.service';
 
 @Component({
   selector: 'app-result',
@@ -9,4 +10,6 @@ import { project } from 'src/app/shared/models/project';
 export class ResultComponent {
 
   @Input() result!: project;
+
+  constructor(public searchService: SearchService) {}
 }

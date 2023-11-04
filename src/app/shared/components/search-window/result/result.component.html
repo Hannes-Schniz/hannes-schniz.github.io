@@ -1,9 +1,13 @@
-<mat-card class="mainCard" [routerLink]="[this.result.slide.link]">
+<mat-card
+  class="mainCard"
+  [routerLink]="[this.result.slide.link]"
+  (click)="this.searchService.toggleSearch()"
+>
   <mat-card-header>
     <mat-card-title>{{ this.result.slide.title }}</mat-card-title>
     <mat-card-subtitle>{{ this.result.slide.text }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="this.result.slide.picture" alt="" />
+  <img mat-card-image [src]="this.result.slide.picture" alt="" />
   <mat-card-content>
     <p *ngFor="let paragraph of this.result.projectPage.summary.text">
       {{ paragraph }}
