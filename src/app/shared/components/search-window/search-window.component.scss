@@ -9,9 +9,10 @@
   z-index: 200;
 }
 
-.row {
+.col {
   height: 100vh;
   background-color: var(--transparent);
+  overflow: scroll;
 }
 
 .submitButton {
@@ -48,6 +49,12 @@
   border-radius: 0 !important;
   border-bottom-right-radius: var(--mdc-shape-small, 4px) !important;
   border-top-right-radius: var(--mdc-shape-small, 4px) !important;
+}
+
+.result {
+  width: calc(40vw + 66px);
+  display: block;
+  margin-bottom: 10px;
 }
 
 ::ng-deep {

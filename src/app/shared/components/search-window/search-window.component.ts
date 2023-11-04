@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { FormControl } from '@angular/forms';
+import { project } from '../../models/project';
 
 @Component({
   selector: 'app-search-window',
@@ -11,6 +12,8 @@ export class SearchWindowComponent {
 
   searchTerm = "";
 
+  results: project[] = [];
+
   constructor(public searchService: SearchService) { }
 
   search() {
@@ -18,8 +21,9 @@ export class SearchWindowComponent {
       this.searchService.toggleSearch();
       return;
     }
+    this.results = this.searchService.search(this.searchTerm);
     console.log(this.searchTerm);
-    console.log(this.searchService.search(this.searchTerm!));
+    console.log(this.searchService.search(this.searchTerm));
   }
 
   enterSearch(event: KeyboardEvent) {

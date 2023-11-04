@@ -1,6 +1,6 @@
 <div class="main">
-  <div class="row left"></div>
-  <div class="row center">
+  <div class="col left"></div>
+  <div class="col center">
     <div class="searchForm">
       <mat-form-field class="form-field" (keydown)="this.enterSearch($event)">
         <mat-label>Search Project</mat-label>
@@ -19,6 +19,11 @@
         <mat-icon class="submitIcon">search</mat-icon>
       </button>
     </div>
+    <app-result
+      *ngFor="let result of this.results"
+      [result]="result"
+      class="result"
+    ></app-result>
   </div>
-  <div class="row right"></div>
+  <div class="col right"></div>
 </div>
