@@ -1,7 +1,6 @@
 import {  Component, HostListener} from '@angular/core';
 import { ScrollService } from './shared/services/scroll.service';
 import { ImportService } from './shared/services/import.service';
-import { languages } from './shared/constants/languages.constants';
 import { SearchService } from './shared/services/search.service';
 
 @Component({

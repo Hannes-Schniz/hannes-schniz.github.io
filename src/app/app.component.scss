@@ -31,7 +31,8 @@
 
 .search {
   z-index: 200;
-  position: absolute;
+  position: fixed;
+  height: 100%;
 }
 
 .hidden {
