@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { FormControl } from '@angular/forms';
 import { project } from '../../models/project';
@@ -9,12 +9,18 @@ import { project } from '../../models/project';
   styleUrls: ['./search-window.component.scss']
 })
 export class SearchWindowComponent {
+  static focus() {
+    throw new Error('Method not implemented.');
+  }
 
   searchTerm = "";
 
   results: project[] = [];
 
   constructor(public searchService: SearchService) { }
+  focus() {
+    document.getElementById('search-input')!.focus();
+  }
 
   search() {
     if (this.searchTerm === "") {

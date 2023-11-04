@@ -1,6 +1,5 @@
 .main {
   width: 100vw;
-
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -25,12 +24,12 @@
 .submitIcon {
   font-size: 50px !important;
   flex-direction: row;
-  display: flex;
+  display: flex !important;
   margin: 0 !important;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .form-field {
@@ -55,6 +54,14 @@
   width: calc(40vw + 66px);
   display: block;
   margin-bottom: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 ::ng-deep {

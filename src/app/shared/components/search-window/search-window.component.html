@@ -2,7 +2,11 @@
   <div class="col left"></div>
   <div class="col center">
     <div class="searchForm">
-      <mat-form-field class="form-field" (keydown)="this.enterSearch($event)">
+      <mat-form-field
+        id="search-input"
+        class="form-field"
+        (keydown)="this.enterSearch($event)"
+      >
         <mat-label>Search Project</mat-label>
         <input matInput id="name" type="text" [(ngModel)]="searchTerm" />
         <button
@@ -12,7 +16,7 @@
           aria-label="Clear"
           (click)="searchTerm = ''"
         >
-          <mat-icon>close</mat-icon>
+          <mat-icon class="submitIcon">close</mat-icon>
         </button>
       </mat-form-field>
       <button mat-flat-button class="submitButton" (click)="search()">

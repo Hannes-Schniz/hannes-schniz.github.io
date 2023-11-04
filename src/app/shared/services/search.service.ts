@@ -1,18 +1,26 @@
 import { Injectable } from '@angular/core';
 import { project } from '../models/project';
 import { ImportService } from './import.service';
+import { SearchWindowComponent } from '../components/search-window/search-window.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
 
-  public showSearch = false;
+  public showSearch = "hidden";
 
   constructor(private importService: ImportService) { }
 
   toggleSearch() {
-    this.showSearch = !this.showSearch;
+    document.getElementById("searchWindow")?.classList.remove(this.showSearch);
+    if (this.showSearch === "hidden") {
+      this.showSearch = "visible";
+    }
+    else {
+      this.showSearch = "hidden";
+    }
+    document.getElementById("searchWindow")?.classList.add(this.showSearch);
   }
 
   showState() {
