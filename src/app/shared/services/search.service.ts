@@ -16,6 +16,7 @@ export class SearchService {
     document.getElementById("searchWindow")?.classList.remove(this.showSearch);
     if (this.showSearch === "hidden") {
       this.showSearch = "visible";
+      document.getElementById("searchInput")?.focus();
     }
     else {
       this.showSearch = "hidden";

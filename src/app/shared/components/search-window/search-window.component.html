@@ -2,13 +2,9 @@
   <div class="col left"></div>
   <div class="col center">
     <div class="searchForm">
-      <mat-form-field
-        id="search-input"
-        class="form-field"
-        (keydown)="this.enterSearch($event)"
-      >
+      <mat-form-field class="form-field" (keydown)="this.enterSearch($event)">
         <mat-label>Search Project</mat-label>
-        <input matInput id="name" type="text" [(ngModel)]="searchTerm" />
+        <input matInput id="searchInput" type="text" [(ngModel)]="searchTerm" />
         <button
           matSuffix
           *ngIf="searchTerm"
