@@ -11,10 +11,54 @@
 
 .row {
   height: 100vh;
-  width: 33vw;
   background-color: var(--transparent);
 }
 
-.center {
-  background-color: black;
+.submitButton {
+  padding: 0 !important;
+  height: 66px;
+  width: 66px;
+  background-color: whitesmoke;
+}
+
+.submitIcon {
+  font-size: 50px !important;
+  flex-direction: row;
+  display: flex;
+  margin: 0 !important;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.form-field {
+  font-size: 28px !important;
+  width: 40vw;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.mat-mdc-unelevated-button {
+  border-radius: 0 !important;
+  border-bottom-right-radius: var(--mdc-shape-small, 4px) !important;
+  border-top-right-radius: var(--mdc-shape-small, 4px) !important;
+}
+
+::ng-deep {
+  .mdc-line-ripple {
+    display: none !important;
+  }
+  .mdc-text-field {
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: var(--mdc-shape-small, 4px) !important;
+  }
+  .mat-mdc-floating-label {
+    top: 50% !important;
+  }
 }

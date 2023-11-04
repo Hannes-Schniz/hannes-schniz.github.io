@@ -44,6 +44,7 @@ import { HangmanComponent } from './pages/hangman/hangman.component';
 import { LinksComponent } from './shared/components/links/links.component';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { SearchWindowComponent } from './shared/components/search-window/search-window.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { SearchWindowComponent } from './shared/components/search-window/search-
     ClipboardModule,
     MatSnackBarModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

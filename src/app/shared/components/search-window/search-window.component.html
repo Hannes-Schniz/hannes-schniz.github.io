@@ -2,8 +2,22 @@
   <div class="row left"></div>
   <div class="row center">
     <div class="searchForm">
-      <input id="name" type="text" [formControl]="searchTerm" />
-      <button type="button" (click)="search()">Search</button>
+      <mat-form-field class="form-field" (keydown)="this.enterSearch($event)">
+        <mat-label>Search Project</mat-label>
+        <input matInput id="name" type="text" [(ngModel)]="searchTerm" />
+        <button
+          matSuffix
+          *ngIf="searchTerm"
+          mat-icon-button
+          aria-label="Clear"
+          (click)="searchTerm = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-flat-button class="submitButton" (click)="search()">
+        <mat-icon class="submitIcon">search</mat-icon>
+      </button>
     </div>
   </div>
   <div class="row right"></div>

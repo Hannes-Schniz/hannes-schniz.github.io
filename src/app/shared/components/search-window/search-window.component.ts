@@ -9,13 +9,23 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchWindowComponent {
 
-  searchTerm = new FormControl('');
+  searchTerm = "";
 
   constructor(public searchService: SearchService) { }
 
   search() {
-    console.log(this.searchTerm.value);
-    console.log(this.searchService.search(this.searchTerm.value!));
+    if (this.searchTerm === "") {
+      this.searchService.toggleSearch();
+      return;
+    }
+    console.log(this.searchTerm);
+    console.log(this.searchService.search(this.searchTerm!));
+  }
+
+  enterSearch(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      this.search();
+    }
   }
 
 }
