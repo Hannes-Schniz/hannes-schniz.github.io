@@ -22,9 +22,15 @@ export class AppComponent{
   }
 
   @HostListener('window:keydown.control.alt.s', ['$event'])
-  bigFont(event: KeyboardEvent) {
+  searchShortListener(event: KeyboardEvent) {
     event.preventDefault();
     this.searchService.toggleSearch();
+  }
+
+  @HostListener('window:keydown.esc', ['$event'])
+  escListener(event: KeyboardEvent) {
+    event.preventDefault();
+    this.searchService.disableSearch();
   }
 
 }

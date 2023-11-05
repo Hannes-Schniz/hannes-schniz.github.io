@@ -24,6 +24,12 @@ export class SearchService {
     document.getElementById("searchWindow")?.classList.add(this.showSearch);
   }
 
+  disableSearch() {
+    document.getElementById("searchWindow")?.classList.remove(this.showSearch);
+    this.showSearch = "hidden";
+    document.getElementById("searchWindow")?.classList.add(this.showSearch);
+  }
+
   showState() {
     return this.showSearch;
   }
