@@ -9,7 +9,7 @@ import { SearchService } from 'src/app/shared/services/search.service';
 })
 export class ResultComponent {
 
-  @Input() result!: project;
+  @Input() results!: project[];
 
   constructor(public searchService: SearchService) {}
 }

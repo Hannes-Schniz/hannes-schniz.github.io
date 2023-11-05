@@ -1,4 +1,5 @@
 <mat-card
+  *ngFor="let result of this.results"
   class="mainCard standardTextColor raisedCardColor"
   [routerLink]="[this.result.slide.link]"
   (click)="this.searchService.toggleSearch()"
