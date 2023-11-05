@@ -16,4 +16,27 @@
       {{ paragraph }}
     </p></mat-card-content
   >
+  <mat-card-footer class="footer">
+    <div class="left">
+      <a
+        mat-chip
+        [href]="this.result.projectPage.gitLink"
+        target="_blank"
+        class="gitChip"
+        *ngIf="this.result.projectPage.gitLink != ''"
+      >
+        <div class="gitLink">
+          <mat-icon>link</mat-icon>
+          <div>Git Link</div>
+        </div>
+      </a>
+    </div>
+    <div class="right">
+      <mat-chip-listbox>
+        <mat-chip *ngFor="let tag of this.result.projectPage.summary.tags">
+          {{ tag }}
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+  </mat-card-footer>
 </mat-card>
