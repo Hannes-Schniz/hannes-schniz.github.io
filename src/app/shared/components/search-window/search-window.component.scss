@@ -1,3 +1,4 @@
+@import url(../../../../styles.scss);
 .main {
   width: 100vw;
   display: flex;
@@ -18,7 +19,7 @@
   padding: 0 !important;
   height: 66px;
   width: 66px;
-  background-color: whitesmoke;
+  background-color: var(--primary) !important;
 }
 
 .submitIcon {
@@ -63,8 +64,14 @@
   .mdc-text-field {
     border-top-right-radius: 0 !important;
     border-bottom-left-radius: var(--mdc-shape-small, 4px) !important;
+    background-color: var(--primary) !important;
   }
   .mat-mdc-floating-label {
     top: 50% !important;
+    color: var(--textColor);
+  }
+
+  .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgba(0, 0, 0, 0.6);
   }
 }
