@@ -1,5 +1,11 @@
 <div class="main">
-  <div class="col left"></div>
+  <div class="col left">
+    <app-search-helper
+      [texts]="this.queryText"
+      [header]="this.title"
+      [subHeader]="this.subTitle"
+    ></app-search-helper>
+  </div>
   <div class="col center">
     <div class="searchForm">
       <mat-form-field class="form-field" (keydown)="this.enterSearch($event)">

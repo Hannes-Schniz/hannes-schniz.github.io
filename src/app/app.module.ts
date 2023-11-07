@@ -46,6 +46,7 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { SearchWindowComponent } from './shared/components/search-window/search-window.component';
 import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './shared/components/search-window/result/result.component';
+import { SearchHelperComponent } from './shared/components/search-window/search-helper/search-helper.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { ResultComponent } from './shared/components/search-window/result/result
     LinksComponent,
     ToolbarComponent,
     SearchWindowComponent,
-    ResultComponent
+    ResultComponent,
+    SearchHelperComponent
   ],
   imports: [
     BrowserModule,
