@@ -7,6 +7,11 @@
   z-index: 200;
 }
 
+.helpIcon {
+  color: var(--textColor);
+  padding-left: 1px;
+}
+
 .backdrop {
   background-color: var(--transparent);
   backdrop-filter: blur(3px);
@@ -82,5 +87,9 @@
 
   .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
     color: rgba(0, 0, 0, 0.6);
+  }
+
+  .mat-mdc-form-field {
+    display: unset !important;
   }
 }

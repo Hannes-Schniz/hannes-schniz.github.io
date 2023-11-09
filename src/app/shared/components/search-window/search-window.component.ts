@@ -43,4 +43,8 @@ export class SearchWindowComponent {
     }
   }
 
+  toggleHelp() {
+    document.getElementById('help')!.classList.toggle('hidden');
+  }
+
 }
