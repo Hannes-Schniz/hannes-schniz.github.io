@@ -35,8 +35,6 @@ export class SearchWindowComponent {
       return;
     }
     this.results = this.searchService.search(this.searchTerm);
-    console.log(this.searchTerm);
-    console.log(this.searchService.search(this.searchTerm));
   }
 
   enterSearch(event: KeyboardEvent) {
