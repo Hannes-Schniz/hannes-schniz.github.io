@@ -30,10 +30,7 @@ export class SearchWindowComponent {
   }
 
   search() {
-    if (this.searchTerm === "") {
-      this.searchService.toggleSearch();
-      return;
-    }
+
     this.results = this.searchService.search(this.searchTerm);
   }
 
