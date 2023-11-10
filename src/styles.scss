@@ -13,6 +13,7 @@
   --textColor: white;
   --headerBackgournd: #7e7c7723;
   --progressBar: #7e7c77;
+  --searchBackground: rgba(70, 69, 69, 0.322);
 }
 
 body {
@@ -20,7 +21,6 @@ body {
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  max-height: 99vh;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif, MyFont !important;
   background-color: var(--background);
   overflow-x: hidden;
@@ -94,4 +94,12 @@ mat-chip {
 app-banner {
   height: 35vh;
   display: block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }

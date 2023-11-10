@@ -1,6 +1,6 @@
 .row {
   height: 50px;
-  z-index: 1000;
+  z-index: 100;
   backdrop-filter: blur(3px) !important;
   background-color: var(--headerBackgournd) !important;
   color: white;
@@ -11,7 +11,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 999;
+  z-index: 100;
   width: 100vw;
 }
 
@@ -33,7 +33,7 @@ h1 {
 }
 
 .progessBar {
-  z-index: 1000;
+  z-index: 100;
 }
 
 .mat-mdc-progress-bar {
@@ -69,4 +69,13 @@ h1 {
 .languageIcon {
   transform: scale(1.5);
   color: white;
+}
+
+.helpIcon {
+  font-size: 30px;
+}
+
+.mat-icon {
+  height: auto !important;
+  width: auto !important;
 }

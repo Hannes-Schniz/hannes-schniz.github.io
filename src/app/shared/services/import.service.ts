@@ -34,11 +34,19 @@ export class ImportService {
     return slides;
   }
 
-    getProjects(): project[] {
+  getProjects(): project[] {
     return this.currentProjects;
   }
 
-    getProjectPages(): ProjectFileModel[] {
+  getOtherLanguageProjects(): project[] {
+    if (this.currentLanguage == languages.DE) {
+      return this.allProjectsEN;
+    }
+    return this.allProjectsDE;
+  }
+
+
+  getProjectPages(): ProjectFileModel[] {
     let projectPages: ProjectFileModel[] = [];
     for (const project of this.currentProjects) {
       projectPages.push(project.projectPage);

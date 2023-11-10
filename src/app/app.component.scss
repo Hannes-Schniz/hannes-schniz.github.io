@@ -1,11 +1,11 @@
 @import url(../styles.scss);
 .button {
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   bottom: 1vh;
   right: 1vh;
   background: rgba(88, 88, 88, 0.466);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(1.5px);
   color: var(--textColor);
 }
 
@@ -27,4 +27,10 @@
 
 .links {
   width: 100%;
+}
+
+.search {
+  z-index: 200;
+  position: fixed;
+  height: 100%;
 }

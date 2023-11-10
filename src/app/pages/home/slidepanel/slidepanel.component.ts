@@ -116,4 +116,9 @@ export class SlidepanelComponent implements OnInit{
   hidden() {
     return IsMobileService.hidePanel();
   }
+
+  setSlide(index: number) {
+    this.currSlide = this.slideService.getSlide(index);
+    this.initDots();
+  }
 }

@@ -43,6 +43,10 @@ import { RunaComponent } from './pages/runa/runa.component';
 import { HangmanComponent } from './pages/hangman/hangman.component';
 import { LinksComponent } from './shared/components/links/links.component';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
+import { SearchWindowComponent } from './shared/components/search-window/search-window.component';
+import { FormsModule } from '@angular/forms';
+import { ResultComponent } from './shared/components/search-window/result/result.component';
+import { SearchHelperComponent } from './shared/components/search-window/search-helper/search-helper.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +72,10 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
     RunaComponent,
     HangmanComponent,
     LinksComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SearchWindowComponent,
+    ResultComponent,
+    SearchHelperComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +97,9 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
     ReactiveFormsModule,
     ClipboardModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

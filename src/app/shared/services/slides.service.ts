@@ -48,6 +48,12 @@ export class SlidesService {
     return this.slides;
   }
 
+  public getSlide(index:number) {
+    this.slides = this.importService.getSlideObjects();
+    this.slidePosition = index;
+    return this.slides[index];
+  }
+
   public updateSlidesAndReturnCurrent() {
     this.slides = this.importService.getSlideObjects();
     return this.slides[this.slidePosition];  }

@@ -1,0 +1,98 @@
+@import url(../../../../styles.scss);
+.main {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  z-index: 200;
+}
+
+.helpIcon {
+  color: var(--textColor);
+  padding-left: 1px;
+  color: var(--primary);
+}
+
+.backdrop {
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.col {
+  height: 100vh;
+  background-color: var(--transparent);
+  overflow: scroll;
+}
+
+.submitButton {
+  padding: 0 !important;
+  height: 66px;
+  width: 66px;
+  background-color: var(--primary) !important;
+}
+
+.submitIcon {
+  font-size: 50px !important;
+  flex-direction: row;
+  display: flex !important;
+  margin: 0 !important;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.form-field {
+  font-size: 28px !important;
+  width: 40vw;
+  max-height: 10vh;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  position: fixed;
+  max-height: 10vh;
+  z-index: 10;
+}
+
+.mat-mdc-unelevated-button {
+  border-radius: 0 !important;
+  border-bottom-right-radius: var(--mdc-shape-small, 4px) !important;
+  border-top-right-radius: var(--mdc-shape-small, 4px) !important;
+}
+
+.results {
+  width: calc(40vw + 66px);
+  display: block;
+  position: relative;
+  top: 150px;
+}
+
+::ng-deep {
+  .mdc-line-ripple {
+    display: none !important;
+  }
+  .mdc-text-field {
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: var(--mdc-shape-small, 4px) !important;
+    background-color: var(--primary) !important;
+  }
+  .mat-mdc-floating-label {
+    top: 50% !important;
+    color: var(--textColor);
+  }
+
+  .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .mat-mdc-form-field {
+    display: unset !important;
+  }
+}

@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, HostListener, Input, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import {  Component, HostListener} from '@angular/core';
 import { ScrollService } from './shared/services/scroll.service';
-import { languages } from './shared/constants/languages.constants';
 import { ImportService } from './shared/services/import.service';
+import { SearchService } from './shared/services/search.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ import { ImportService } from './shared/services/import.service';
 })
 export class AppComponent{
 
-  constructor(public scrollService: ScrollService, public importService: ImportService){
+  constructor(public scrollService: ScrollService, public importService: ImportService, public searchService: SearchService){
   }
 
   scrollTop() {
@@ -22,6 +21,16 @@ export class AppComponent{
     this.scrollService.updateScrollPosition();
   }
 
+  @HostListener('window:keydown.control.alt.s', ['$event'])
+  searchShortListener(event: KeyboardEvent) {
+    event.preventDefault();
+    this.searchService.toggleSearch();
+  }
 
+  @HostListener('window:keydown.esc', ['$event'])
+  escListener(event: KeyboardEvent) {
+    event.preventDefault();
+    this.searchService.disableSearch();
+  }
 
 }
