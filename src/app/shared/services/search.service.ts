@@ -117,10 +117,30 @@ export class SearchService {
   }
 
   private searchPercent(term: string): project[] {
-    var finds = [];
-    for (const project of this.importService.getProjects()) {
-      if (project.projectPage.progress.toString() === term) {
-        finds.push(project);
+    var finds: project[] = [];
+    switch (term[0]) {
+      case ">": {
+        for (const project of this.importService.getProjects()) {
+          if (project.projectPage.progress >= parseInt(term.substring(1))) {
+            finds.push(project);
+          }
+        }
+        break;
+      }
+      case "<": {
+        for (const project of this.importService.getProjects()) {
+          if (project.projectPage.progress <= parseInt(term.substring(1))) {
+            finds.push(project);
+          }
+        }
+        break;
+      }
+      default: {
+        for (const project of this.importService.getProjects()) {
+          if (project.projectPage.progress.toString() === term) {
+            finds.push(project);
+          }
+        }
       }
     }
     return finds;
