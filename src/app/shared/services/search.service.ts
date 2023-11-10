@@ -9,6 +9,10 @@ export class SearchService {
 
   public showSearch = "hidden";
 
+  public searchTerm = "";
+
+  public results: project[] = [];
+
   constructor(private importService: ImportService) { }
 
   toggleSearch() {
@@ -33,23 +37,20 @@ export class SearchService {
     return this.showSearch;
   }
 
-  search(term:string): project[] {
-    if (term.length <= 0) {
-      return [];
-    }
+  search() {
     var finds = [];
-    switch (term[0]) {
+    switch (this.searchTerm[0]) {
       case "#":
-        finds = this.searchTags(term.substring(1));
+        finds = this.searchTags(this.searchTerm.substring(1));
         break;
       case "=":
-        finds = this.searchTerms(term.substring(1));
+        finds = this.searchTerms(this.searchTerm.substring(1));
         break;
       default:
-        finds = this.searchTitle(term);
+        finds = this.searchTitle(this.searchTerm);
         break;
     }
-    return finds;
+    this.results = finds;
   }
 
   getTags (): string[] {

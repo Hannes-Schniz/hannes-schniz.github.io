@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ImportService } from '../../services/import.service';
 import { ProjectFileModel } from '../../models/projectFile.model';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-project-summary',
@@ -13,7 +14,7 @@ export class ProjectSummaryComponent implements OnInit{
 
 
   projectPage!: ProjectFileModel;
-  constructor(public importService: ImportService){
+  constructor(public importService: ImportService, public searchService: SearchService){
   }
   ngOnInit(): void {
     this.projectPage = this.importService.getProjectPage(this.project)!;
@@ -21,6 +22,14 @@ export class ProjectSummaryComponent implements OnInit{
 
   getTexts() {
     return this.importService.getProjectPage(this.project)!;
+  }
+
+  perfSearch(tag: string) {
+    this.searchService.toggleSearch();
+    this.searchService.searchTerm = '#' + tag;
+    this.searchService.search();
+
+
   }
 
 }

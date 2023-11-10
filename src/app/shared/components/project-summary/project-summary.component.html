@@ -26,7 +26,10 @@
     </div>
     <div class="right">
       <mat-chip-listbox>
-        <mat-chip *ngFor="let tag of projectPage.summary.tags">
+        <mat-chip
+          *ngFor="let tag of projectPage.summary.tags"
+          (click)="this.perfSearch(tag)"
+        >
           {{ tag }}
         </mat-chip>
       </mat-chip-listbox>

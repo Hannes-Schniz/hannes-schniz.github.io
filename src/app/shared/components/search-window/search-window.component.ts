@@ -12,9 +12,6 @@ export class SearchWindowComponent {
   static focus() {
     throw new Error('Method not implemented.');
   }
-
-  searchTerm = "";
-
   results: project[] = [];
 
   queryText = [TAGQUERY, EXPTAGQUERY, SUMQUERY, EXPSUMQUERY, TITLEQUERY, EXPTITLEQUERY];
@@ -29,8 +26,7 @@ export class SearchWindowComponent {
   }
 
   search() {
-
-    this.results = this.searchService.search(this.searchTerm);
+    this.searchService.search();
   }
 
   enterSearch(event: KeyboardEvent) {
