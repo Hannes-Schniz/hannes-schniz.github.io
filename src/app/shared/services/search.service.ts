@@ -53,6 +53,18 @@ export class SearchService {
     return finds;
   }
 
+  getTags (): string[] {
+    var tags: string[] = [];
+    for (const project of this.importService.getProjects()) {
+      for (const tag of project.projectPage.summary.tags) {
+        if (!tags.includes(tag)) {
+          tags.push(tag);
+        }
+      }
+    }
+    return tags;
+  }
+
   private searchTags(term: string): project[] {
     var finds = [];
     for (const project of this.importService.getProjects()) {
