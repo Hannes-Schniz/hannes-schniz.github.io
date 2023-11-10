@@ -1,6 +1,8 @@
 <mat-card class="searchHints standardTextColor raisedCardColor">
   <mat-card-header>
-    <mat-card-title>{{ header }}</mat-card-title>
+    <mat-card-title
+      ><strong>{{ header }}</strong></mat-card-title
+    >
     <mat-card-subtitle class="subtitle" *ngIf="this.subHeader != ''">{{
       subHeader
     }}</mat-card-subtitle>
@@ -20,4 +22,15 @@
     </p>
     <!-- Add more queries as needed -->
   </mat-card-content>
+</mat-card>
+<mat-card class="searchHints standardTextColor raisedCardColor">
+  <mat-card-header>
+    <mat-card-title> <strong>Tags</strong></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p *ngFor="let tag of tags">
+      #{{ tag }}
+      <!-- Add more queries as needed -->
+    </p></mat-card-content
+  >
 </mat-card>

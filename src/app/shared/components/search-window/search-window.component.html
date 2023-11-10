@@ -32,6 +32,7 @@
         [texts]="this.queryText"
         [header]="this.title"
         [subHeader]="this.subTitle"
+        [tags]="this.searchService.getTags()"
       ></app-search-helper>
     </div>
     <app-result [results]="results" class="results"></app-result>

@@ -13,4 +13,6 @@ export class SearchHelperComponent {
 
   @Input() subHeader!: String;
 
+  @Input() tags!: String[];
+
 }
