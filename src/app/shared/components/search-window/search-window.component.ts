@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchService } from '../../services/search.service';
-import { FormControl } from '@angular/forms';
 import { project } from '../../models/project';
 import { EXPSUMQUERY, EXPTAGQUERY, EXPTITLEQUERY, SUMQUERY, TAGQUERY, TITLEQUERY } from '../../constants/queries.constants';
 

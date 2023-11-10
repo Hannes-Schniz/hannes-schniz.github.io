@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { project } from '../models/project';
 import { ImportService } from './import.service';
-import { SearchWindowComponent } from '../components/search-window/search-window.component';
 
 @Injectable({
   providedIn: 'root'
