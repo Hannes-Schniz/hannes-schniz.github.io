@@ -28,8 +28,6 @@ export class ProjectSummaryComponent implements OnInit{
     this.searchService.toggleSearch();
     this.searchService.searchTerm = '#' + tag;
     this.searchService.search();
-
-
   }
 
 }
