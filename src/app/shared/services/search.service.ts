@@ -9,18 +9,26 @@ export class SearchService {
 
   public showSearch = "hidden";
 
+  public searchTerm = "";
+
+  public results: project[] = [];
+
   constructor(private importService: ImportService) { }
 
   toggleSearch() {
-    document.getElementById("searchWindow")?.classList.remove(this.showSearch);
     if (this.showSearch === "hidden") {
-      this.showSearch = "visible";
-      document.getElementById("searchInput")?.focus();
+      this.displaySearch();
     }
     else {
-      this.showSearch = "hidden";
+      this.disableSearch();
     }
-    document.getElementById("searchWindow")?.classList.add(this.showSearch);
+  }
+
+  displaySearch() {
+      document.getElementById("searchWindow")?.classList.remove(this.showSearch);
+      this.showSearch = "visible";
+      document.getElementById("searchWindow")?.classList.add(this.showSearch);
+      document.getElementById("searchInput")?.focus();
   }
 
   disableSearch() {
@@ -29,27 +37,35 @@ export class SearchService {
     document.getElementById("searchWindow")?.classList.add(this.showSearch);
   }
 
+  tagSearch(tag: string) {
+    if(this.showSearch === "hidden") {
+      this.displaySearch();
+    }
+    this.searchTerm = '#' + tag;
+    this.search();
+    document.getElementById("colCenter")!.scrollTop = 0;
+  }
+
   showState() {
     return this.showSearch;
   }
 
-  search(term:string): project[] {
-    if (term.length <= 0) {
-      return [];
-    }
+  search() {
     var finds = [];
-    switch (term[0]) {
+    switch (this.searchTerm[0]) {
       case "#":
-        finds = this.searchTags(term.substring(1));
+        finds = this.searchTags(this.searchTerm.substring(1));
         break;
       case "=":
-        finds = this.searchTerms(term.substring(1));
+        finds = this.searchTerms(this.searchTerm.substring(1));
+        break;
+      case "%":
+        finds = this.searchPercent(this.searchTerm.substring(1));
         break;
       default:
-        finds = this.searchTitle(term);
-        break;
+        finds = this.searchTitle(this.searchTerm);
     }
-    return finds;
+    this.results = finds;
   }
 
   getTags (): string[] {
@@ -95,6 +111,36 @@ export class SearchService {
     for (const project of this.importService.getProjects()) {
       if (project.projectPage.summary.title.toLowerCase().includes(term.toLowerCase())) {
         finds.push(project);
+      }
+    }
+    return finds;
+  }
+
+  private searchPercent(term: string): project[] {
+    var finds: project[] = [];
+    switch (term[0]) {
+      case ">": {
+        for (const project of this.importService.getProjects()) {
+          if (project.projectPage.progress >= parseInt(term.substring(1))) {
+            finds.push(project);
+          }
+        }
+        break;
+      }
+      case "<": {
+        for (const project of this.importService.getProjects()) {
+          if (project.projectPage.progress <= parseInt(term.substring(1))) {
+            finds.push(project);
+          }
+        }
+        break;
+      }
+      default: {
+        for (const project of this.importService.getProjects()) {
+          if (project.projectPage.progress.toString() === term) {
+            finds.push(project);
+          }
+        }
       }
     }
     return finds;

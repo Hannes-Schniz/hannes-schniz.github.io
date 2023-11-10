@@ -127,7 +127,7 @@
             "Dieses Projekt war ein kleines Bastler Projekt, welches ich stetig weiter entwickle. Ich wollte eine Anzeige, auf welcher ich nicht nur die Zeit sondern auch einige Informationen wie anstehende Termine einsehen kann. Nach etwas Recherche bin ich auf die MagicMirror anwendung gestoßen und das Projket war geboren.",
             "Zu dieser Zeit hatte ich günstig einen RaspberryPi 2b gekauft und musste lediglich ein kleines Display und einen Wifi Stick anschaffen um das Projekt in die Tat umzusetzen. Seither steht die Uhr auf meinem Schreibtisch und ist täglich in Nutzung."
           ],
-          "tags": ["RaspberyPi", "Hardware"]
+          "tags": ["RaspberryPi", "Hardware"]
         },
         "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
         "additionalFeatures": [{ "title": "", "text": "" }],

@@ -118,7 +118,7 @@
         "summary": {
           "title": "RaspberryPi Smart Clock",
           "text": ["tba"],
-          "tags": ["RaspberyPi", "Hardware"]
+          "tags": ["RaspberryPi", "Hardware"]
         },
         "coreFeatures": [{ "feature": "", "syntax": "", "explanation": "" }],
         "additionalFeatures": [{ "title": "", "text": "" }],

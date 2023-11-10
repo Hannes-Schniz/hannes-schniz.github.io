@@ -1,17 +1,23 @@
 <mat-card
   *ngFor="let result of this.results"
   class="mainCard standardTextColor raisedCardColor"
-  [routerLink]="[this.result.slide.link]"
-  (click)="this.searchService.toggleSearch()"
 >
-  <mat-card-header>
+  <mat-card-header
+    (click)="this.searchService.toggleSearch()"
+    [routerLink]="[this.result.slide.link]"
+  >
     <mat-card-title>{{ this.result.projectPage.summary.title }}</mat-card-title>
     <mat-card-subtitle class="standardTextColor">{{
       this.result.slide.text
     }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="this.result.slide.picture" alt="" />
-  <mat-card-content>
+  <img
+    mat-card-image
+    [src]="this.result.slide.picture"
+    [routerLink]="[this.result.slide.link]"
+    alt=""
+  />
+  <mat-card-content (click)="this.searchService.toggleSearch()">
     <p *ngFor="let paragraph of this.result.projectPage.summary.text">
       {{ paragraph }}
     </p></mat-card-content
@@ -33,7 +39,10 @@
     </div>
     <div class="right">
       <mat-chip-listbox>
-        <mat-chip *ngFor="let tag of this.result.projectPage.summary.tags">
+        <mat-chip
+          *ngFor="let tag of this.result.projectPage.summary.tags"
+          (click)="this.searchService.tagSearch(tag)"
+        >
           {{ tag }}
         </mat-chip>
       </mat-chip-listbox>
