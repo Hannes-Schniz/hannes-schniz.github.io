@@ -137,7 +137,7 @@ export class SearchService {
       }
       default: {
         for (const project of this.importService.getProjects()) {
-          if (project.projectPage.progress.toString() === term) {
+          if (project.projectPage.progress == parseInt(term.substring(1))) {
             finds.push(project);
           }
         }
