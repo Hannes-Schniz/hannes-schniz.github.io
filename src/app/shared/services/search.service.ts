@@ -16,21 +16,34 @@ export class SearchService {
   constructor(private importService: ImportService) { }
 
   toggleSearch() {
-    document.getElementById("searchWindow")?.classList.remove(this.showSearch);
     if (this.showSearch === "hidden") {
-      this.showSearch = "visible";
-      document.getElementById("searchInput")?.focus();
+      this.displaySearch();
     }
     else {
-      this.showSearch = "hidden";
+      this.disableSearch();
     }
-    document.getElementById("searchWindow")?.classList.add(this.showSearch);
+  }
+
+  displaySearch() {
+      document.getElementById("searchWindow")?.classList.remove(this.showSearch);
+      this.showSearch = "visible";
+      document.getElementById("searchWindow")?.classList.add(this.showSearch);
+      document.getElementById("searchInput")?.focus();
   }
 
   disableSearch() {
     document.getElementById("searchWindow")?.classList.remove(this.showSearch);
     this.showSearch = "hidden";
     document.getElementById("searchWindow")?.classList.add(this.showSearch);
+  }
+
+  tagSearch(tag: string) {
+    if(this.showSearch === "hidden") {
+      this.displaySearch();
+    }
+    this.searchTerm = '#' + tag;
+    this.search();
+    document.getElementById("colCenter")!.scrollTop = 0;
   }
 
   showState() {

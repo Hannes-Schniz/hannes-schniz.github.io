@@ -24,10 +24,4 @@ export class ProjectSummaryComponent implements OnInit{
     return this.importService.getProjectPage(this.project)!;
   }
 
-  perfSearch(tag: string) {
-    this.searchService.toggleSearch();
-    this.searchService.searchTerm = '#' + tag;
-    this.searchService.search();
-  }
-
 }

@@ -1,7 +1,7 @@
 <div class="backdrop" (click)="this.searchService.toggleSearch()"></div>
 <div class="main">
   <div class="col left"></div>
-  <div class="col center">
+  <div class="col center" id="colCenter">
     <div class="searchForm">
       <mat-form-field class="form-field" (keydown)="this.enterSearch($event)">
         <mat-label class="label">Search Project</mat-label>

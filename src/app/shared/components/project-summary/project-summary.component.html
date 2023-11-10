@@ -28,7 +28,7 @@
       <mat-chip-listbox>
         <mat-chip
           *ngFor="let tag of projectPage.summary.tags"
-          (click)="this.perfSearch(tag)"
+          (click)="this.searchService.tagSearch(tag)"
         >
           {{ tag }}
         </mat-chip>
