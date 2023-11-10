@@ -33,7 +33,11 @@
     <div class="spacer"></div>
     <div class="slideIndicator">
       <div class="dot" *ngFor="let item of dots; let i = index">
-        <img [src]="this.getDot(!item)" />
+        <img
+          [src]="this.getDot(!item)"
+          (click)="this.setSlide(i)"
+          style="cursor: pointer"
+        />
       </div>
     </div>
     <div class="progressSpinner"></div>
