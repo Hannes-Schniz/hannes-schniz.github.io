@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { project } from '../../models/project';
-import { EXPSUMQUERY, EXPTAGQUERY, EXPTITLEQUERY, SUMQUERY, TAGQUERY, TITLEQUERY } from '../../constants/queries.constants';
+import { EXPFINISHSTATEQUERY, EXPSUMQUERY, EXPTAGQUERY, EXPTITLEQUERY, FINISHSTATEQUERY, SUMQUERY, TAGQUERY, TITLEQUERY } from '../../constants/queries.constants';
 
 @Component({
   selector: 'app-search-window',
@@ -14,7 +14,7 @@ export class SearchWindowComponent {
   }
   results: project[] = [];
 
-  queryText = [TAGQUERY, EXPTAGQUERY, SUMQUERY, EXPSUMQUERY, TITLEQUERY, EXPTITLEQUERY];
+  queryText = [TAGQUERY, EXPTAGQUERY, SUMQUERY, EXPSUMQUERY,FINISHSTATEQUERY, EXPFINISHSTATEQUERY, TITLEQUERY, EXPTITLEQUERY ];
 
   title = "Search Queries";
 

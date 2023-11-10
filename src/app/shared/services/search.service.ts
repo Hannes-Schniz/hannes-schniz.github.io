@@ -59,6 +59,9 @@ export class SearchService {
       case "=":
         finds = this.searchTerms(this.searchTerm.substring(1));
         break;
+      case "%":
+        finds = this.searchPercent(this.searchTerm.substring(1));
+        break;
       default:
         finds = this.searchTitle(this.searchTerm);
     }
@@ -107,6 +110,16 @@ export class SearchService {
     var finds = [];
     for (const project of this.importService.getProjects()) {
       if (project.projectPage.summary.title.toLowerCase().includes(term.toLowerCase())) {
+        finds.push(project);
+      }
+    }
+    return finds;
+  }
+
+  private searchPercent(term: string): project[] {
+    var finds = [];
+    for (const project of this.importService.getProjects()) {
+      if (project.projectPage.progress.toString() === term) {
         finds.push(project);
       }
     }
