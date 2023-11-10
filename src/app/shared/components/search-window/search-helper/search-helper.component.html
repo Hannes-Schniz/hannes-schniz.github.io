@@ -1,48 +1,50 @@
-<mat-card class="searchHints standardTextColor raisedCardColor">
-  <mat-card-header>
-    <mat-card-title
-      ><strong>{{ header }}</strong></mat-card-title
-    >
-    <mat-card-subtitle class="subtitle" *ngIf="this.subHeader != ''">{{
-      subHeader
-    }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      <strong>{{ texts[0] }}</strong
-      >{{ texts[1] }}
-    </p>
-    <p>
-      <strong>{{ texts[2] }}</strong
-      >{{ texts[3] }}
-    </p>
-    <p>
-      <strong>{{ texts[4] }}</strong
-      >{{ texts[5] }}
-    </p>
-    <p>
-      <strong>{{ texts[6] }}</strong
-      >{{ texts[7] }}
-    </p>
-    <p>
-      <strong>{{ texts[8] }}</strong
-      >{{ texts[9] }}
-    </p>
-    <p>
-      <strong>{{ texts[10] }}</strong
-      >{{ texts[11] }}
-    </p>
-    <!-- Add more queries as needed -->
-  </mat-card-content>
-</mat-card>
-<mat-card class="searchHints standardTextColor raisedCardColor">
-  <mat-card-header>
-    <mat-card-title> <strong>Tags</strong></mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p *ngFor="let tag of tags">
-      #{{ tag }}
+<div class="main">
+  <mat-card class="searchHints standardTextColor raisedCardColor">
+    <mat-card-header>
+      <mat-card-title
+        ><strong>{{ header }}</strong></mat-card-title
+      >
+      <mat-card-subtitle class="subtitle" *ngIf="this.subHeader != ''">{{
+        subHeader
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <strong>{{ texts[0] }}</strong
+        >{{ texts[1] }}
+      </p>
+      <p>
+        <strong>{{ texts[2] }}</strong
+        >{{ texts[3] }}
+      </p>
+      <p>
+        <strong>{{ texts[4] }}</strong
+        >{{ texts[5] }}
+      </p>
+      <p>
+        <strong>{{ texts[6] }}</strong
+        >{{ texts[7] }}
+      </p>
+      <p>
+        <strong>{{ texts[8] }}</strong
+        >{{ texts[9] }}
+      </p>
+      <p>
+        <strong>{{ texts[10] }}</strong
+        >{{ texts[11] }}
+      </p>
       <!-- Add more queries as needed -->
-    </p></mat-card-content
-  >
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="searchHints standardTextColor raisedCardColor">
+    <mat-card-header>
+      <mat-card-title> <strong>Tags</strong></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngFor="let tag of tags">
+        #{{ tag }}
+        <!-- Add more queries as needed -->
+      </p></mat-card-content
+    >
+  </mat-card>
+</div>

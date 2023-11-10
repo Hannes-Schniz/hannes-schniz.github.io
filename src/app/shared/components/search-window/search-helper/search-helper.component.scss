@@ -1,6 +1,12 @@
 .searchHints {
   background-color: var(--cardBackground);
   margin-bottom: 5px;
+  width: 20vw;
+}
+
+.main {
+  overflow: scroll;
+  max-height: 100vh;
 }
 
 .subtitle {
