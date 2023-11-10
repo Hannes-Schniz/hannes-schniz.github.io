@@ -48,7 +48,6 @@ export class SearchService {
         break;
       default:
         finds = this.searchTitle(this.searchTerm);
-        break;
     }
     this.results = finds;
   }
