@@ -74,6 +74,11 @@
   top: 150px;
 }
 
+#help {
+  overflow: scroll;
+  height: calc(100vh - 50px);
+}
+
 ::ng-deep {
   .mdc-line-ripple {
     display: none !important;
