@@ -24,7 +24,7 @@
 .col {
   height: 100vh;
   background-color: var(--transparent);
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .submitButton {
@@ -43,6 +43,10 @@
   align-items: center;
   height: 100% !important;
   width: 100% !important;
+}
+
+.center {
+  overflow: scroll;
 }
 
 .form-field {
