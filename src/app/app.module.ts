@@ -47,6 +47,7 @@ import { SearchWindowComponent } from './shared/components/search-window/search-
 import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './shared/components/search-window/result/result.component';
 import { SearchHelperComponent } from './shared/components/search-window/search-helper/search-helper.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { SearchHelperComponent } from './shared/components/search-window/search-
     MatSnackBarModule,
     MatTooltipModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
