@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ImportService } from '../../services/import.service';
 import { languages } from '../../constants/languages.constants';
 import { MatDrawer } from '@angular/material/sidenav';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -15,7 +16,7 @@ export class ToolbarComponent {
   en = languages.EN;
   de = languages.DE;
 
-  constructor(public importService: ImportService) { }
+  constructor(public importService: ImportService, public searchService: SearchService) { }
 
   languageSwitch(newLanguage: languages) {
     this.importService.switchLanguage(newLanguage);

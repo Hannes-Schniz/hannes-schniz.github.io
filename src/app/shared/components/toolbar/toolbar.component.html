@@ -37,9 +37,10 @@
           </button>
         </mat-menu>
         <mat-icon
-          class="helpIcon"
+          class="searchIcon"
           matTooltip="To search for projects press Strg + Alt + S"
-          >help</mat-icon
+          (click)="this.searchService.toggleSearch()"
+          >search</mat-icon
         >
       </div>
     </div>
