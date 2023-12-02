@@ -13,6 +13,8 @@ export class SearchService {
 
   public results: project[] = [];
 
+  public queries = ["#", "=", "'", "%", "%>", "%<", "%="];
+
   constructor(private importService: ImportService) { }
 
   toggleSearch() {
@@ -145,4 +147,13 @@ export class SearchService {
     }
     return finds;
   }
+
+  getTitles(): string[] {
+    var titles: string[] = [];
+    for (const project of this.importService.getProjects()) {
+      titles.push(project.projectPage.summary.title);
+    }
+    return titles;
+  }
+
 }

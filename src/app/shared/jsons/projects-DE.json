@@ -192,7 +192,7 @@
         ],
         "progress": 100,
         "additionalPictures": [""],
-        "gitLink": "https://github.com/TheXample/skript_runner"
+        "gitLink": "https://github.com/hannes-schniz/skript_runner"
       }
     },
     {
@@ -222,7 +222,7 @@
         "additionalFeatures": [],
         "progress": 60,
         "additionalPictures": [""],
-        "gitLink": "https://github.com/TheXample/Runa"
+        "gitLink": "https://github.com/hannes-schniz/Runa"
       }
     },
     {
@@ -273,7 +273,7 @@
         "additionalFeatures": [],
         "progress": 100,
         "additionalPictures": [""],
-        "gitLink": "https://github.com/TheXample/Hangman"
+        "gitLink": "https://github.com/hannes-schniz/Hangman"
       }
     }
   ]
