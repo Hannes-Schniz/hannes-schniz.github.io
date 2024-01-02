@@ -10,7 +10,7 @@
 }
 
 .mat-drawer-container {
-  background-color: var(--backgroundColor);
+  background-color: var(--background);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -21,7 +21,8 @@
 .drawer {
   width: 20vw;
   min-width: 200px;
-  background-color: var(--cardBackground);
+  background-color: var(--background);
+  backdrop-filter: blur(2px) !important;
   position: fixed;
 }
 
