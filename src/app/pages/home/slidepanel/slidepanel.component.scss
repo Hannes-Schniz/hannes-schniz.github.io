@@ -53,12 +53,16 @@
   position: relative;
   left: 10%;
   top: -50vh;
-  max-width: 100vw;
+  width: fit-content;
+  //max-width: 40vw;
   //width: fit-content;
-  backdrop-filter: blur(0.5px) !important;
-  background-color: var(--cardbackground);
+  backdrop-filter: blur(2px) !important;
+  background-color: var(--slideCardBackground);
   padding: 1%;
-  border-radius: 10%;
+  border-radius: 20px;
+  border: 5px;
+  border-style: solid;
+  border-color: var(--primary);
 }
 
 .header {
@@ -69,7 +73,7 @@
 
 h1 {
   font-size: 75px !important;
-  color: var(--textColor);
+  color: var(--secondary);
   margin-bottom: 0;
   margin-top: 0;
   max-width: 80vw;
@@ -94,4 +98,5 @@ a {
 
 .link {
   margin-bottom: 1%;
+  color: var(--secondary);
 }
