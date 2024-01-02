@@ -6,8 +6,9 @@
 .spinnerCard {
   margin-top: 10%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .percent {
@@ -17,4 +18,12 @@
 .contentCard {
   margin: 5%;
   padding: 0.5%;
+  width: fit-content;
+  height: fit-content;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
