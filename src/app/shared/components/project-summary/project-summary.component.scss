@@ -6,9 +6,16 @@
 }
 
 .headerCard {
-  width: 80vw;
+  width: fit-content;
+  max-width: 60vw;
   margin: 1%;
+  margin-left: 0;
   padding: 1%;
+}
+
+.title {
+  font-size: xx-large;
+  color: var(--secondary) !important;
 }
 
 .footer {

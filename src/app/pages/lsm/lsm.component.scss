@@ -4,13 +4,27 @@
   position: relative;
 }
 
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+.centerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .contentCard {
   margin: 5%;
   padding: 0.5%;
 }
 
 .headerCard {
-  width: 80vw;
+  width: inherit;
   margin: 1%;
   padding: 1%;
 }
@@ -33,8 +47,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 90vw;
-  padding-left: 10vw;
+  width: inherit;
 }
 
 .tableContent {

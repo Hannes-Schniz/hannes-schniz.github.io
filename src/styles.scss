@@ -36,12 +36,17 @@ body {
 
 .standardCardColor {
   background-color: var(--transparent);
-  box-shadow: none;
+  border-radius: 30px;
+  border: 5px;
+  border-color: var(--primary);
+  border-style: solid;
 }
 
 .raisedCardColor {
   background-color: var(--cardBackground);
-  box-shadow: inset;
+  border-radius: 30px;
+  border: 5px;
+  border-color: var(--primary);
 }
 
 .standardTextColor {
