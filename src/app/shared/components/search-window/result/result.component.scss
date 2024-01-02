@@ -3,6 +3,24 @@
   max-width: 100%;
   cursor: pointer;
   margin-bottom: 10px;
+  border: 5px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: var(--primary);
+  background-color: var(--slideCardBackground);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  color: var(--secondary);
+}
+
+.text {
+  color: var(--textColor);
+}
+
+::ng-deep .mat-mdc-chip-action-label {
+  color: var(--textColor) !important;
 }
 
 .footer {
