@@ -1,24 +1,35 @@
 <div class="mainContainer">
-  <app-banner [project]="project"></app-banner>
+  <div>
+    <app-banner [project]="project"></app-banner>
+  </div>
   <mat-divider horizontal class="dividerHorizontal"></mat-divider>
-  <div class="textContent">
-    <app-project-summary [project]="project"></app-project-summary>
-    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
-    <app-table [project]="project"></app-table>
+  <div class="centerContent">
+    <div></div>
+    <div class="textContent">
+      <div>
+        <div class="textAndProgress">
+          <app-project-summary [project]="project"></app-project-summary>
 
-    <mat-divider horizontal class="dividerHorizontal"></mat-divider>
-    <div class="bottom">
-      <app-progress-wheel
-        [project]="project"
-        *ngIf="hidden()"
-      ></app-progress-wheel>
-      <div class="mobileLayout">
+          <app-progress-wheel
+            class="wheelSize"
+            [project]="project"
+            *ngIf="hidden()"
+          ></app-progress-wheel>
+        </div>
+        <div class="mobileLayout">
+          <app-progress-wheel
+            class="wheelSize"
+            [project]="project"
+            *ngIf="!hidden()"
+          ></app-progress-wheel>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <app-table [project]="project"></app-table>
         <app-feature-list [project]="project"></app-feature-list>
-        <app-progress-wheel
-          [project]="project"
-          *ngIf="!hidden()"
-        ></app-progress-wheel>
       </div>
     </div>
+    <div></div>
   </div>
 </div>

@@ -8,13 +8,16 @@
   a {
     width: 100%;
     max-width: inherit;
+    height: 3vh;
+    min-height: 40px;
     background-color: var(--cardBackground);
     color: var(--primary);
-    margin: 2px 0 2px 0;
+    margin: 6px 0 6px 0;
     white-space: nowrap;
     &:hover {
-      background-color: var(--primary);
-      color: var(--cardBackground);
+      background-color: var(--secondary);
+      color: var(--textColor);
+      border-color: var(--secondary);
     }
     .buttonText {
       text-overflow: ellipsis;
@@ -29,11 +32,12 @@
 }
 
 #home {
-  background-color: white;
+  background-color: var(--primary);
   color: black;
   &:hover {
-    background-color: var(--primary);
-    color: var(--cardBackground);
+    background-color: var(--secondary);
+    color: var(--textColor);
+    border-color: var(--secondary);
   }
 }
 
@@ -41,7 +45,8 @@
   background-color: var(--cardBackground);
   color: var(--primary);
   &:hover {
-    background-color: var(--primary);
-    color: var(--cardBackground);
+    background-color: var(--secondary);
+    color: var(--textColor);
+    border-color: var(--secondary);
   }
 }

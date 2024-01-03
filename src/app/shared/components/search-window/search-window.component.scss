@@ -10,7 +10,7 @@
 .helpIcon {
   color: var(--textColor);
   padding-left: 1px;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .backdrop {
@@ -46,7 +46,9 @@
 }
 
 .center {
-  overflow: scroll;
+  overflow-y: auto !important;
+  scrollbar-width: none !important;
+  overflow-x: hidden !important;
 }
 
 .form-field {
@@ -103,5 +105,9 @@
 
   .mat-mdc-form-field {
     display: unset !important;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    height: 66px !important;
   }
 }

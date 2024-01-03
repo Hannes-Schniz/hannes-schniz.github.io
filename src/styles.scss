@@ -6,14 +6,16 @@
 }
 
 :root {
-  --primary: #fadd6e;
-  --background: #201f1a;
-  --cardBackground: #2f2d27;
+  --primary: #00a37b;
+  --secondary: #de6535;
+  --background: #16182b;
+  --cardBackground: #2f2d2700;
   --transparent: #ffffff00;
   --textColor: white;
   --headerBackgournd: #7e7c7723;
   --progressBar: #7e7c77;
-  --searchBackground: rgba(70, 69, 69, 0.322);
+  --searchBackground: rgba(70, 69, 69, 0.408);
+  --slideCardBackground: #1e1e1e3f;
 }
 
 body {
@@ -34,12 +36,17 @@ body {
 
 .standardCardColor {
   background-color: var(--transparent);
-  box-shadow: none;
+  border-radius: 30px;
+  border: 5px;
+  border-color: var(--primary);
+  border-style: solid;
 }
 
 .raisedCardColor {
   background-color: var(--cardBackground);
-  box-shadow: inset;
+  border-radius: 30px;
+  border: 5px;
+  border-color: var(--primary);
 }
 
 .standardTextColor {
@@ -81,10 +88,6 @@ mat-chip {
 
 .mat-mdc-list-base {
   --mdc-list-list-item-hover-label-text-color: inherit;
-}
-
-.darkText {
-  color: var(--cardBackground);
 }
 
 .yellowColor {

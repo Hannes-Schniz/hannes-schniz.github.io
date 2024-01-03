@@ -27,3 +27,12 @@
 .tableContent {
   margin-top: 1%;
 }
+
+::ng-deep .mat-elevation-z8 {
+  box-shadow: 0 0 0 0 var(--transparent) !important;
+}
+
+.title {
+  font-size: xx-large;
+  color: var(--secondary) !important;
+}

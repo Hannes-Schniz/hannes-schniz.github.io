@@ -1,10 +1,11 @@
 <mat-card class="contentCard standardCardColor standardTextColor">
   <mat-card-header>
-    <mat-card-title>
+    <mat-card-title class="title">
       {{ this.importService.getTexts().progress }}</mat-card-title
     >
   </mat-card-header>
   <mat-card-content class="spinnerCard">
+    <div class="left"></div>
     <div class="center">
       <mat-progress-spinner
         class="example-margin"
@@ -14,5 +15,6 @@
       </mat-progress-spinner>
       <h3 class="percent">{{ this.projectPage.progress }}%</h3>
     </div>
+    <div class="right"></div>
   </mat-card-content>
 </mat-card>

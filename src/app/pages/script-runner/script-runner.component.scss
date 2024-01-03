@@ -4,13 +4,28 @@
   position: relative;
 }
 
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+.centerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
 .contentCard {
   margin: 5%;
   padding: 0.5%;
 }
 
 .headerCard {
-  width: 80vw;
+  width: inherit;
   margin: 1%;
   padding: 1%;
 }
@@ -31,10 +46,9 @@
 .bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 90vw;
-  padding-left: 10vw;
+  width: inherit;
 }
 
 .tableContent {
@@ -46,7 +60,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70vw;
 }
 
 .gitLink {
@@ -56,4 +69,14 @@
 .gitLinkContainer {
   display: flex;
   align-items: center;
+}
+
+.textAndProgress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 80vw;
 }

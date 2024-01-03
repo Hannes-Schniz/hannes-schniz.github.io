@@ -16,6 +16,13 @@
   padding: 1%;
 }
 
+.centerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .footer {
   margin-top: 1%;
   display: flex;
@@ -53,11 +60,13 @@
 .textAndProgress {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+
+  width: fit-content;
+  max-width: 80vw;
 }
 
-.wheelSize {
+.test {
   width: fit-content;
-  height: fit-content;
 }
