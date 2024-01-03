@@ -6,20 +6,25 @@
   <div class="centerContent">
     <div></div>
     <div class="textContent">
-      <app-project-summary [project]="project"></app-project-summary>
+      <div class="textAndProgress">
+        <app-project-summary [project]="project"></app-project-summary>
 
-      <div class="bottom">
-        <app-table [project]="project"></app-table>
         <app-progress-wheel
+          class="wheelSize"
           [project]="project"
           *ngIf="hidden()"
         ></app-progress-wheel>
-        <div class="mobileLayout">
-          <app-progress-wheel
-            [project]="project"
-            *ngIf="!hidden()"
-          ></app-progress-wheel>
-        </div>
+      </div>
+      <div class="mobileLayout">
+        <app-progress-wheel
+          class="wheelSize"
+          [project]="project"
+          *ngIf="!hidden()"
+        ></app-progress-wheel>
+      </div>
+
+      <div class="bottom">
+        <app-table [project]="project"></app-table>
       </div>
     </div>
     <div></div>

@@ -17,6 +17,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 .contentCard {
   margin: 5%;
@@ -45,7 +46,7 @@
 .bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: inherit;
 }
@@ -59,7 +60,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70vw;
 }
 
 .gitLink {
@@ -69,4 +69,14 @@
 .gitLinkContainer {
   display: flex;
   align-items: center;
+}
+
+.textAndProgress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 80vw;
 }

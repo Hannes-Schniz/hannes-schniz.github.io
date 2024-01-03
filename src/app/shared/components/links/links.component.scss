@@ -6,17 +6,13 @@
   flex-direction: column;
   max-width: inherit;
   a {
-    border: 3px;
-    border-color: var(--primary);
-    border-style: solid;
-    border-radius: 10px;
     width: 100%;
     max-width: inherit;
     height: 3vh;
     min-height: 40px;
     background-color: var(--cardBackground);
     color: var(--primary);
-    margin: 4px 0 4px 0;
+    margin: 6px 0 6px 0;
     white-space: nowrap;
     &:hover {
       background-color: var(--secondary);
