@@ -1,18 +1,36 @@
-<div class="personal_container">
-  <div class="leftSide">
-    <app-round-picture
-      src="../../../../assets/pictures/personal/Hannes_Schniz.jpg"
-      class="personalPicture"
-      *ngIf="this.hidden()"
-    ></app-round-picture>
+<div class="main">
+  <div class="left">
+    <div class="border">
+      <div class="corners">
+        <div class="top">
+          <div class="box topleft"></div>
+          <div class="box topright"></div>
+        </div>
+
+        <div class="bottom">
+          <div class="box bottomleft"></div>
+          <div class="box bottomright"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <div class="blocker" *ngIf="!this.hidden()"></div>
-    <app-round-picture
-      src="../../../../assets/pictures/personal/Hannes_Schniz.jpg"
-      class="mobilePicture"
-      *ngIf="!this.hidden()"
-    ></app-round-picture>
-    <app-intro-text></app-intro-text>
+  <div class="right">
+    <div class="border">
+      <div class="corners">
+        <div class="top">
+          <div class="box topleft"></div>
+          <div class="box topright"></div>
+        </div>
+        <div class="bottom">
+          <div class="box bottomleft"></div>
+          <div class="box bottomright"></div>
+        </div>
+      </div>
+      <img
+        class="image"
+        src="../../../assets/pictures/personal/Hannes_Schniz.jpg"
+        alt="About Me"
+      />
+    </div>
   </div>
 </div>
