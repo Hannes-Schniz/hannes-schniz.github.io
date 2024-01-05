@@ -1,0 +1,41 @@
+<div class="flexHome">
+  <div class="topBox">
+    <div class="leftEnd">
+      <div class="tux">
+        <img
+          class="tuxImage"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Tux_Mono.svg/1200px-Tux_Mono.svg.png"
+          alt=""
+        />
+      </div>
+      <div class="breadcrumb">
+        <div class="breadcrumbText">
+          <a class="link" routerLink="/home" routerLinkActive="active"
+            ><span class="span">~/home</span></a
+          >
+          <a
+            class="link"
+            [routerLink]="this.routerLink"
+            routerLinkActive="active"
+            *ngIf="this.routerLink != null"
+            ><span class="span"> /{{ this.linkName }} </span></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="rightEnd">
+      <div class="tick">
+        <mat-icon class="tickIcon" fontIcon="check"></mat-icon>
+      </div>
+      <div class="time">
+        <p class="timeText">23:23:23</p>
+        <mat-icon class="timeIcon" fontIcon="schedule"></mat-icon>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="middleConnector"></div>
+  </div>
+  <div class="bottomBox">
+    <ng-content></ng-content>
+  </div>
+</div>

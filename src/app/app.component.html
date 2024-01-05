@@ -1,23 +1,2 @@
 <app-search-window class="search hidden" id="searchWindow"></app-search-window>
-<app-toolbar [drawer]="this.drawer"></app-toolbar>
-<div>
-  <button
-    mat-fab
-    class="button"
-    *ngIf="this.scrollService.showScrollTop()"
-    (click)="this.scrollTop()"
-  >
-    <mat-icon>arrow_upward</mat-icon>
-  </button>
-</div>
-<mat-drawer-container>
-  <mat-drawer #drawer mode="over" opened="false" class="drawer">
-    <app-links
-      class="links"
-      [slides]="this.importService.getSlideObjects()"
-      [drawer]="this.drawer"
-    ></app-links>
-  </mat-drawer>
-  <router-outlet></router-outlet>
-</mat-drawer-container>
-<app-footer></app-footer>
+<router-outlet></router-outlet>

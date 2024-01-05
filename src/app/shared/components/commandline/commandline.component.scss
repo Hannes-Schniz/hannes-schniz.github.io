@@ -1,0 +1,147 @@
+.flexHome {
+  --connectorColor: grey;
+  --separatorColor: rgb(186, 186, 186);
+  --leftWidth: 300px;
+  --rightWidth: 160px;
+  --boxHeight: 30px;
+  --width: 800px;
+  --tuxSize: calc(var(--boxHeight) * 0.8);
+  --tuxWidth: calc(var(--boxHeight) + (var(--boxHeight) * 0.5));
+  --tickWidth: calc(var(--boxHeight) + (var(--boxHeight) * 0.2));
+  --breadCrumbWidth: calc(var(--leftWidth) - var(--tuxWidth));
+  --contentBackground: rgba(57, 57, 57, 0.357);
+  --connectorWidth: 3px;
+  --blur: 5px;
+}
+
+.topBox {
+  width: var(--width);
+  height: var(--boxHeight);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  scale: 1;
+}
+
+.leftEnd {
+  width: var(--leftWidth);
+  height: inherit;
+  background-color: var(--contentBackground);
+  display: flex;
+  flex-direction: row;
+  backdrop-filter: blur(var(--blur));
+
+  .tux {
+    width: var(--tuxWidth);
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 2px solid var(--separatorColor);
+    .tuxImage {
+      width: var(--tuxSize);
+      height: var(--tuxSize);
+      object-fit: contain;
+      top: calc((var(--boxHeight) - var(--tuxSize)) / 2);
+      left: calc((var(--boxHeight) - var(--tuxSize)) / 2);
+      position: fixed;
+    }
+  }
+
+  .breadcrumb {
+    width: var(--breadCrumbWidth);
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-left: 10px;
+    .breadcrumbText {
+      display: flex;
+      justify-content: center;
+
+      .link {
+        font-size: 1.3em;
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+.link {
+  text-decoration: unset !important;
+  color: var(--secondary);
+  .span {
+    display: inline-block;
+    vertical-align: super;
+    line-height: var(--boxHeight);
+  }
+}
+
+.rightEnd {
+  width: var(--rightWidth);
+  height: inherit;
+  background-color: var(--contentBackground);
+  display: flex;
+  flex-direction: row;
+  backdrop-filter: blur(var(--blur));
+
+  .tick {
+    width: var(--tickWidth);
+    border-right: 2px solid var(--separatorColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .tickIcon {
+      font-size: 1.5em;
+      color: var(--primary);
+      margin: 0 0 0 0 !important;
+    }
+  }
+
+  .time {
+    width: calc(var(--rightWidth) - var(--tickWidth));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .timeIcon {
+      font-size: 1.3em;
+      color: var(--primary);
+      margin: 0 0 0 0 !important;
+      align-self: center;
+    }
+
+    .timeText {
+      font-size: 1.3em;
+      color: var(--primary);
+      margin: 0 0 0 0 !important;
+    }
+  }
+}
+
+.connector {
+  width: 3%;
+  height: inherit;
+  position: absolute;
+  top: calc(50% - var(--connectorWidth) / 2);
+  left: calc(-3% - var(--connectorWidth));
+  border-left: var(--connectorWidth) solid var(--connectorColor);
+  border-top: var(--connectorWidth) solid var(--connectorColor);
+  border-bottom: var(--connectorWidth) solid var(--connectorColor);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.middleConnector {
+  width: calc(100% - var(--leftWidth) - var(--rightWidth));
+  height: inherit;
+  position: absolute;
+  top: calc(50% - var(--connectorWidth) / 2);
+  left: var(--leftWidth);
+  border-top: var(--connectorWidth) dotted var(--connectorColor);
+}
+
+.bottomBox {
+  width: var(--width);
+}

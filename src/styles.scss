@@ -20,6 +20,7 @@
 
 body {
   max-width: 100vw;
+  height: 100vh;
   margin: 0 !important;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif, MyFont !important;
   background-color: var(--background);
@@ -103,4 +104,31 @@ app-banner {
 
 .visible {
   visibility: visible;
+}
+
+.line {
+  width: calc(100% - 5px);
+  margin: 3px 0 3px 5px !important;
+  font-size: 1.3em;
+  color: var(--textColor);
+  text-decoration: unset !important;
+  text-wrap: wrap;
+  .link {
+    text-decoration: unset !important;
+    color: var(--secondary);
+    .span {
+      display: inline-block;
+      vertical-align: super;
+      line-height: var(--boxHeight);
+      text-wrap: wrap;
+    }
+  }
+}
+
+.command {
+  margin-bottom: 10px !important;
+}
+
+.elevated {
+  color: var(--secondary) !important;
 }

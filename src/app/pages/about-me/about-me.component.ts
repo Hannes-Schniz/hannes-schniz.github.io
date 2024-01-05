@@ -9,7 +9,10 @@ import { IsMobileService } from 'src/app/shared/services/is-mobile.service';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent {
-  constructor(public screenSize: IsMobileService){}
+
+  link = ["/AboutMe", "AboutMe"]
+
+  constructor(public importService:ImportService){}
 
   hidden() {
     return IsMobileService.hidePanel();

@@ -48,6 +48,8 @@ import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './shared/components/search-window/result/result.component';
 import { SearchHelperComponent } from './shared/components/search-window/search-helper/search-helper.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { CommandlineComponent } from './shared/components/commandline/commandline.component';
+import { TextboxComponent } from './shared/components/textbox/textbox.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ToolbarComponent,
     SearchWindowComponent,
     ResultComponent,
-    SearchHelperComponent
+    SearchHelperComponent,
+    CommandlineComponent,
+    TextboxComponent
   ],
   imports: [
     BrowserModule,

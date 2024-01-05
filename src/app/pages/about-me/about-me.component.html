@@ -1,36 +1,43 @@
 <div class="main">
   <div class="left">
-    <div class="border">
-      <div class="corners">
-        <div class="top">
-          <div class="box topleft"></div>
-          <div class="box topright"></div>
-        </div>
-
-        <div class="bottom">
-          <div class="box bottomleft"></div>
-          <div class="box bottomright"></div>
-        </div>
-      </div>
-    </div>
+    <app-commandline
+      class="commandline"
+      routerLink="/AboutMe"
+      linkName="AboutMe"
+    >
+      <p class="line command">show Hannes_Schniz.png</p>
+      <app-textbox class="textbox"></app-textbox>
+    </app-commandline>
   </div>
   <div class="right">
-    <div class="border">
-      <div class="corners">
-        <div class="top">
-          <div class="box topleft"></div>
-          <div class="box topright"></div>
-        </div>
-        <div class="bottom">
-          <div class="box bottomleft"></div>
-          <div class="box bottomright"></div>
-        </div>
-      </div>
-      <img
-        class="image"
-        src="../../../assets/pictures/personal/Hannes_Schniz.jpg"
-        alt="About Me"
-      />
-    </div>
+    <app-commandline
+      class="commandline"
+      routerLink="/AboutMe"
+      linkName="AboutMe"
+    >
+      <p class="line command">cat Hannes_Schniz_introduction.txt</p>
+      <p class="line">
+        {{ importService.getPersonal().texts[0] }}
+      </p>
+      <p class="line">
+        {{ importService.getPersonal().texts[1] }}
+      </p>
+    </app-commandline>
+    <app-commandline
+      class="commandline"
+      routerLink="/AboutMe"
+      linkName="AboutMe"
+    >
+      <p class="line command">cat Hannes_Schniz_skills.txt</p>
+      <p class="line elevated">- OOP</p>
+      <p class="line elevated">- Java</p>
+      <p class="line elevated">- Javascript</p>
+      <p class="line elevated">- Python</p>
+      <p class="line elevated">- C#</p>
+      <p class="line elevated">- C</p>
+      <p class="line elevated">- SQL</p>
+      <p class="line elevated">- Linux Distros</p>
+      <p class="line elevated">- Microcontroller</p>
+    </app-commandline>
   </div>
 </div>
