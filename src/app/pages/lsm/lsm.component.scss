@@ -1,11 +1,32 @@
 @import "../../../styles.scss";
 
 .main {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "core-features banner banner"
+    "core-features summary summary"
+    "core-features additional-features progress";
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.core-features {
+  grid-area: core-features;
+}
+.banner {
+  grid-area: banner;
+}
+.summary {
+  grid-area: summary;
+}
+.additional-features {
+  grid-area: additional-features;
+}
+.progress {
+  grid-area: progress;
 }
 
 .textbox {
@@ -14,28 +35,9 @@
   //display: block;
 }
 
-.left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 50%;
-  height: 100%;
-  padding-top: 10%;
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 50%;
-  height: 100%;
-  padding-top: 10%;
-}
-
 .commandline {
   margin-bottom: 1%;
+  scale: calc(100% * 0.9);
 }
 
 .wheel {

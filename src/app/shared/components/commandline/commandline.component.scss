@@ -1,10 +1,10 @@
 .flexHome {
+  width: inherit;
   --connectorColor: grey;
   --separatorColor: rgb(186, 186, 186);
-  --leftWidth: 300px;
-  --rightWidth: 160px;
+  --leftWidth: calc(100% / 3);
+  --rightWidth: calc(100% / 8);
   --boxHeight: 30px;
-  --width: 800px;
   --tuxSize: calc(var(--boxHeight) * 0.8);
   --tuxWidth: calc(var(--boxHeight) + (var(--boxHeight) * 0.5));
   --tickWidth: calc(var(--boxHeight) + (var(--boxHeight) * 0.2));
@@ -15,12 +15,13 @@
 }
 
 .topBox {
-  width: var(--width);
+  width: 100%;
   height: var(--boxHeight);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   scale: 1;
+  min-width: fit-content;
 }
 
 .leftEnd {
@@ -30,6 +31,7 @@
   display: flex;
   flex-direction: row;
   backdrop-filter: blur(var(--blur));
+  min-width: fit-content;
 
   .tux {
     width: var(--tuxWidth);
@@ -85,6 +87,8 @@
   display: flex;
   flex-direction: row;
   backdrop-filter: blur(var(--blur));
+  justify-content: space-between;
+  min-width: fit-content;
 
   .tick {
     width: var(--tickWidth);
@@ -134,11 +138,11 @@
 }
 
 .middleConnector {
-  width: calc(100% - var(--leftWidth) - var(--rightWidth));
+  width: 46%;
   height: inherit;
   position: absolute;
   top: calc(50% - var(--connectorWidth) / 2);
-  left: var(--leftWidth);
+  left: 33%;
   border-top: var(--connectorWidth) dotted var(--connectorColor);
 }
 

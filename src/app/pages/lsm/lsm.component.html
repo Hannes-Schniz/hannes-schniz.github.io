@@ -1,26 +1,31 @@
 <div class="main">
-  <div class="left">
-    <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
-      <p class="line command">cat lsm_core_features.txt</p>
-      <app-corefeatures
-        class="corefeatures"
+  <app-commandline
+    class="commandline core-features"
+    routerLink="/LSM"
+    linkName="LSM"
+  >
+    <p class="line command">cat lsm_core_features.txt</p>
+    <app-corefeatures
+      class="corefeatures"
+      [project]="project"
+    ></app-corefeatures>
+  </app-commandline>
+  <app-commandline
+    class="commandline progress"
+    routerLink="/LSM"
+    linkName="LSM"
+  >
+    <p class="line command">show progress.pi</p>
+    <app-textbox class="textbox"
+      ><app-progress-wheel
+        class="wheel"
         [project]="project"
-      ></app-corefeatures>
-    </app-commandline>
-    <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
-      <p class="line command">show progress.pi</p>
-      <app-textbox class="textbox"
-        ><app-progress-wheel
-          class="wheel"
-          [project]="project"
-        ></app-progress-wheel
-      ></app-textbox>
-    </app-commandline>
-  </div>
-  <div class="right">
-    <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
-      <p class="line command">show LSM_CODE.png</p>
-      <app-image class="image" [project]="project"></app-image>
-    </app-commandline>
-  </div>
+      ></app-progress-wheel
+    ></app-textbox>
+  </app-commandline>
+
+  <app-commandline class="commandline banner" routerLink="/LSM" linkName="LSM">
+    <p class="line command">show LSM_CODE.png</p>
+    <app-image class="image" [project]="project"></app-image>
+  </app-commandline>
 </div>
