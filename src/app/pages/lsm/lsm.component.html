@@ -1,35 +1,19 @@
-<div class="mainContainer">
-  <div>
-    <app-banner [project]="project"></app-banner>
+<div class="main">
+  <div class="left">
+    <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
+      <p class="line command">show progress.pi</p>
+      <app-textbox class="textbox"
+        ><app-progress-wheel
+          class="wheel"
+          [project]="project"
+        ></app-progress-wheel
+      ></app-textbox>
+    </app-commandline>
   </div>
-  <mat-divider horizontal class="dividerHorizontal"></mat-divider>
-  <div class="centerContent">
-    <div></div>
-    <div class="textContent">
-      <div>
-        <div class="textAndProgress">
-          <app-project-summary [project]="project"></app-project-summary>
-
-          <app-progress-wheel
-            class="wheelSize"
-            [project]="project"
-            *ngIf="hidden()"
-          ></app-progress-wheel>
-        </div>
-        <div class="mobileLayout">
-          <app-progress-wheel
-            class="wheelSize"
-            [project]="project"
-            *ngIf="!hidden()"
-          ></app-progress-wheel>
-        </div>
-      </div>
-
-      <div class="bottom">
-        <app-table [project]="project"></app-table>
-        <app-feature-list [project]="project"></app-feature-list>
-      </div>
-    </div>
-    <div></div>
+  <div class="right">
+    <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
+      <p class="line command">show LSM_CODE.png</p>
+      <app-image class="image" [project]="project"></app-image>
+    </app-commandline>
   </div>
 </div>

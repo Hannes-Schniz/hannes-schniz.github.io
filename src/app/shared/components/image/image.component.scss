@@ -1,12 +1,14 @@
-.additionImage {
-  width: 75vw;
-  height: 75vw;
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
   object-fit: cover;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-color: var(--primary);
-  border-width: 5px;
-  border-style: solid;
-  box-shadow: inset;
-  border-radius: 30px;
+}
+
+.textbox {
+  height: inherit;
+  width: inherit;
+  display: block;
 }

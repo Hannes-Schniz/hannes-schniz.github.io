@@ -37,3 +37,12 @@
 .commandline {
   margin-bottom: 1%;
 }
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}

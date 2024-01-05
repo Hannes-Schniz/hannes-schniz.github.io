@@ -3,25 +3,13 @@
   --mdc-circular-progress-active-indicator-color: var(--primary) !important;
 }
 
-.spinnerCard {
-  margin-top: 10%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
 .percent {
   text-align: center;
+  color: var(--textColor);
 }
 
-.contentCard {
-  margin: 5%;
-  padding: 0.5%;
-  width: fit-content;
-  height: fit-content;
-}
 .center {
+  width: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;

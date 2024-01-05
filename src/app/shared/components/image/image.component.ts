@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProjectFileModel } from '../../models/projectFile.model';
 import { ImportService } from '../../services/import.service';
 
