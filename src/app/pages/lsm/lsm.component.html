@@ -1,6 +1,13 @@
 <div class="main">
   <div class="left">
     <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
+      <p class="line command">cat lsm_core_features.txt</p>
+      <app-corefeatures
+        class="corefeatures"
+        [project]="project"
+      ></app-corefeatures>
+    </app-commandline>
+    <app-commandline class="commandline" routerLink="/LSM" linkName="LSM">
       <p class="line command">show progress.pi</p>
       <app-textbox class="textbox"
         ><app-progress-wheel

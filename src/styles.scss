@@ -113,6 +113,7 @@ app-banner {
   color: var(--textColor);
   text-decoration: unset !important;
   text-wrap: wrap;
+  white-space: break-spaces;
   .link {
     text-decoration: unset !important;
     color: var(--secondary);

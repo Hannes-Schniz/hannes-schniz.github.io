@@ -1,0 +1,19 @@
+<div class="main">
+  <app-textbox>
+    <h1 class="line elevated center">Core Features</h1>
+    <div *ngFor="let feature of this.projectPage.coreFeatures" class="feature">
+      <p class="line descriptor">
+        <span class="elevated">Feature: </span>
+        {{ feature.feature }}
+      </p>
+      <p class="line tab">
+        <span class="elevated">Syntax: </span>
+        {{ feature.syntax }}
+      </p>
+      <p class="line tab">
+        <span class="elevated">Explanation: </span>
+        {{ feature.explanation }}
+      </p>
+    </div>
+  </app-textbox>
+</div>

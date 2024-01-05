@@ -50,6 +50,7 @@ import { SearchHelperComponent } from './shared/components/search-window/search-
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { CommandlineComponent } from './shared/components/commandline/commandline.component';
 import { TextboxComponent } from './shared/components/textbox/textbox.component';
+import { CorefeaturesComponent } from './shared/components/corefeatures/corefeatures.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { TextboxComponent } from './shared/components/textbox/textbox.component'
     ResultComponent,
     SearchHelperComponent,
     CommandlineComponent,
-    TextboxComponent
+    TextboxComponent,
+    CorefeaturesComponent
   ],
   imports: [
     BrowserModule,
