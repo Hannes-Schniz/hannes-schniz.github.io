@@ -16,19 +16,16 @@
     </div>
   </div>
 
-  <div class="textBlock">
-    <div class="header">
-      <h1>
-        {{ this.getTexts().title }}
-      </h1>
-      <a [href]="this.currSlide.link" class="link" *ngIf="hidden()"
-        ><mat-icon>launch</mat-icon></a
-      >
-    </div>
-    <div class="text" *ngIf="hidden()">
-      <h2>{{ this.getTexts().text }}</h2>
+  <div class="align-horizontal">
+    <div class="textBlock">
+      <div class="header">
+        <h1>
+          {{ this.getTexts().title }}
+        </h1>
+      </div>
     </div>
   </div>
+
   <div class="footer" *ngIf="hidden()">
     <div class="spacer"></div>
     <div class="slideIndicator">

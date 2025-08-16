@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SlidesService } from '../../../shared/services/slides.service';
-import { slide } from '../../../shared/models/slide';
+import { SlidesService } from '../../services/slides.service';
+import { slide } from '../../models/slide';
 import { Subscription, interval } from 'rxjs';
 import { trigger, transition, style, animate, group, query } from '@angular/animations';
 import { IsMobileService } from 'src/app/shared/services/is-mobile.service';

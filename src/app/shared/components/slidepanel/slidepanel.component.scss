@@ -48,11 +48,22 @@
   transform: scale(0.75);
 }
 
+.align-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 20vh;
+}
+
 .textBlock {
   z-index: 1;
   position: relative;
-  left: 10%;
-  top: -50vh;
+  display: flex;
+  //left: 50%;
+  //top: 20vh;
   width: fit-content;
   //max-width: 40vw;
   //width: fit-content;
