@@ -41,3 +41,180 @@
   position: fixed;
   height: 100%;
 }
+
+.intro {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 110vh;
+  background-color: white;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition: all 0.15s ease-out;
+  z-index: 100;
+
+  // CSS variables for tilt effect
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+  --scale: 1;
+
+  transform: perspective(1000px) rotateX(var(--rotateX)) rotateY(var(--rotateY))
+    scale(var(--scale));
+
+  &:hover {
+    --scale: 1.05;
+  }
+}
+
+.imageWrapper {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+// Default layout for smaller screens (single column)
+.main {
+  height: 750vh;
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(10);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  object-fit: fill;
+}
+
+// Base animation styles for grid items
+.div1,
+.div2,
+.div3,
+.div4,
+.div5,
+.div6,
+.div7,
+.div8,
+.div9,
+.div10 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+// Animation trigger class
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Left column items (odd-numbered divs in desktop view)
+.div1,
+.div3,
+.div5,
+.div7,
+.div9 {
+  &.animate-in {
+    transition-delay: 0s;
+  }
+}
+
+// Right column items (even-numbered divs in desktop view)
+.div2,
+.div4,
+.div6,
+.div8,
+.div10 {
+  &.animate-in {
+    transition-delay: 0.2s;
+  }
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.div4 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+.div5 {
+  grid-area: 5 / 1 / 6 / 2;
+}
+.div6 {
+  grid-area: 6 / 1 / 7 / 2;
+}
+.div7 {
+  grid-area: 7 / 1 / 8 / 2;
+}
+.div8 {
+  grid-area: 8 / 1 / 9 / 2;
+}
+.div9 {
+  grid-area: 9 / 1 / 10 / 2;
+}
+.div10 {
+  grid-area: 10 / 1 / 11 / 2;
+}
+
+// Layout for larger screens (2-column grid)
+@media all and (min-width: 768px) {
+  .main {
+    height: 250vh;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(5);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .div2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .div3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .div5 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .div6 {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .div7 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .div8 {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  .div9 {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  .div10 {
+    grid-area: 5 / 2 / 6 / 3;
+  }
+}

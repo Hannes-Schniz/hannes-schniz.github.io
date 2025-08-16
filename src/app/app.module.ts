@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { SlidepanelComponent } from './pages/home/slidepanel/slidepanel.component';
+import { SlidepanelComponent } from './shared/components/slidepanel/slidepanel.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { HomeComponent } from './pages/home/home.component';
 import {MatMenuModule} from '@angular/material/menu';

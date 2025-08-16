@@ -1,23 +1,41 @@
 <app-search-window class="search hidden" id="searchWindow"></app-search-window>
-<app-toolbar [drawer]="this.drawer"></app-toolbar>
-<div>
-  <button
-    mat-fab
-    class="button"
-    *ngIf="this.scrollService.showScrollTop()"
-    (click)="this.scrollTop()"
-  >
-    <mat-icon>arrow_upward</mat-icon>
-  </button>
+<app-slidepanel></app-slidepanel>
+<div class="intro"></div>
+<div class="main">
+  <div class="div1 imageWrapper">
+    <img
+      src="../assets/pictures/projects/ProjectPage/RPI.JPG"
+      class="image rotateAnimation"
+    />
+  </div>
+  <div class="div2"></div>
+  <div class="div3"></div>
+  <div class="div4 imageWrapper">
+    <img
+      src="../assets/pictures/projects/ProjectPage/RPI.JPG"
+      class="image rotateAnimation"
+    />
+  </div>
+  <div class="div5 imageWrapper">
+    <img
+      src="../assets/pictures/projects/ProjectPage/RPI.JPG"
+      class="image rotateAnimation"
+    />
+  </div>
+  <div class="div6"></div>
+  <div class="div7"></div>
+  <div class="div8 imageWrapper">
+    <img
+      src="../assets/pictures/projects/ProjectPage/RPI.JPG"
+      class="image rotateAnimation"
+    />
+  </div>
+  <div class="div9 imageWrapper">
+    <img
+      src="../assets/pictures/projects/ProjectPage/RPI.JPG"
+      class="image rotateAnimation"
+    />
+  </div>
+  <div class="div10"></div>
 </div>
-<mat-drawer-container>
-  <mat-drawer #drawer mode="over" opened="false" class="drawer">
-    <app-links
-      class="links"
-      [slides]="this.importService.getSlideObjects()"
-      [drawer]="this.drawer"
-    ></app-links>
-  </mat-drawer>
-  <router-outlet></router-outlet>
-</mat-drawer-container>
 <app-footer></app-footer>
