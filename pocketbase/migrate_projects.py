@@ -197,7 +197,8 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
             project_id_de = project_de.get("ProjectID", "")
             if project_id_en != project_id_de:
                 print(f"Warning: Project ID mismatch at index {idx}: EN='{project_id_en}' vs DE='{project_id_de}'")
-            project_id_label = project_id_en  # Use EN as primary
+            # Prefer non-empty ID
+            project_id_label = project_id_en if project_id_en else project_id_de
         elif project_en:
             project_id_label = project_en.get("ProjectID", "")
         else:
@@ -276,7 +277,7 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
         
         # Process summary texts and tags
         summary_title = ""
-        summary_text_ids_set = set()  # Use set for O(1) lookups
+        summary_text_ids_set = set()  # Use set to prevent duplicate text IDs
         tags_list = []
         
         for project, language in [(project_en, "eng"), (project_de, "ger")]:
@@ -349,8 +350,8 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
             max_core_features = max(max_core_features, len(project_de.get("projectPage", {}).get("coreFeatures", [])))
         
         for feat_idx in range(max_core_features):
-            feature_name_text_ids_set = set()  # Use set for O(1) lookups
-            feature_explanation_text_ids_set = set()  # Use set for O(1) lookups
+            feature_name_text_ids_set = set()  # Use set to prevent duplicate text IDs
+            feature_explanation_text_ids_set = set()  # Use set to prevent duplicate text IDs
             feature_syntax = ""
             
             for project, language in [(project_en, "eng"), (project_de, "ger")]:
@@ -406,8 +407,8 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
             max_additional_features = max(max_additional_features, len(project_de.get("projectPage", {}).get("additionalFeatures", [])))
         
         for feat_idx in range(max_additional_features):
-            feature_name_text_ids_set = set()  # Use set for O(1) lookups
-            feature_explanation_text_ids_set = set()  # Use set for O(1) lookups
+            feature_name_text_ids_set = set()  # Use set to prevent duplicate text IDs
+            feature_explanation_text_ids_set = set()  # Use set to prevent duplicate text IDs
             
             for project, language in [(project_en, "eng"), (project_de, "ger")]:
                 if not project:
