@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 PocketBase Migration Script for Projects
-Converts projects-EN.json to PocketBase schema format
+Converts projects-EN.json and projects-DE.json to PocketBase schema format with bilingual support
 """
 
 import json
@@ -170,6 +170,15 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
     tag_map = {}  # tag_name -> tag_record
     text_map = {}  # (text_content, language) -> text_record
 
+    # Helper function to get or create text record
+    def get_or_create_text(text_content: str, language: str) -> Dict[str, Any]:
+        key = (text_content, language)
+        if key not in text_map:
+            text_record = create_text(text_content, language)
+            text_map[key] = text_record
+            all_texts.append(text_record)
+        return text_map[key]
+
     # Ensure both files have the same projects in the same order
     projects_en = data_en.get("projects", [])
     projects_de = data_de.get("projects", [])
@@ -196,29 +205,27 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
         
         all_projectIDs.append(project_id_label)
 
-        # Helper function to get or create text record
-        def get_or_create_text(text_content: str, language: str) -> Dict[str, Any]:
-            key = (text_content, language)
-            if key not in text_map:
-                text_record = create_text(text_content, language)
-                text_map[key] = text_record
-                all_texts.append(text_record)
-            return text_map[key]
-
         # Process slides for both languages
         slide_title_text_ids = []
         slide_text_text_ids = []
         slide_picture_resource = None
+        # Extract position and link from first available project (they should be language-independent)
         slide_position = 0
         slide_link = ""
+        if project_en:
+            slide_data_en = project_en.get("slide", {})
+            slide_position = slide_data_en.get("position", 0)
+            slide_link = slide_data_en.get("link", "")
+        elif project_de:
+            slide_data_de = project_de.get("slide", {})
+            slide_position = slide_data_de.get("position", 0)
+            slide_link = slide_data_de.get("link", "")
         
         for project, language in [(project_en, "eng"), (project_de, "ger")]:
             if not project:
                 continue
             
             slide_data = project.get("slide", {})
-            slide_position = slide_data.get("position", 0)
-            slide_link = slide_data.get("link", "")
             
             # Create text records for slide title
             slide_title = slide_data.get("title", "")
@@ -255,12 +262,21 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
         page_title_text_ids = []
         page_picture_resource = None
         additional_picture_ids = []
+        # Extract progress and gitLink from first available project (language-independent)
         page_progress = 0
         page_git_link = ""
+        if project_en:
+            page_data_en = project_en.get("projectPage", {})
+            page_progress = page_data_en.get("progress", 0)
+            page_git_link = page_data_en.get("gitLink", "")
+        elif project_de:
+            page_data_de = project_de.get("projectPage", {})
+            page_progress = page_data_de.get("progress", 0)
+            page_git_link = page_data_de.get("gitLink", "")
         
         # Process summary texts and tags
         summary_title = ""
-        summary_text_ids = []
+        summary_text_ids_set = set()  # Use set for O(1) lookups
         tags_list = []
         
         for project, language in [(project_en, "eng"), (project_de, "ger")]:
@@ -268,8 +284,6 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
                 continue
                 
             page_data = project.get("projectPage", {})
-            page_progress = page_data.get("progress", 0)
-            page_git_link = page_data.get("gitLink", "")
             
             # Create text records for project page title
             page_title = page_data.get("title", "")
@@ -317,12 +331,11 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
             for text_content in summary_data.get("text", []):
                 if text_content:
                     text_record = get_or_create_text(text_content, language)
-                    if text_record["id"] not in summary_text_ids:
-                        summary_text_ids.append(text_record["id"])
+                    summary_text_ids_set.add(text_record["id"])
 
         # Create summary
         summary = create_summary({"title": summary_title}, tags_list, [])
-        summary["texts"] = summary_text_ids  # Use the collected text IDs
+        summary["texts"] = list(summary_text_ids_set)  # Convert set to list
         all_summaries.append(summary)
 
         # Process core features for both languages
@@ -336,8 +349,8 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
             max_core_features = max(max_core_features, len(project_de.get("projectPage", {}).get("coreFeatures", [])))
         
         for feat_idx in range(max_core_features):
-            feature_name_text_ids = []
-            feature_explanation_text_ids = []
+            feature_name_text_ids_set = set()  # Use set for O(1) lookups
+            feature_explanation_text_ids_set = set()  # Use set for O(1) lookups
             feature_syntax = ""
             
             for project, language in [(project_en, "eng"), (project_de, "ger")]:
@@ -364,22 +377,20 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
                 feature_name = feature_data.get("feature", feature_data.get("title", ""))
                 if feature_name:
                     feature_name_text = get_or_create_text(feature_name, language)
-                    if feature_name_text["id"] not in feature_name_text_ids:
-                        feature_name_text_ids.append(feature_name_text["id"])
+                    feature_name_text_ids_set.add(feature_name_text["id"])
                 
                 # Create text record for feature explanation
                 feature_explanation = feature_data.get("explanation", feature_data.get("text", ""))
                 if feature_explanation:
                     feature_explanation_text = get_or_create_text(feature_explanation, language)
-                    if feature_explanation_text["id"] not in feature_explanation_text_ids:
-                        feature_explanation_text_ids.append(feature_explanation_text["id"])
+                    feature_explanation_text_ids_set.add(feature_explanation_text["id"])
             
             # Only create feature if we have at least one name or explanation
-            if feature_name_text_ids or feature_explanation_text_ids:
+            if feature_name_text_ids_set or feature_explanation_text_ids_set:
                 feature = create_feature(
                     {"syntax": feature_syntax},
-                    feature_name_text_ids,
-                    feature_explanation_text_ids,
+                    list(feature_name_text_ids_set),  # Convert set to list
+                    list(feature_explanation_text_ids_set),  # Convert set to list
                 )
                 core_features.append(feature)
                 all_features.append(feature)
@@ -395,8 +406,8 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
             max_additional_features = max(max_additional_features, len(project_de.get("projectPage", {}).get("additionalFeatures", [])))
         
         for feat_idx in range(max_additional_features):
-            feature_name_text_ids = []
-            feature_explanation_text_ids = []
+            feature_name_text_ids_set = set()  # Use set for O(1) lookups
+            feature_explanation_text_ids_set = set()  # Use set for O(1) lookups
             
             for project, language in [(project_en, "eng"), (project_de, "ger")]:
                 if not project:
@@ -418,22 +429,20 @@ def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
                 feature_name = feature_data.get("feature", feature_data.get("title", ""))
                 if feature_name:
                     feature_name_text = get_or_create_text(feature_name, language)
-                    if feature_name_text["id"] not in feature_name_text_ids:
-                        feature_name_text_ids.append(feature_name_text["id"])
+                    feature_name_text_ids_set.add(feature_name_text["id"])
                 
                 # Create text record for feature explanation
                 feature_explanation = feature_data.get("explanation", feature_data.get("text", ""))
                 if feature_explanation:
                     feature_explanation_text = get_or_create_text(feature_explanation, language)
-                    if feature_explanation_text["id"] not in feature_explanation_text_ids:
-                        feature_explanation_text_ids.append(feature_explanation_text["id"])
+                    feature_explanation_text_ids_set.add(feature_explanation_text["id"])
             
             # Only create feature if we have at least one name or explanation
-            if feature_name_text_ids or feature_explanation_text_ids:
+            if feature_name_text_ids_set or feature_explanation_text_ids_set:
                 feature = create_feature(
                     {},
-                    feature_name_text_ids,
-                    feature_explanation_text_ids,
+                    list(feature_name_text_ids_set),  # Convert set to list
+                    list(feature_explanation_text_ids_set),  # Convert set to list
                 )
                 additional_features.append(feature)
                 all_features.append(feature)
