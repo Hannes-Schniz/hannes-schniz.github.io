@@ -22,6 +22,7 @@
     "angular": "file:angular-devkit/build-angular:dev-server",
     "marked": "^4.3.0",
     "ngx-markdown": "^16.0.0",
+    "pocketbase": "^0.26.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
