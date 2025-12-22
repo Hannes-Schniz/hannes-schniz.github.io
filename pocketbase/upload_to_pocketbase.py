@@ -10,9 +10,10 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 try:
-    import requests
+    from pocketbase import PocketBase
+    from pocketbase.models.record import Record
 except ImportError:
-    print("Error: 'requests' library is required. Install it with: pip install requests")
+    print("Error: 'pocketbase' library is required. Install it with: pip install pocketbase")
     sys.exit(1)
 
 
@@ -41,43 +42,39 @@ class PocketBaseUploader:
             print("Error: Config file must contain 'url', 'admin_email', and 'admin_password'")
             sys.exit(1)
         
-        self.token = None
-        self.session = requests.Session()
+        self.client = PocketBase(self.base_url)
     
     def authenticate(self) -> bool:
         """Authenticate as admin and get auth token"""
         try:
-            url = f"{self.base_url}/api/admins/auth-with-password"
-            response = self.session.post(url, json={
-                'identity': self.admin_email,
-                'password': self.admin_password
-            })
-            response.raise_for_status()
-            
-            data = response.json()
-            self.token = data['token']
-            self.session.headers.update({
-                'Authorization': f'Bearer {self.token}'
-            })
-            print(f"✓ Successfully authenticated as admin")
-            return True
-        except requests.exceptions.RequestException as e:
+            auth_data = self.client.admins.auth_with_password(
+                self.admin_email,
+                self.admin_password
+            )
+            if auth_data and getattr(auth_data, 'token', None):
+                print(f"✓ Successfully authenticated as admin")
+                return True
+            return False
+        except Exception as e:
             print(f"✗ Authentication failed: {e}")
-            if hasattr(e, 'response') and e.response is not None:
-                print(f"  Response: {e.response.text}")
             return False
     
     def create_record(self, collection: str, data: Dict[str, Any]) -> Optional[Dict]:
         """Create a record in a collection"""
         try:
-            url = f"{self.base_url}/api/collections/{collection}/records"
-            response = self.session.post(url, json=data)
-            response.raise_for_status()
-            return response.json()
-        except requests.exceptions.RequestException as e:
+            record = self.client.collection(collection).create(data)
+            # Convert Record object to dict for backward compatibility with the existing
+            # upload_collection method, which expects dict-like objects for success checking.
+            # The Record class doesn't provide a to_dict() method, so we extract its attributes.
+            if isinstance(record, Record):
+                result = {}
+                for key, value in record.__dict__.items():
+                    if not key.startswith('_'):
+                        result[key] = value
+                return result
+            return record
+        except Exception as e:
             print(f"  ✗ Failed to create record in {collection}: {e}")
-            if hasattr(e, 'response') and e.response is not None:
-                print(f"    Response: {e.response.text}")
             return None
     
     def upload_collection(self, collection: str, records: List[Dict]) -> int:
