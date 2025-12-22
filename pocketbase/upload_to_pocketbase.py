@@ -6,7 +6,6 @@ Uploads migration data directly to PocketBase instance
 
 import json
 import sys
-import time
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
@@ -22,12 +21,26 @@ class PocketBaseUploader:
     
     def __init__(self, config_path: str):
         """Initialize with PocketBase configuration"""
-        with open(config_path, 'r') as f:
-            config = json.load(f)
+        try:
+            with open(config_path, 'r') as f:
+                config = json.load(f)
+        except FileNotFoundError:
+            print(f"Error: Config file not found: {config_path}")
+            print("Please create the config file with your PocketBase credentials.")
+            sys.exit(1)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in config file: {config_path}")
+            print(f"  {e}")
+            sys.exit(1)
         
-        self.base_url = config['url'].rstrip('/')
-        self.admin_email = config['admin_email']
-        self.admin_password = config['admin_password']
+        self.base_url = config.get('url', '').rstrip('/')
+        self.admin_email = config.get('admin_email', '')
+        self.admin_password = config.get('admin_password', '')
+        
+        if not all([self.base_url, self.admin_email, self.admin_password]):
+            print("Error: Config file must contain 'url', 'admin_email', and 'admin_password'")
+            sys.exit(1)
+        
         self.token = None
         self.session = requests.Session()
     
@@ -88,8 +101,17 @@ class PocketBaseUploader:
     def upload_migration_data(self, migration_file: str) -> bool:
         """Upload migration data to PocketBase"""
         # Load migration data
-        with open(migration_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+        try:
+            with open(migration_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            print(f"Error: Migration file not found: {migration_file}")
+            print("Please run 'migrate_projects.py' first to generate the migration data.")
+            return False
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in migration file: {migration_file}")
+            print(f"  {e}")
+            return False
         
         print(f"\n{'='*60}")
         print(f"Starting PocketBase upload from: {migration_file}")
