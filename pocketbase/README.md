@@ -5,11 +5,11 @@ This directory contains Python scripts to migrate project data from the Angular 
 ## Overview
 
 The PocketBase schema uses a normalized, relational structure where text content and media resources are stored in separate collections and referenced by IDs. This allows for:
-- Multi-language support through the `texts` collection
+- Multi-language support through the `texts` collection with bilingual (English and German) content
 - Centralized resource management through the `resources` collection
 - Efficient data reuse and relationship management
 
-1. **`migrate_projects.py`** - Transforms `projects-EN.json` or `projects-DE.json` into PocketBase-compatible records following the normalized schema
+1. **`migrate_projects.py`** - Transforms `projects-EN.json` AND `projects-DE.json` into PocketBase-compatible records following the normalized schema with bilingual support
 2. **`upload_to_pocketbase.py`** - Uploads the migration data directly to your PocketBase instance
 
 ## Quick Start
@@ -27,20 +27,21 @@ The PocketBase schema uses a normalized, relational structure where text content
 # Navigate to the pocketbase directory
 cd pocketbase
 
-# Run the migration script to generate the JSON (default: English)
+# Run the migration script to generate the JSON (processes both EN and DE files)
 python3 migrate_projects.py
 
-# Or migrate German projects
-python3 migrate_projects.py --language ger --input ../src/app/shared/jsons/projects-DE.json
+# Or use custom input files
+python3 migrate_projects.py --input-en /path/to/projects-EN.json --input-de /path/to/projects-DE.json
 
-# Or use custom input/output files
-python3 migrate_projects.py --input /path/to/projects.json --output /path/to/output.json
+# Or use custom output file
+python3 migrate_projects.py --output /path/to/output.json
 ```
 
 This will create `pocketbase_migration.json` with the transformed data, including:
-- Text content stored in the `texts` collection with language metadata
+- Text content stored in the `texts` collection with language metadata (both English and German)
 - Picture references stored in the `resources` collection
 - Proper relational IDs linking all entities together
+- Each project, slide, and feature links to texts in BOTH languages
 
 ### Step 2: Configure PocketBase Connection
 
@@ -107,22 +108,28 @@ Upload Summary:
 
 ### migrate_projects.py
 
-Transforms the Angular JSON format into PocketBase-compatible records.
+Transforms the Angular JSON format into PocketBase-compatible records with bilingual support.
 
 The script will:
-1. Read `/src/app/shared/jsons/projects-EN.json`
-2. Transform the data into PocketBase format
+1. Read both `/src/app/shared/jsons/projects-EN.json` and `/src/app/shared/jsons/projects-DE.json`
+2. Transform the data into PocketBase format with texts from both languages
 3. Generate output to `pocketbase/pocketbase_migration.json`
+
+**Key Features:**
+- **Bilingual Support**: Processes both English and German project files simultaneously
+- **Text Deduplication**: Ensures no duplicate texts within the same language
+- **Proper Language Tagging**: Each text record is tagged with its language (eng/ger)
+- **Unified Structure**: Creates single project/slide/feature records that reference texts from both languages
 
 **Output Collections:**
 - **tags**: Unique tags used across all projects (e.g., "Software", "Frontend", "Angular")
-- **texts**: Text content with language metadata (eng/ger) - used for all translatable strings
+- **texts**: Text content with language metadata (eng/ger) - used for all translatable strings from both language files
 - **resources**: Media resources (pictures) with metadata (title, description, src path)
-- **features**: Core and additional features of projects (with relations to texts for name and explanations)
-- **summaries**: Project summaries with references to tags and texts
-- **slides**: Carousel slide information with relations to texts (title, text) and resources (picture)
-- **projectPages**: Detailed project page information with relations to texts (title) and resources (picture)
-- **projects**: Main project records linking slides and project pages
+- **features**: Core and additional features of projects (with relations to texts for name and explanations in both languages)
+- **summaries**: Project summaries with references to tags and texts from both languages
+- **slides**: Carousel slide information with relations to texts (title, text) from both languages and resources (picture)
+- **projectPages**: Detailed project page information with relations to texts (title) from both languages and resources (picture)
+- **projects**: Main project records linking slides and project pages (no language field - supports both via text relations)
 
 ### upload_to_pocketbase.py
 
@@ -171,8 +178,12 @@ Create `pb_config.json` with your PocketBase credentials:
 
 The new schema uses a normalized, relational structure where text content and resources are stored separately:
 
-### Source: projects-EN.json
+### Source: projects-EN.json and projects-DE.json
+
+The migration script reads BOTH language files and creates unified records:
+
 ```json
+// projects-EN.json
 {
   "projects": [
     {
@@ -183,19 +194,23 @@ The new schema uses a normalized, relational structure where text content and re
         "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
         ...
       },
-      "projectPage": {
-        "title": "LSM Project",
-        "picture": "../../assets/pictures/projects/ProjectPage/LSM_Picture.png",
-        "summary": { "title": "...", "text": [...], "tags": [...] },
-        "coreFeatures": [
-          {
-            "feature": "register",
-            "syntax": "static register(componentID: string)",
-            "explanation": "Registers a namespace..."
-          }
-        ],
+      ...
+    }
+  ]
+}
+
+// projects-DE.json
+{
+  "projects": [
+    {
+      "ProjectID": "LSM",
+      "slide": { 
+        "title": "LSM",
+        "text": "Localstorage Verwaltungssystem",
+        "picture": "../../assets/pictures/projects/Slides/LSM_Picture.png",
         ...
-      }
+      },
+      ...
     }
   ]
 }
@@ -203,55 +218,53 @@ The new schema uses a normalized, relational structure where text content and re
 
 ### Output: pocketbase_migration.json
 
-The script creates normalized records with proper ID references:
+The script creates normalized records with proper ID references and bilingual support:
 
-**texts** collection (all translatable strings):
+**texts** collection (all translatable strings from both languages):
 ```json
+// English version
 {
   "id": "abc123xyz456789",
-  "text": "LSM",
+  "text": "Localstorage management system",
   "language": "eng"
 }
-```
 
-**resources** collection (all pictures):
-```json
+// German version
 {
   "id": "def456uvw789012",
-  "picture": "",
-  "title": "LSM Slide Picture",
-  "description": "Slide picture for LSM",
-  "src": "../../assets/pictures/projects/Slides/LSM_Picture.png"
+  "text": "Localstorage Verwaltungssystem",
+  "language": "ger"
 }
 ```
 
-**features** collection (with relations):
-```json
-{
-  "id": "ghi789rst345678",
-  "name": ["text_id_for_register"],
-  "syntax": "static register(componentID: string)",
-  "text": ["text_id_for_explanation"]
-}
-```
-
-**slides** collection (with relations):
+**slides** collection (with relations to texts in both languages):
 ```json
 {
   "id": "jkl012mno678901",
-  "title": ["text_id_for_title"],
-  "text": ["text_id_for_text"],
+  "title": ["text_id_for_eng_title", "text_id_for_ger_title"],
+  "text": ["text_id_for_eng_text", "text_id_for_ger_text"],
   "picture": "resource_id_for_picture",
   "position": 0,
   "link": "/LSM"
 }
 ```
 
+**features** collection (with bilingual text relations):
+```json
+{
+  "id": "ghi789rst345678",
+  "name": ["text_id_for_eng_name", "text_id_for_ger_name"],
+  "syntax": "static register(componentID: string)",
+  "text": ["text_id_for_eng_explanation", "text_id_for_ger_explanation"]
+}
+```
+
 This normalized structure enables:
-- Multi-language support (same structure, different text IDs)
+- Multi-language support (same structure, text IDs reference both English and German)
 - Efficient text reuse across collections
 - Centralized resource management
 - Clean separation of content and metadata
+- No duplicate texts within the same language
 
 ## Important Notes
 
@@ -290,11 +303,13 @@ The script generates random IDs matching PocketBase's format (15-character lower
 
 ### Language
 
-The script now supports language parameters:
-- Default: `"eng"` (English) from `projects-EN.json`
-- Option: `"ger"` (German) from `projects-DE.json`
+The script now automatically processes both language files:
+- Reads both `projects-EN.json` and `projects-DE.json`
+- Creates text records for each language with proper language tags (`eng` and `ger`)
+- Links all project structures to texts from BOTH languages
+- Ensures no duplicate texts within the same language
 
-All text records are tagged with the specified language code in the `texts` collection.
+All text records in the `texts` collection are tagged with their language code, and each project/slide/feature references texts from both languages.
 
 ## Manual Import (Alternative to Upload Script)
 
@@ -312,15 +327,15 @@ If you prefer to manually import the data instead of using `upload_to_pocketbase
 
 ## Customization
 
-### Migrating Different Languages
-
-To migrate German projects:
+The migration script automatically processes both English and German files. You can customize the input and output paths:
 
 ```bash
-python3 migrate_projects.py --language ger --input ../src/app/shared/jsons/projects-DE.json
-```
+# Use custom input files
+python3 migrate_projects.py --input-en /path/to/projects-EN.json --input-de /path/to/projects-DE.json
 
-The language parameter sets the `language` field in all text records in the `texts` collection.
+# Use custom output file
+python3 migrate_projects.py --output /path/to/output.json
+```
 
 ## Schema Reference
 
