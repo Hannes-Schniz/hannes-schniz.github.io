@@ -12,7 +12,7 @@ This directory contains Python scripts to migrate project data from the Angular 
 ### Prerequisites
 
 - Python 3.7 or higher
-- `requests` library: `pip install requests`
+- `pocketbase` library: `pip install pocketbase`
 - A running PocketBase instance
 - Admin credentials for your PocketBase instance
 
