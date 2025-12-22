@@ -10,7 +10,7 @@ The migration script (`migrate_projects.py`) reads the `projects-EN.json` file f
 
 ### Prerequisites
 
-- Python 3.6 or higher
+- Python 3.7 or higher
 - Access to the repository files
 
 ### Running the Script
