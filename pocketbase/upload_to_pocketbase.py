@@ -11,6 +11,7 @@ from typing import Dict, List, Any, Optional
 
 try:
     from pocketbase import PocketBase
+    from pocketbase.models.record import Record
 except ImportError:
     print("Error: 'pocketbase' library is required. Install it with: pip install pocketbase")
     sys.exit(1)
@@ -61,13 +62,15 @@ class PocketBaseUploader:
     def create_record(self, collection: str, data: Dict[str, Any]) -> Optional[Dict]:
         """Create a record in a collection"""
         try:
-            from pocketbase.models.record import Record
             record = self.client.collection(collection).create(data)
             # Convert Record object to dict for compatibility
+            # The Record object stores its data as attributes, so we create a dict
+            # with the essential fields needed by the calling code
             if isinstance(record, Record):
-                # Extract all attributes from the Record object
-                result = {key: value for key, value in record.__dict__.items() 
-                         if not key.startswith('_')}
+                result = {}
+                for key, value in record.__dict__.items():
+                    if not key.startswith('_'):
+                        result[key] = value
                 return result
             return record
         except Exception as e:
