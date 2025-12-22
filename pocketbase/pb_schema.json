@@ -125,9 +125,7 @@
     },
     "passwordAuth": {
       "enabled": true,
-      "identityFields": [
-        "email"
-      ]
+      "identityFields": ["email"]
     },
     "mfa": {
       "enabled": false,
@@ -331,9 +329,7 @@
     },
     "passwordAuth": {
       "enabled": true,
-      "identityFields": [
-        "email"
-      ]
+      "identityFields": ["email"]
     },
     "mfa": {
       "enabled": false,
@@ -775,11 +771,11 @@
   },
   {
     "id": "pbc_4287529994",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "features",
     "type": "base",
     "fields": [
@@ -800,20 +796,6 @@
       {
         "autogeneratePattern": "",
         "hidden": false,
-        "id": "text534213990",
-        "max": 0,
-        "min": 0,
-        "name": "name",
-        "pattern": "",
-        "presentable": false,
-        "primaryKey": false,
-        "required": false,
-        "system": false,
-        "type": "text"
-      },
-      {
-        "autogeneratePattern": "",
-        "hidden": false,
         "id": "text1653587750",
         "max": 0,
         "min": 0,
@@ -826,18 +808,30 @@
         "type": "text"
       },
       {
-        "autogeneratePattern": "",
+        "cascadeDelete": false,
+        "collectionId": "pbc_3581128020",
         "hidden": false,
-        "id": "text999008199",
-        "max": 0,
-        "min": 0,
-        "name": "text",
-        "pattern": "",
+        "id": "relation1579384326",
+        "maxSelect": 999,
+        "minSelect": 0,
+        "name": "name",
         "presentable": false,
-        "primaryKey": false,
         "required": false,
         "system": false,
-        "type": "text"
+        "type": "relation"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_3581128020",
+        "hidden": false,
+        "id": "relation999008199",
+        "maxSelect": 999,
+        "minSelect": 0,
+        "name": "text",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
       },
       {
         "hidden": false,
@@ -865,11 +859,11 @@
   },
   {
     "id": "pbc_3533256308",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "projectPages",
     "type": "base",
     "fields": [
@@ -886,34 +880,6 @@
         "required": true,
         "system": true,
         "type": "text"
-      },
-      {
-        "autogeneratePattern": "",
-        "hidden": false,
-        "id": "text724990059",
-        "max": 0,
-        "min": 0,
-        "name": "title",
-        "pattern": "",
-        "presentable": false,
-        "primaryKey": false,
-        "required": false,
-        "system": false,
-        "type": "text"
-      },
-      {
-        "hidden": false,
-        "id": "file383471497",
-        "maxSelect": 1,
-        "maxSize": 0,
-        "mimeTypes": [],
-        "name": "picture",
-        "presentable": false,
-        "protected": false,
-        "required": false,
-        "system": false,
-        "thumbs": [],
-        "type": "file"
       },
       {
         "cascadeDelete": false,
@@ -978,18 +944,43 @@
         "type": "number"
       },
       {
+        "cascadeDelete": false,
+        "collectionId": "pbc_2337082678",
         "hidden": false,
-        "id": "file63471391",
-        "maxSelect": 99,
-        "maxSize": 0,
-        "mimeTypes": [],
+        "id": "relation63471391",
+        "maxSelect": 999,
+        "minSelect": 0,
         "name": "additionalPictures",
         "presentable": false,
-        "protected": false,
         "required": false,
         "system": false,
-        "thumbs": [],
-        "type": "file"
+        "type": "relation"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_2337082678",
+        "hidden": false,
+        "id": "relation383471497",
+        "maxSelect": 1,
+        "minSelect": 0,
+        "name": "picture",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_3581128020",
+        "hidden": false,
+        "id": "relation724990059",
+        "maxSelect": 999,
+        "minSelect": 0,
+        "name": "title",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
       },
       {
         "hidden": false,
@@ -1017,11 +1008,11 @@
   },
   {
     "id": "pbc_2723121715",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "projects",
     "type": "base",
     "fields": [
@@ -1078,18 +1069,119 @@
         "type": "relation"
       },
       {
+        "autogeneratePattern": "",
         "hidden": false,
-        "id": "select3571151285",
+        "id": "text553718305",
+        "max": 0,
+        "min": 0,
+        "name": "projectName",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "autodate2990389176",
+        "name": "created",
+        "onCreate": true,
+        "onUpdate": false,
+        "presentable": false,
+        "system": false,
+        "type": "autodate"
+      },
+      {
+        "hidden": false,
+        "id": "autodate3332085495",
+        "name": "updated",
+        "onCreate": true,
+        "onUpdate": true,
+        "presentable": false,
+        "system": false,
+        "type": "autodate"
+      }
+    ],
+    "indexes": [],
+    "system": false
+  },
+  {
+    "id": "pbc_2337082678",
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "name": "resources",
+    "type": "base",
+    "fields": [
+      {
+        "autogeneratePattern": "[a-z0-9]{15}",
+        "hidden": false,
+        "id": "text3208210256",
+        "max": 15,
+        "min": 15,
+        "name": "id",
+        "pattern": "^[a-z0-9]+$",
+        "presentable": false,
+        "primaryKey": true,
+        "required": true,
+        "system": true,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "file383471497",
         "maxSelect": 1,
-        "name": "language",
+        "maxSize": 1000000000000000,
+        "mimeTypes": [],
+        "name": "picture",
+        "presentable": false,
+        "protected": false,
+        "required": false,
+        "system": false,
+        "thumbs": [],
+        "type": "file"
+      },
+      {
+        "autogeneratePattern": "",
+        "hidden": false,
+        "id": "text1843675174",
+        "max": 0,
+        "min": 0,
+        "name": "description",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "autogeneratePattern": "",
+        "hidden": false,
+        "id": "text724990059",
+        "max": 0,
+        "min": 0,
+        "name": "title",
+        "pattern": "",
+        "presentable": false,
+        "primaryKey": false,
+        "required": false,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "exceptDomains": null,
+        "hidden": false,
+        "id": "url1615078541",
+        "name": "src",
+        "onlyDomains": null,
         "presentable": false,
         "required": false,
         "system": false,
-        "type": "select",
-        "values": [
-          "eng",
-          "ger"
-        ]
+        "type": "url"
       },
       {
         "hidden": false,
@@ -1117,11 +1209,11 @@
   },
   {
     "id": "pbc_2412994015",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "slides",
     "type": "base",
     "fields": [
@@ -1154,48 +1246,6 @@
       {
         "autogeneratePattern": "",
         "hidden": false,
-        "id": "text724990059",
-        "max": 0,
-        "min": 0,
-        "name": "title",
-        "pattern": "",
-        "presentable": false,
-        "primaryKey": false,
-        "required": false,
-        "system": false,
-        "type": "text"
-      },
-      {
-        "hidden": false,
-        "id": "file383471497",
-        "maxSelect": 1,
-        "maxSize": 0,
-        "mimeTypes": [],
-        "name": "picture",
-        "presentable": false,
-        "protected": false,
-        "required": false,
-        "system": false,
-        "thumbs": [],
-        "type": "file"
-      },
-      {
-        "autogeneratePattern": "",
-        "hidden": false,
-        "id": "text999008199",
-        "max": 0,
-        "min": 0,
-        "name": "text",
-        "pattern": "",
-        "presentable": false,
-        "primaryKey": false,
-        "required": false,
-        "system": false,
-        "type": "text"
-      },
-      {
-        "autogeneratePattern": "",
-        "hidden": false,
         "id": "text917281265",
         "max": 0,
         "min": 0,
@@ -1206,6 +1256,45 @@
         "required": false,
         "system": false,
         "type": "text"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_2337082678",
+        "hidden": false,
+        "id": "relation383471497",
+        "maxSelect": 1,
+        "minSelect": 0,
+        "name": "picture",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_3581128020",
+        "hidden": false,
+        "id": "relation724990059",
+        "maxSelect": 999,
+        "minSelect": 0,
+        "name": "title",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
+      },
+      {
+        "cascadeDelete": false,
+        "collectionId": "pbc_3581128020",
+        "hidden": false,
+        "id": "relation999008199",
+        "maxSelect": 999,
+        "minSelect": 0,
+        "name": "text",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "relation"
       },
       {
         "hidden": false,
@@ -1233,11 +1322,11 @@
   },
   {
     "id": "pbc_39049810",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "summaries",
     "type": "base",
     "fields": [
@@ -1321,11 +1410,11 @@
   },
   {
     "id": "pbc_1219621782",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "tags",
     "type": "base",
     "fields": [
@@ -1383,11 +1472,11 @@
   },
   {
     "id": "pbc_3581128020",
-    "listRule": null,
-    "viewRule": null,
-    "createRule": null,
-    "updateRule": null,
-    "deleteRule": null,
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
     "name": "texts",
     "type": "base",
     "fields": [
@@ -1421,6 +1510,17 @@
       },
       {
         "hidden": false,
+        "id": "select3571151285",
+        "maxSelect": 2,
+        "name": "language",
+        "presentable": false,
+        "required": false,
+        "system": false,
+        "type": "select",
+        "values": ["eng", "ger"]
+      },
+      {
+        "hidden": false,
         "id": "autodate2990389176",
         "name": "created",
         "onCreate": true,
@@ -1444,3 +1544,4 @@
     "system": false
   }
 ]
+

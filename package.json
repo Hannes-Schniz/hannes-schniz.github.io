@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^16.1.2",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "angular": "file:angular-devkit/build-angular:dev-server",
     "marked": "^4.3.0",
     "ngx-markdown": "^16.0.0",
     "rxjs": "~7.8.0",
