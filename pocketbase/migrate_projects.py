@@ -7,13 +7,21 @@ Converts projects-EN.json to PocketBase schema format
 import json
 import random
 import string
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Set
 from pathlib import Path
 
 
+# Track generated IDs to ensure uniqueness
+_generated_ids: Set[str] = set()
+
+
 def generate_id(length: int = 15) -> str:
-    """Generate a PocketBase-style ID (lowercase alphanumeric)"""
-    return ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
+    """Generate a unique PocketBase-style ID (lowercase alphanumeric)"""
+    while True:
+        new_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
+        if new_id not in _generated_ids:
+            _generated_ids.add(new_id)
+            return new_id
 
 
 def create_tag(tag_name: str) -> Dict[str, Any]:
@@ -40,6 +48,11 @@ def create_feature(feature_data: Dict[str, str]) -> Dict[str, Any]:
         "syntax": feature_data.get("syntax", ""),
         "text": feature_data.get("explanation", feature_data.get("text", ""))
     }
+
+
+def is_empty_feature(feature_data: Dict[str, str]) -> bool:
+    """Check if a feature is empty (has no meaningful content)"""
+    return not feature_data.get("feature") and not feature_data.get("title")
 
 
 def create_summary(summary_data: Dict[str, Any], tags: List[Dict], texts: List[Dict]) -> Dict[str, Any]:
@@ -167,7 +180,7 @@ def migrate_projects(input_file: str, output_file: str):
         core_features = []
         for feature_data in page_data.get("coreFeatures", []):
             # Skip empty features
-            if not feature_data.get("feature") and not feature_data.get("title"):
+            if is_empty_feature(feature_data):
                 continue
             feature = create_feature(feature_data)
             core_features.append(feature)
@@ -177,7 +190,7 @@ def migrate_projects(input_file: str, output_file: str):
         additional_features = []
         for feature_data in page_data.get("additionalFeatures", []):
             # Skip empty features
-            if not feature_data.get("title"):
+            if is_empty_feature(feature_data):
                 continue
             feature = create_feature(feature_data)
             additional_features.append(feature)
