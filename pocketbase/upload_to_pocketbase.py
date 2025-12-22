@@ -124,6 +124,7 @@ class PocketBaseUploader:
         upload_order = [
             "tags",
             "texts",
+            "resources",
             "features",
             "summaries",
             "slides",
