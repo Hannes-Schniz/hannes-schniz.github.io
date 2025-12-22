@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# PocketBase migration output and secrets
+/pocketbase/pocketbase_migration.json
+/pocketbase/pb_config.json
+/pocketbase/__pycache__/
