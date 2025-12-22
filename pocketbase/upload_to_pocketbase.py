@@ -63,9 +63,9 @@ class PocketBaseUploader:
         """Create a record in a collection"""
         try:
             record = self.client.collection(collection).create(data)
-            # Convert Record object to dict for compatibility
-            # The Record object stores its data as attributes, so we create a dict
-            # with the essential fields needed by the calling code
+            # Convert Record object to dict for backward compatibility with the existing
+            # upload_collection method, which expects dict-like objects for success checking.
+            # The Record class doesn't provide a to_dict() method, so we extract its attributes.
             if isinstance(record, Record):
                 result = {}
                 for key, value in record.__dict__.items():
