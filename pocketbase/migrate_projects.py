@@ -54,7 +54,7 @@ def is_empty_feature(feature_data: Dict[str, str]) -> bool:
 
 
 def create_resource(
-    picture_path: str = "", title: str = "", description: str = "", src: str = ""
+    src: str = "", title: str = "", description: str = ""
 ) -> Dict[str, Any]:
     """Create a resource record for pictures"""
     return {
@@ -62,7 +62,7 @@ def create_resource(
         "picture": "",  # Actual file upload needs to be handled separately
         "title": title,
         "description": description,
-        "src": src or picture_path,  # Store the path as src for reference
+        "src": src,  # Store the path for reference
     }
 
 
@@ -105,7 +105,7 @@ def create_project_page(
     additional_feature_ids: List[str],
     title_text_ids: List[str],
     picture_id: str = "",
-    additional_picture_ids: List[str] = None,
+    additional_picture_ids: List[str] | None = None,
 ) -> Dict[str, Any]:
     """Create a project page record with relations"""
     if additional_picture_ids is None:
@@ -189,7 +189,7 @@ def migrate_projects(input_file: str, output_file: str, language: str = "eng"):
         slide_picture_resource = None
         if slide_picture_path:
             slide_picture_resource = create_resource(
-                picture_path=slide_picture_path,
+                src=slide_picture_path,
                 title=f"{project_id_label} Slide Picture",
                 description=f"Slide picture for {project_id_label}",
             )
@@ -215,7 +215,7 @@ def migrate_projects(input_file: str, output_file: str, language: str = "eng"):
         page_picture_resource = None
         if page_picture_path:
             page_picture_resource = create_resource(
-                picture_path=page_picture_path,
+                src=page_picture_path,
                 title=f"{project_id_label} Page Picture",
                 description=f"Project page picture for {project_id_label}",
             )
@@ -226,7 +226,7 @@ def migrate_projects(input_file: str, output_file: str, language: str = "eng"):
         for i, pic_path in enumerate(page_data.get("additionalPictures", [])):
             if pic_path:
                 add_pic_resource = create_resource(
-                    picture_path=pic_path,
+                    src=pic_path,
                     title=f"{project_id_label} Additional Picture {i+1}",
                     description=f"Additional picture {i+1} for {project_id_label}",
                 )
