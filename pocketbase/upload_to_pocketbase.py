@@ -50,7 +50,7 @@ class PocketBaseUploader:
                 self.admin_email,
                 self.admin_password
             )
-            if auth_data and auth_data.token:
+            if auth_data and getattr(auth_data, 'token', None):
                 print(f"✓ Successfully authenticated as admin")
                 return True
             return False
@@ -61,9 +61,15 @@ class PocketBaseUploader:
     def create_record(self, collection: str, data: Dict[str, Any]) -> Optional[Dict]:
         """Create a record in a collection"""
         try:
+            from pocketbase.models.record import Record
             record = self.client.collection(collection).create(data)
-            # Convert Record object to dict-like structure for compatibility
-            return record.__dict__ if hasattr(record, '__dict__') else record
+            # Convert Record object to dict for compatibility
+            if isinstance(record, Record):
+                # Extract all attributes from the Record object
+                result = {key: value for key, value in record.__dict__.items() 
+                         if not key.startswith('_')}
+                return result
+            return record
         except Exception as e:
             print(f"  ✗ Failed to create record in {collection}: {e}")
             return None
