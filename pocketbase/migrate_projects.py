@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 PocketBase Migration Script for Projects
-Converts projects-EN.json to PocketBase schema format
+Converts projects-EN.json and projects-DE.json to PocketBase schema format with bilingual support
 """
 
 import json
@@ -91,7 +91,7 @@ def create_slide(
     return {
         "id": generate_id(),
         "position": slide_data.get("position", 0),
-        "title": title_text_ids,
+        "heading": title_text_ids,
         "picture": picture_id,
         "text": slide_text_ids,
         "link": slide_data.get("link", ""),
@@ -112,7 +112,7 @@ def create_project_page(
         additional_picture_ids = []
     return {
         "id": generate_id(),
-        "title": title_text_ids,
+        "heading": title_text_ids,
         "picture": picture_id,
         "summary": summary_id,
         "coreFeatures": core_feature_ids,
@@ -128,7 +128,6 @@ def create_project(
     progress: float,
     slide_id: str,
     project_page_id: str,
-    language: str = "ger",
 ) -> Dict[str, Any]:
     """Create a project record"""
     return {
@@ -136,23 +135,25 @@ def create_project(
         "progress": progress,
         "slide": slide_id,
         "projectPage": project_page_id,
-        "language": language,
         "projectName": project_id,
     }
 
 
-def migrate_projects(input_file: str, output_file: str, language: str = "eng"):
+def migrate_projects(input_file_en: str, input_file_de: str, output_file: str):
     """
-    Migrate projects from JSON file to PocketBase format
+    Migrate projects from both language JSON files to PocketBase format
 
     Args:
-        input_file: Path to projects-EN.json or projects-DE.json
+        input_file_en: Path to projects-EN.json
+        input_file_de: Path to projects-DE.json
         output_file: Path to output PocketBase migration JSON
-        language: Language code ('eng' or 'ger')
     """
-    # Read input JSON
-    with open(input_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    # Read input JSONs
+    with open(input_file_en, "r", encoding="utf-8") as f:
+        data_en = json.load(f)
+    
+    with open(input_file_de, "r", encoding="utf-8") as f:
+        data_de = json.load(f)
 
     # Initialize collections
     all_projectIDs = []
@@ -165,182 +166,306 @@ def migrate_projects(input_file: str, output_file: str, language: str = "eng"):
     all_projects = []
     all_resources = []
 
-    # Track unique tags to avoid duplicates
+    # Track unique tags and texts to avoid duplicates
     tag_map = {}  # tag_name -> tag_record
+    text_map = {}  # (text_content, language) -> text_record
 
-    # Process each project
-    for project in data.get("projects", []):
-        project_id_label = project.get("ProjectID", "")
+    # Helper function to get or create text record
+    def get_or_create_text(text_content: str, language: str) -> Dict[str, Any]:
+        key = (text_content, language)
+        if key not in text_map:
+            text_record = create_text(text_content, language)
+            text_map[key] = text_record
+            all_texts.append(text_record)
+        return text_map[key]
+
+    # Ensure both files have the same projects in the same order
+    projects_en = data_en.get("projects", [])
+    projects_de = data_de.get("projects", [])
+    
+    if len(projects_en) != len(projects_de):
+        print(f"Warning: Different number of projects in EN ({len(projects_en)}) and DE ({len(projects_de)})")
+    
+    # Process each project (pairing EN and DE versions)
+    for idx in range(max(len(projects_en), len(projects_de))):
+        project_en = projects_en[idx] if idx < len(projects_en) else None
+        project_de = projects_de[idx] if idx < len(projects_de) else None
+        
+        # Get project ID (should be the same in both)
+        if project_en and project_de:
+            project_id_en = project_en.get("ProjectID", "")
+            project_id_de = project_de.get("ProjectID", "")
+            if project_id_en != project_id_de:
+                print(f"Warning: Project ID mismatch at index {idx}: EN='{project_id_en}' vs DE='{project_id_de}'")
+            # Prefer non-empty ID
+            project_id_label = project_id_en if project_id_en else project_id_de
+        elif project_en:
+            project_id_label = project_en.get("ProjectID", "")
+        else:
+            project_id_label = project_de.get("ProjectID", "")
+        
         all_projectIDs.append(project_id_label)
 
-        # Process slide
-        slide_data = project.get("slide", {})
-
-        # Create text records for slide title
-        slide_title_text = create_text(slide_data.get("title", ""), language)
-        all_texts.append(slide_title_text)
-
-        # Create text records for slide text
-        slide_text_text = create_text(slide_data.get("text", ""), language)
-        all_texts.append(slide_text_text)
-
-        # Create resource for slide picture
-        slide_picture_path = slide_data.get("picture", "")
+        # Process slides for both languages
+        slide_title_text_ids = []
+        slide_text_text_ids = []
         slide_picture_resource = None
-        if slide_picture_path:
-            slide_picture_resource = create_resource(
-                src=slide_picture_path,
-                title=f"{project_id_label} Slide Picture",
-                description=f"Slide picture for {project_id_label}",
-            )
-            all_resources.append(slide_picture_resource)
+        # Extract position and link from first available project (they should be language-independent)
+        slide_position = 0
+        slide_link = ""
+        if project_en:
+            slide_data_en = project_en.get("slide", {})
+            slide_position = slide_data_en.get("position", 0)
+            slide_link = slide_data_en.get("link", "")
+        elif project_de:
+            slide_data_de = project_de.get("slide", {})
+            slide_position = slide_data_de.get("position", 0)
+            slide_link = slide_data_de.get("link", "")
+        
+        for project, language in [(project_en, "eng"), (project_de, "ger")]:
+            if not project:
+                continue
+            
+            slide_data = project.get("slide", {})
+            
+            # Create text records for slide title
+            slide_title = slide_data.get("title", "")
+            if slide_title:
+                slide_title_text = get_or_create_text(slide_title, language)
+                slide_title_text_ids.append(slide_title_text["id"])
+            
+            # Create text records for slide text
+            slide_text = slide_data.get("text", "")
+            if slide_text:
+                slide_text_text = get_or_create_text(slide_text, language)
+                slide_text_text_ids.append(slide_text_text["id"])
+            
+            # Create resource for slide picture (only once)
+            if not slide_picture_resource:
+                slide_picture_path = slide_data.get("picture", "")
+                if slide_picture_path:
+                    slide_picture_resource = create_resource(
+                        src=slide_picture_path,
+                        title=f"{project_id_label} Slide Picture",
+                        description=f"Slide picture for {project_id_label}",
+                    )
+                    all_resources.append(slide_picture_resource)
 
         slide = create_slide(
-            slide_data,
-            [slide_title_text["id"]],
-            [slide_text_text["id"]],
+            {"position": slide_position, "link": slide_link},
+            slide_title_text_ids,
+            slide_text_text_ids,
             slide_picture_resource["id"] if slide_picture_resource else "",
         )
         all_slides.append(slide)
 
-        # Process project page
-        page_data = project.get("projectPage", {})
-
-        # Create text records for project page title
-        page_title_text = create_text(page_data.get("title", ""), language)
-        all_texts.append(page_title_text)
-
-        # Create resource for project page picture
-        page_picture_path = page_data.get("picture", "")
+        # Process project pages for both languages
+        page_title_text_ids = []
         page_picture_resource = None
-        if page_picture_path:
-            page_picture_resource = create_resource(
-                src=page_picture_path,
-                title=f"{project_id_label} Page Picture",
-                description=f"Project page picture for {project_id_label}",
-            )
-            all_resources.append(page_picture_resource)
-
-        # Process additional pictures
         additional_picture_ids = []
-        for i, pic_path in enumerate(page_data.get("additionalPictures", [])):
-            if pic_path:
-                add_pic_resource = create_resource(
-                    src=pic_path,
-                    title=f"{project_id_label} Additional Picture {i+1}",
-                    description=f"Additional picture {i+1} for {project_id_label}",
-                )
-                all_resources.append(add_pic_resource)
-                additional_picture_ids.append(add_pic_resource["id"])
-
-        # Process summary
-        summary_data = page_data.get("summary", {})
-
-        # Process tags
+        # Extract progress and gitLink from first available project (language-independent)
+        page_progress = 0
+        page_git_link = ""
+        if project_en:
+            page_data_en = project_en.get("projectPage", {})
+            page_progress = page_data_en.get("progress", 0)
+            page_git_link = page_data_en.get("gitLink", "")
+        elif project_de:
+            page_data_de = project_de.get("projectPage", {})
+            page_progress = page_data_de.get("progress", 0)
+            page_git_link = page_data_de.get("gitLink", "")
+        
+        # Process summary texts and tags
+        summary_title = ""
+        summary_text_ids_set = set()  # Use set to prevent duplicate text IDs
         tags_list = []
-        for tag_name in summary_data.get("tags", []):
-            if tag_name not in tag_map:
-                tag = create_tag(tag_name)
-                tag_map[tag_name] = tag
-                all_tags.append(tag)
-            tags_list.append(tag_map[tag_name])
-
-        # Process texts
-        texts_list = []
-        for text_content in summary_data.get("text", []):
-            text = create_text(text_content, language)
-            texts_list.append(text)
-            all_texts.append(text)
+        
+        for project, language in [(project_en, "eng"), (project_de, "ger")]:
+            if not project:
+                continue
+                
+            page_data = project.get("projectPage", {})
+            
+            # Create text records for project page title
+            page_title = page_data.get("title", "")
+            if page_title:
+                page_title_text = get_or_create_text(page_title, language)
+                page_title_text_ids.append(page_title_text["id"])
+            
+            # Create resource for project page picture (only once)
+            if not page_picture_resource:
+                page_picture_path = page_data.get("picture", "")
+                if page_picture_path:
+                    page_picture_resource = create_resource(
+                        src=page_picture_path,
+                        title=f"{project_id_label} Page Picture",
+                        description=f"Project page picture for {project_id_label}",
+                    )
+                    all_resources.append(page_picture_resource)
+            
+            # Process additional pictures (only once)
+            if not additional_picture_ids:
+                for i, pic_path in enumerate(page_data.get("additionalPictures", [])):
+                    if pic_path:
+                        add_pic_resource = create_resource(
+                            src=pic_path,
+                            title=f"{project_id_label} Additional Picture {i+1}",
+                            description=f"Additional picture {i+1} for {project_id_label}",
+                        )
+                        all_resources.append(add_pic_resource)
+                        additional_picture_ids.append(add_pic_resource["id"])
+            
+            # Process summary
+            summary_data = page_data.get("summary", {})
+            summary_title = summary_data.get("title", "")
+            
+            # Process tags (only once, they're language-independent)
+            if not tags_list:
+                for tag_name in summary_data.get("tags", []):
+                    if tag_name not in tag_map:
+                        tag = create_tag(tag_name)
+                        tag_map[tag_name] = tag
+                        all_tags.append(tag)
+                    tags_list.append(tag_map[tag_name])
+            
+            # Process summary texts
+            for text_content in summary_data.get("text", []):
+                if text_content:
+                    text_record = get_or_create_text(text_content, language)
+                    summary_text_ids_set.add(text_record["id"])
 
         # Create summary
-        summary = create_summary(summary_data, tags_list, texts_list)
+        summary = create_summary({"title": summary_title}, tags_list, [])
+        summary["texts"] = list(summary_text_ids_set)  # Convert set to list
         all_summaries.append(summary)
 
-        # Process core features
+        # Process core features for both languages
         core_features = []
-        for feature_data in page_data.get("coreFeatures", []):
-            # Skip empty features
-            if is_empty_feature(feature_data):
-                continue
+        
+        # Get the maximum number of core features
+        max_core_features = 0
+        if project_en:
+            max_core_features = max(max_core_features, len(project_en.get("projectPage", {}).get("coreFeatures", [])))
+        if project_de:
+            max_core_features = max(max_core_features, len(project_de.get("projectPage", {}).get("coreFeatures", [])))
+        
+        for feat_idx in range(max_core_features):
+            feature_name_text_ids_set = set()  # Use set to prevent duplicate text IDs
+            feature_explanation_text_ids_set = set()  # Use set to prevent duplicate text IDs
+            feature_syntax = ""
+            
+            for project, language in [(project_en, "eng"), (project_de, "ger")]:
+                if not project:
+                    continue
+                
+                page_data = project.get("projectPage", {})
+                core_features_data = page_data.get("coreFeatures", [])
+                
+                if feat_idx >= len(core_features_data):
+                    continue
+                
+                feature_data = core_features_data[feat_idx]
+                
+                # Skip empty features
+                if is_empty_feature(feature_data):
+                    continue
+                
+                # Get syntax (language-independent, use first non-empty)
+                if not feature_syntax:
+                    feature_syntax = feature_data.get("syntax", "")
+                
+                # Create text record for feature name
+                feature_name = feature_data.get("feature", feature_data.get("title", ""))
+                if feature_name:
+                    feature_name_text = get_or_create_text(feature_name, language)
+                    feature_name_text_ids_set.add(feature_name_text["id"])
+                
+                # Create text record for feature explanation
+                feature_explanation = feature_data.get("explanation", feature_data.get("text", ""))
+                if feature_explanation:
+                    feature_explanation_text = get_or_create_text(feature_explanation, language)
+                    feature_explanation_text_ids_set.add(feature_explanation_text["id"])
+            
+            # Only create feature if we have at least one name or explanation
+            if feature_name_text_ids_set or feature_explanation_text_ids_set:
+                feature = create_feature(
+                    {"syntax": feature_syntax},
+                    list(feature_name_text_ids_set),  # Convert set to list
+                    list(feature_explanation_text_ids_set),  # Convert set to list
+                )
+                core_features.append(feature)
+                all_features.append(feature)
 
-            # Create text record for feature name
-            feature_name = feature_data.get("feature", feature_data.get("title", ""))
-            if feature_name:
-                feature_name_text = create_text(feature_name, language)
-                all_texts.append(feature_name_text)
-                feature_name_ids = [feature_name_text["id"]]
-            else:
-                feature_name_ids = []
-
-            # Create text record for feature explanation
-            feature_explanation = feature_data.get(
-                "explanation", feature_data.get("text", "")
-            )
-            if feature_explanation:
-                feature_explanation_text = create_text(feature_explanation, language)
-                all_texts.append(feature_explanation_text)
-                feature_explanation_ids = [feature_explanation_text["id"]]
-            else:
-                feature_explanation_ids = []
-
-            feature = create_feature(
-                feature_data, feature_name_ids, feature_explanation_ids
-            )
-            core_features.append(feature)
-            all_features.append(feature)
-
-        # Process additional features
+        # Process additional features for both languages
         additional_features = []
-        for feature_data in page_data.get("additionalFeatures", []):
-            # Skip empty features
-            if is_empty_feature(feature_data):
-                continue
-
-            # Create text record for feature name
-            feature_name = feature_data.get("feature", feature_data.get("title", ""))
-            if feature_name:
-                feature_name_text = create_text(feature_name, language)
-                all_texts.append(feature_name_text)
-                feature_name_ids = [feature_name_text["id"]]
-            else:
-                feature_name_ids = []
-
-            # Create text record for feature explanation
-            feature_explanation = feature_data.get(
-                "explanation", feature_data.get("text", "")
-            )
-            if feature_explanation:
-                feature_explanation_text = create_text(feature_explanation, language)
-                all_texts.append(feature_explanation_text)
-                feature_explanation_ids = [feature_explanation_text["id"]]
-            else:
-                feature_explanation_ids = []
-
-            feature = create_feature(
-                feature_data, feature_name_ids, feature_explanation_ids
-            )
-            additional_features.append(feature)
-            all_features.append(feature)
+        
+        # Get the maximum number of additional features
+        max_additional_features = 0
+        if project_en:
+            max_additional_features = max(max_additional_features, len(project_en.get("projectPage", {}).get("additionalFeatures", [])))
+        if project_de:
+            max_additional_features = max(max_additional_features, len(project_de.get("projectPage", {}).get("additionalFeatures", [])))
+        
+        for feat_idx in range(max_additional_features):
+            feature_name_text_ids_set = set()  # Use set to prevent duplicate text IDs
+            feature_explanation_text_ids_set = set()  # Use set to prevent duplicate text IDs
+            
+            for project, language in [(project_en, "eng"), (project_de, "ger")]:
+                if not project:
+                    continue
+                
+                page_data = project.get("projectPage", {})
+                additional_features_data = page_data.get("additionalFeatures", [])
+                
+                if feat_idx >= len(additional_features_data):
+                    continue
+                
+                feature_data = additional_features_data[feat_idx]
+                
+                # Skip empty features
+                if is_empty_feature(feature_data):
+                    continue
+                
+                # Create text record for feature name
+                feature_name = feature_data.get("feature", feature_data.get("title", ""))
+                if feature_name:
+                    feature_name_text = get_or_create_text(feature_name, language)
+                    feature_name_text_ids_set.add(feature_name_text["id"])
+                
+                # Create text record for feature explanation
+                feature_explanation = feature_data.get("explanation", feature_data.get("text", ""))
+                if feature_explanation:
+                    feature_explanation_text = get_or_create_text(feature_explanation, language)
+                    feature_explanation_text_ids_set.add(feature_explanation_text["id"])
+            
+            # Only create feature if we have at least one name or explanation
+            if feature_name_text_ids_set or feature_explanation_text_ids_set:
+                feature = create_feature(
+                    {},
+                    list(feature_name_text_ids_set),  # Convert set to list
+                    list(feature_explanation_text_ids_set),  # Convert set to list
+                )
+                additional_features.append(feature)
+                all_features.append(feature)
 
         # Create project page
         project_page = create_project_page(
-            page_data,
+            {"progress": page_progress, "gitLink": page_git_link},
             summary["id"],
             [f["id"] for f in core_features],
             [f["id"] for f in additional_features],
-            [page_title_text["id"]],
+            page_title_text_ids,
             page_picture_resource["id"] if page_picture_resource else "",
             additional_picture_ids,
         )
         all_project_pages.append(project_page)
 
-        # Create project
+        # Create project (single project with texts in both languages)
         project_record = create_project(
             project_id_label,
-            page_data.get("progress", 0),
+            page_progress,
             slide["id"],
             project_page["id"],
-            language,
         )
         all_projects.append(project_record)
 
@@ -386,29 +511,27 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Migrate English projects (default)
+  # Migrate both English and German projects (default)
   %(prog)s
 
-  # Migrate German projects
-  %(prog)s --language ger --input ../src/app/shared/jsons/projects-DE.json
+  # Custom input files
+  %(prog)s --input-en /path/to/projects-EN.json --input-de /path/to/projects-DE.json
 
-  # Custom input and output files
-  %(prog)s --input /path/to/projects.json --output /path/to/output.json
+  # Custom output file
+  %(prog)s --output /path/to/output.json
         """,
     )
     parser.add_argument(
-        "--input",
-        help="Path to input JSON file (default: ../src/app/shared/jsons/projects-EN.json)",
+        "--input-en",
+        help="Path to English JSON file (default: ../src/app/shared/jsons/projects-EN.json)",
+    )
+    parser.add_argument(
+        "--input-de",
+        help="Path to German JSON file (default: ../src/app/shared/jsons/projects-DE.json)",
     )
     parser.add_argument(
         "--output",
         help="Path to output JSON file (default: pocketbase_migration.json)",
-    )
-    parser.add_argument(
-        "--language",
-        choices=["eng", "ger"],
-        default="eng",
-        help="Language code for text content (default: eng)",
     )
 
     args = parser.parse_args()
@@ -417,15 +540,16 @@ Examples:
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
 
-    # Determine input file
-    if args.input:
-        input_file = Path(args.input)
+    # Determine input files
+    if args.input_en:
+        input_file_en = Path(args.input_en)
     else:
-        # Default based on language
-        if args.language == "ger":
-            input_file = repo_root / "src" / "app" / "shared" / "jsons" / "projects-DE.json"
-        else:
-            input_file = repo_root / "src" / "app" / "shared" / "jsons" / "projects-EN.json"
+        input_file_en = repo_root / "src" / "app" / "shared" / "jsons" / "projects-EN.json"
+
+    if args.input_de:
+        input_file_de = Path(args.input_de)
+    else:
+        input_file_de = repo_root / "src" / "app" / "shared" / "jsons" / "projects-DE.json"
 
     # Determine output file
     if args.output:
@@ -433,18 +557,23 @@ Examples:
     else:
         output_file = script_dir / "pocketbase_migration.json"
 
-    # Check if input file exists
-    if not input_file.exists():
-        print(f"Error: Input file not found: {input_file}")
+    # Check if input files exist
+    if not input_file_en.exists():
+        print(f"Error: English input file not found: {input_file_en}")
+        return 1
+    
+    if not input_file_de.exists():
+        print(f"Error: German input file not found: {input_file_de}")
         return 1
 
-    print(f"Migrating projects from: {input_file}")
-    print(f"Language: {args.language}")
+    print(f"Migrating projects from:")
+    print(f"  English: {input_file_en}")
+    print(f"  German: {input_file_de}")
     print(f"Output will be written to: {output_file}")
     print()
 
     try:
-        migrate_projects(str(input_file), str(output_file), args.language)
+        migrate_projects(str(input_file_en), str(input_file_de), str(output_file))
         return 0
     except Exception as e:
         print(f"Error during migration: {e}")
