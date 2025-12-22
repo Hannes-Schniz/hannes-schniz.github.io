@@ -127,8 +127,8 @@ The script will:
 - **resources**: Media resources (pictures) with metadata (title, description, src path)
 - **features**: Core and additional features of projects (with relations to texts for name and explanations in both languages)
 - **summaries**: Project summaries with references to tags and texts from both languages
-- **slides**: Carousel slide information with relations to texts (title, text) from both languages and resources (picture)
-- **projectPages**: Detailed project page information with relations to texts (title) from both languages and resources (picture)
+- **slides**: Carousel slide information with relations to texts (heading, text) from both languages and resources (picture)
+- **projectPages**: Detailed project page information with relations to texts (heading) from both languages and resources (picture)
 - **projects**: Main project records linking slides and project pages (no language field - supports both via text relations)
 
 ### upload_to_pocketbase.py
@@ -241,7 +241,7 @@ The script creates normalized records with proper ID references and bilingual su
 ```json
 {
   "id": "jkl012mno678901",
-  "title": ["text_id_for_eng_title", "text_id_for_ger_title"],
+  "heading": ["text_id_for_eng_title", "text_id_for_ger_title"],
   "text": ["text_id_for_eng_text", "text_id_for_ger_text"],
   "picture": "resource_id_for_picture",
   "position": 0,
@@ -284,8 +284,8 @@ The PocketBase schema has been updated to use a normalized, relational structure
 
 **Affected Collections**:
 - `features`: `name` and `text` are now relations to `texts` collection (arrays of text IDs)
-- `slides`: `title` and `text` are now relations to `texts` collection; `picture` is a relation to `resources`
-- `projectPages`: `title` is now a relation to `texts` collection; `picture` and `additionalPictures` are relations to `resources`
+- `slides`: `heading` and `text` are now relations to `texts` collection; `picture` is a relation to `resources`
+- `projectPages`: `heading` is now a relation to `texts` collection; `picture` and `additionalPictures` are relations to `resources`
 - `summaries`: `texts` field is a relation to `texts` collection (already was)
 
 ### File Uploads
@@ -349,13 +349,13 @@ The PocketBase schema is defined in `pb_schema.json`. Key collections:
 
 - **slides** (pbc_2412994015): Carousel slides
   - `position` (number): Display order
-  - `title` (relation): Array of text IDs for title
+  - `heading` (relation): Array of text IDs for title
   - `text` (relation): Array of text IDs for description
   - `picture` (relation): Resource ID for slide image
   - `link` (text): Navigation link
 
 - **projectPages** (pbc_3533256308): Detailed project information
-  - `title` (relation): Array of text IDs for page title
+  - `heading` (relation): Array of text IDs for page title
   - `summary` (relation): Reference to summaries collection
   - `coreFeatures` (relation): Array of feature IDs
   - `additionalFeatures` (relation): Array of feature IDs

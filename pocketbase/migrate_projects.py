@@ -91,7 +91,7 @@ def create_slide(
     return {
         "id": generate_id(),
         "position": slide_data.get("position", 0),
-        "title": title_text_ids,
+        "heading": title_text_ids,
         "picture": picture_id,
         "text": slide_text_ids,
         "link": slide_data.get("link", ""),
@@ -112,7 +112,7 @@ def create_project_page(
         additional_picture_ids = []
     return {
         "id": generate_id(),
-        "title": title_text_ids,
+        "heading": title_text_ids,
         "picture": picture_id,
         "summary": summary_id,
         "coreFeatures": core_feature_ids,
